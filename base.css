@@ -52,8 +52,11 @@ bennylope.github.com specific CSS
 */
 
 html {
-  margin: 10px;
   font-size: 18px;
+}
+
+body {
+    padding: 30px;
 }
 
 /* ------------- headers ------------- */
@@ -61,6 +64,7 @@ html {
 h1 {
   font-size: 36px;
   line-height: 48px;
+  margin-bottom: 12px;
 }
 
 /* ------------- el texto ------------- */
@@ -75,6 +79,7 @@ p {
 nav {
   display: block;
   margin-top: 20px;
+  text-align: center;
 }
 
 nav ul {
@@ -92,18 +97,18 @@ nav ul li {
 
 a {
   padding: 10px;
-  margin: 12px;
-  background-color: #ffc;
+
+  text-decoration: none;
 }
 a:hover {
-  background-color: #ddd;
-  font-size: 20px;
-  margin: 16px;
+  text-decoration: underline;
+
 }
 
 /* ------------- footer ------------- */
 
 footer {
   display: block;
-  margin-top: 20px;
+  margin-top: 40px;
+  position: absolute;
 }
