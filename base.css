@@ -143,3 +143,8 @@ footer p {
   margin-top: 20px;
   color: #f60;
 }
+
+ul.li-bullets {
+ list-style: disc;
+ margin-left: 10px; 
+}
