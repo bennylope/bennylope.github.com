@@ -69,9 +69,9 @@ background-color: white;
 /* ------------- headers ------------- */
 
 h1 {
-  font-size: 48px;
-  line-height: 48px;
-  margin-bottom: 12px;
+  font-size: 4em;
+  line-height: 1em;
+  margin-bottom: 0.5em;
 }
 
 h3 {
@@ -86,6 +86,10 @@ p {
   font-size: 18px;
   line-height: 27px;
   margin-bottom: 6px;
+}
+
+a.ilvrgsyngr {
+  background-color: #ccf;
 }
 
 /* ------------- navigation ------------- */
@@ -123,6 +127,7 @@ nav#identities a, nav#identities a:hover, nav#identities a:visited {
 
 a {
   text-decoration: none;
+  padding: 0.2em;
 }
 a:hover {
   text-decoration: underline;
