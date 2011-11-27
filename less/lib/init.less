@@ -1,0 +1,74 @@
+// project:: base LESS css declarations for sites
+// dev: Wellfire Interactive
+// version:: 1.0: q3, 2011
+
+
+/* --- =base styles --- */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, menu, time, mark, audio, video { background:transparent; border:0; font-size:100%; margin:0; padding:0; vertical-align:baseline } 
+article, aside, details, figure, figcaption, footer, header, hgroup, menu, nav, section { display:block }
+html 								{ height:100%; -ms-text-size-adjust:100%; -webkit-text-size-adjust: 100%; }
+body								{ min-height:100%; }
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6                  { font-weight:normal }
+sub,
+sup									{ font-size:75%; line-height:0; position:relative; }
+sub									{ bottom:-0.25em; }
+sup									{ top:-0.5em; }
+pre									{ white-space:pre; white-space:pre-wrap; word-wrap:break-word; }
+ul                  { list-style-type: disc }
+table               { border-collapse: collapse; border-spacing:0 }
+th                  { text-align: center } 
+tbody th            { text-align:left }
+abbr, 
+dfn                 { font-variant:normal; font-style:normal; }
+abbr[title]					{ border-bottom:1px dotted; }
+blockquote, 
+q, 
+em, 
+cite, 
+i, 
+var, 
+address             { font-style: italic }
+fieldset, 
+img                 { border:0 }
+img                 { border:0; vertical-align: bottom; -ms-interpolation-mode:bicubic; }
+ol                  { list-style-type: decimal }
+th, 
+strong, 
+dt, 
+b                   { font-weight:bold }
+blockquote p, 
+q                   {
+  &:before, 
+  &:after           { content:'' }  
+}
+input,
+textarea,
+button,
+select 							{ margin:0; font-size:100%; line-height:normal; vertical-align:baseline; }
+button, 
+html input[type='button'],
+input[type='reset'],
+input[type='submit']	{ cursor:pointer; -webkit-appearance: button; }
+input[type='checkbox'],
+input[type='radio'] 	{ .box-size(border); }
+textarea	{ overflow:auto; }
+figure { 
+	position:relative; 
+	img,
+	object,
+	embed,
+	video { display:block; max-width:100%; }
+}
+
+
+::-moz-selection    { background:@selBg; color:@selColor; text-shadow:none }
+::selection         { background:@selBg; color:@selColor; text-shadow:none } 
+:before             { display:block; float:left; margin-top:-1px }
+
+.a11y               { left:-999em; position:absolute } /* captions should be classed with this as well */

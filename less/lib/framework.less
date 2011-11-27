@@ -1,0 +1,37 @@
+#targets {
+	
+	.viewport(@margin:0, @padding:0) {
+		margin:@margin;
+		padding:@padding;
+		position:fixed;
+	}
+	
+}
+
+.button(@color: #f5f5f5, @textColor: #333, @textShadow: 0 1px 1px rgba(255,255,255,.75), @fontSize: 13px, @padding: 9px 15px 10px, @borderRadius: 6px) {
+  display: inline-block;
+  #gradient > .vertical(@color,darken(saturate(@color,10),10));
+  padding: @padding;
+  text-shadow: @textShadow;
+  color: @textColor;
+  font-size: @fontSize;
+  line-height: 20px;
+  .border-radius(@borderRadius);
+  @shadow: inset 0 1px 0 rgba(255,255,255,.2), inset 0 -1px 0 rgba(0,0,0,.2), 0 1px 2px rgba(0,0,0,.25);
+  .box-shadow(@shadow);
+  &:hover {
+    background-position: 0 -15px;
+    color: @textColor;
+    text-decoration: none;
+  }
+}
+
+#form {
+
+	.placeholder (@c:lighten(@black, 50%) ){ //@black
+		:-moz-placeholder { color:@c; }
+		::-webkit-input-placeholder { color:@c; }
+	}
+
+	
+}

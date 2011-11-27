@@ -16,16 +16,18 @@ layout: home
         leveraged to cross-pollinate innovation across inter-organizational silos. Each silo must 
         own its vertical to allow for unfettered horizontal growth and for the development of streamlined 
         efficiencies by bubbling up organically.</p>
-      <p>I usually post on my Tumblr blog, <a href="http://tumblr.benlopatin.com" class="ilvrgsyngr">I leverage synergies</a>.</p>
     </section>
 
     <section id="posts">
-    {% for post in site.posts %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-
+    <h3>Posts</h3>
+      <p>I usually post on <a href="http://tumblr.benlopatin.com">Tumblr</a>.</p>
+      <ul>
+        {% for post in site.posts %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
     </section>
-    
+
     <section id="my_content">
       <h3>Notes</h3>
       <ul class="li-bullets">

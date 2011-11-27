@@ -1,0 +1,54 @@
+#mod {
+	.multi () {
+		@var: ~`"@{arguments}".replace(/[\[\]]/g,'')`;
+		-moz-transition: 			@var;
+		-o-transition: 				@var;
+		-webkit-transition: 	@var;	
+	  transition: 					@var;
+	}
+	.time (@t:.5s) {
+		-moz-transition-duration: 		@t;
+		-o-transition-duration: 			@t;
+		-webkit-transition-duration: 	@t;
+		transition-duration: 					@t;
+	}
+	.rotate (@deg:45deg) { 
+	  -moz-transform: 		rotate(@deg);
+		-o-transform: 			rotate(@deg);
+	  -webkit-transform: 	rotate(@deg);
+	  transform: 					rotate(@deg);
+	}
+	.scale (@ratio:2) {
+	 	-moz-transform:			scale(@ratio);
+		-o-transform: 			scale(@ratio);
+		-webkit-transform:	scale(@ratio);
+		transform:					scale(@ratio);
+	}
+
+	.skew (@dX: 45, @dY: 0) {
+		-moz-transform: 		skew(@dX, @dY);
+		-ms-transform: 			skew(@dX, @dY);
+		-o-transform: 			skew(@dX, @dY);
+		-webkit-transform: 	skew(@dX, @dY);
+		transform: 					skew(@dX,@dY);								
+	}
+}
+
+//translations
+.changeState(@t:.5s, @ease:ease-in-out) {
+	@var: ~`"all @{t} @{ease}"`;
+  #mod > .multi(@var);
+}
+
+// Animations
+.animation (@name, @count: infinite, @timing: linear, @duration: 5s) {
+	-moz-animation-name: @name;
+	-moz-animation-iteration-count: @count;
+	-moz-animation-timing-function: @timing;
+	-moz-animation-duration: @duration;
+	-webkit-animation-name: @name;
+	-webkit-animation-iteration-count: @count;
+	-webkit-animation-timing-function: @timing;
+	-webkit-animation-duration: @duration;
+}
+ 

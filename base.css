@@ -68,6 +68,9 @@ background-color: white;
 
 /* ------------- headers ------------- */
 
+h1 { font-family: Georgia; }
+h3 { font-family: Helvetica, Arial; }
+
 h1 {
   font-size: 4em;
   line-height: 1em;
@@ -76,8 +79,9 @@ h1 {
 
 h3 {
   font-weight: bold;
-  margin-top: 6px;
-  margin-bottom: 12px;
+  font-size: 1.8em;
+  margin-top: 0.8em;
+  margin-bottom: 0.4em;
 }
 
 /* ------------- el texto ------------- */
