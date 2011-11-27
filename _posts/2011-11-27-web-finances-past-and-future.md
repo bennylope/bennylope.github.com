@@ -177,6 +177,6 @@ history up to date and accurate is frictionless, the system adapts to your perso
 financial model, and it stays one step ahead of you, keeping you out of
 trouble and on track to your goals.
 
-Maybe that's [Simple](http://www.simple.com) (neé BankSimple), although not having had the
+Maybe that's [Simple](http://www.simple.com) (ne&#233; BankSimple), although not having had the
 opportunity to use it yet, I'm not really sure how it fits into your
 personal finances in conjunction with third party accounts.

@@ -58,7 +58,7 @@ bennylope.github.com specific CSS
 
 html {
   font-size: 18px;
-background-color: #D8252B;
+background-color: #666;
 }
 
 body {
@@ -150,7 +150,7 @@ footer p {
   font-family: Helvetica, Arial;
   font-size: 14px;
   margin-top: 20px;
-  color: #f60;
+  color: #ccc;
 }
 
 ul.li-bullets {
