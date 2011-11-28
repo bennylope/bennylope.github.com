@@ -58,38 +58,59 @@ bennylope.github.com specific CSS
 
 html {
   font-size: 18px;
-background-color: #666;
+/*background-color: #666;*/
+  background: white;
 }
 
 body {
     padding: 30px;
-background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    max-width: 1024px;
 }
 
 /* ------------- headers ------------- */
 
-h1 { font-family: Georgia; }
-h3 { font-family: Helvetica, Arial; }
 
 h1 {
-  font-size: 4em;
+  font-size: 1em;
+  line-height: 1em;
+  margin-bottom: 1.3em;
+  /*border-bottom: 1px #D53C2E solid;*/
+  /*color: #D53C2E;*/
+  color: #999;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+h2 {
+  font-size: 3em;
   line-height: 1em;
   margin-bottom: 0.5em;
+  font-family: Georgia;
 }
 
 h3 {
   font-weight: bold;
-  font-size: 1.8em;
-  margin-top: 0.8em;
-  margin-bottom: 0.4em;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.5em;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+  color: #D53C2E;
 }
 
+html#index h1 {
+  color: black;
+  font-size: 3em;
+  font-family: Georgia;
+  margin-bottom: 0.5em;
+}
 /* ------------- el texto ------------- */
 
 p {
-  font-size: 18px;
-  line-height: 27px;
-  margin-bottom: 6px;
+  font-size: 1.0em;
+  line-height: 1.2em;
+  margin-bottom: 0.5em;
 }
 
 a.ilvrgsyngr {
@@ -127,6 +148,11 @@ nav#identities a, nav#identities a:hover, nav#identities a:visited {
   color: white;
 }
 
+p.homeLink  {
+  font-family: Helvetica, Arial, sans-serif;
+  margin-top: 1.5em;
+}
+
 /* ------------- links ------------- */
 
 a {
@@ -135,15 +161,22 @@ a {
 }
 a:hover {
   text-decoration: underline;
-
+}
+header a {
+  color: #999;
 }
 
+p.homeLink a {
+  color: #999;
+  font-size: 1em;
+}
 /* ------------- footer ------------- */
 
 footer {
   display: block;
   margin-top: 40px;
-  position: absolute;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 footer p {

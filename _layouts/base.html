@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" {% if page.pageid %}id="{{ page.pageid }}"{% endif %}>
   <head>
-    <title>{% if page.title %}{{ page.title }} - {% endif %}I leverage synergies.</title>
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     <link rel="stylesheet" href="/base.css" type="text/css" media="screen">
     <!--<link rel="stylesheet/less" type="text/css" href="/less/surveyor.less">
     <link rel="stylesheet/less" type="text/css" href="/less/site.less">
