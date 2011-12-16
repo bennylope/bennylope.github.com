@@ -68,6 +68,7 @@ body {
     margin-right: auto;
     background-color: white;
     max-width: 1024px;
+    font-family: Helvetica;
 }
 
 /* ------------- headers ------------- */
@@ -96,7 +97,8 @@ h3 {
   font-size: 1.5em;
   margin-top: 1.0em;
   margin-bottom: 0.5em;
-  color: #D53C2E;
+  color: #666;
+  /*color: #D53C2E;*/
 }
 
 html#index h1 {
@@ -139,7 +141,7 @@ nav#identities ul li {
   line-height: 36px;
   margin: 5px;
   padding: 5px;
-  background-color: #f60;
+  background-color: #ff8a00;
   color: white;
   border-radius: 5px;
 }
@@ -158,6 +160,7 @@ p.homeLink  {
 a {
   text-decoration: none;
   padding: 0.2em;
+  color: #d53c2e;
 }
 a:hover {
   text-decoration: underline;
