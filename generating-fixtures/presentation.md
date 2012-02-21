@@ -8,7 +8,7 @@
 
 -----
 
-# Do you already have data?
+# Presumption that you have data
 
 ![Data](data.jpg)
 
@@ -26,7 +26,7 @@
 
 -----
 
-# Going back to the admin to update and re-dump after schema changes?
+# Edit data through admin to re-dump after schema changes?
 
 <br/><br/>
 
@@ -41,7 +41,6 @@
 ## Model and Manager
 
     !python
-
     class SomeManager(models.Manager):
         def future(self):
             return self.get_query_set().filter(pub_date__gte=datetime.today())
@@ -53,7 +52,6 @@
 ## Test
 
     !python
-
     class SomeManagerTest(TestCase):
         fixtures = "some_fixtures.json"
 
@@ -83,12 +81,46 @@
 
 -----
 
-# Generating fixture files <br/> (django-fixture-generator)
-
+# Generating fixture files <br/> ([django-fixture-generator](https://github.com/alex/django-fixture-generator))
 
 -----
 
-# Automatic model factories <br/> (django-any)
+    !python
+    from fixture_generator import fixture_generator
+
+    from events.models import EventCategory, Event
+    from django.contrib.auth.models import User, Group
+
+    @fixture_generator(User, requires=["events.test_categories"])
+    def test_users():
+        festival, tasting = EventCategory.objects.order_by("name")
+        fortnights_festival = Event.objects.create(
+                title="Beer Fest",
+                start_date=datetime.today() - timedelta(days=14),
+                category=festival)
+        tomorrows_tasting = Event.objects.create(
+                title="Tripel Tasting",
+                start_date=datetime.today() + timedelta(days=1),
+                category=tasting)
+
+    @fixture_generator(Category)
+    def test_categories():
+        EventCategory.objects.create(name="Tasting")
+        EventCategory.objects.create(name="Festival")
+
+-----
+
+# Re-generate fixtures as needed
+
+    ./manage.py generate_fixture my_app.test_users
+
+# Update fixtures for date sensitivity
+
+# Modify fixture definitions for schema changes
+
+-----
+
+# Automatic model factories <br/> ([django-any](https://github.com/kmmbvnr/django-any))
 
 
 -----
@@ -101,8 +133,8 @@
 
     class EventTestCase(TestCase):
         def setUp(self):
-            yesterday = datetime.today() - datetime.timedelta(days=1)
-            tomorrow = datetime.today() + datetime.timedelta(days=1)
+            yesterday = datetime.today() - timedelta(days=1)
+            tomorrow = datetime.today() + timedelta(days=1)
             old_event = any_model(Event, start_date=yesterday)
             current_event = any_model(Event)
             future_event = any_model(Event, start_date=tomorrow)
@@ -125,8 +157,8 @@
                     title=title, category=self.get_category())
 
         def setUp(self):
-            yesterday = datetime.today() - datetime.timedelta(days=1)
-            tomorrow = datetime.today() + datetime.timedelta(days=1)
+            yesterday = datetime.today() - timedelta(days=1)
+            tomorrow = datetime.today() + timedelta(days=1)
             old_event = self.get_event("Old event", start_date=yesterday)
             future_event = self.get_event("Old event", start_date=tomorrow)
 
@@ -142,20 +174,20 @@
 
 ------
 
-# Try them all
+# Lots of options
 
-* [https://github.com/alex/django-fixture-generator](https://github.com/alex/django-fixture-generator)
-* [https://github.com/kmmbvnr/django-any](https://github.com/kmmbvnr/django-any)
+* [Fixture related packages on Django Packages](http://djangopackages.com/grids/g/fixtures/)
 
-# Lots more packages
+* [django-fixture-generator](https://github.com/alex/django-fixture-generator)
 
-[http://djangopackages.com/grids/g/fixtures/](http://djangopackages.com/grids/g/fixtures/)
+* [django-any](https://github.com/kmmbvnr/django-any)
 
 -----
 
-# Reduce coupling!
+# Final notes
 
-* Break up validation from model to forms
+# Reduce coupling!
+# Performance differences -> unknown
 
 -----
 
@@ -167,3 +199,7 @@
 * Twitter [@bennylope](http://twitter.com/bennylope)
 * GitHub [bennylope](http://github.com/bennylope)
 * Principal/Developer @ [Wellfire Interactive](http://www.wellfireinteractive.com)
+
+
+<p style="color: #666; font-size: 0.8em;">None of the code in this presentation has been tested. Many module
+imports are implied.</p>
