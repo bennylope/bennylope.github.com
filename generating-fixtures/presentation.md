@@ -74,9 +74,9 @@
 
 ## Generating fixture files
 
-## Automatic model factories
+## Dynamic object generators
 
-## Custom fixture factories
+## Application based object generators
 
 
 -----
@@ -120,7 +120,7 @@
 
 -----
 
-# Automatic model factories <br/> ([django-any](https://github.com/kmmbvnr/django-any))
+# Dynamic object generators <br/> ([django-any](https://github.com/kmmbvnr/django-any))
 
 
 -----
@@ -143,12 +143,12 @@
 -----
 
 
-# Custom factories/mixins
+# Application based object generators
 
 ------
 
     !python
-    class MyFactoryMixin(object):
+    class MyGeneratorMixin(object):
         def get_category(self, name=""):
             return CategoryModel.objects.create(name=name)
 
@@ -162,13 +162,13 @@
             old_event = self.get_event("Old event", start_date=yesterday)
             future_event = self.get_event("Old event", start_date=tomorrow)
 
-    class ModelTestCase(MyFactoryMixin, TestCase):
+    class ModelTestCase(MyGeneratorMixin, TestCase):
         ...
 
-    class ViewModelTestCase(MyFactoryMixin, TestCase):
+    class ViewModelTestCase(MyGeneratorMixin, TestCase):
         ...
 
-    class FormsTestCase(MyFactoryMixin, TestCase):
+    class FormsTestCase(MyGeneratorMixin, TestCase):
         ...
 
 

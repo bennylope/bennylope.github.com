@@ -1497,8 +1497,8 @@ aside {
             
             
             <section><h2>Generating fixture files</h2>
-<h2>Automatic model factories</h2>
-<h2>Custom fixture factories</h2></section>
+<h2>Dynamic object generators</h2>
+<h2>Application based object generators</h2></section>
             
           </div>
           <div class="presenter_notes">
@@ -1636,7 +1636,7 @@ aside {
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Automatic model factories <br/> (<a href="https://github.com/kmmbvnr/django-any">django-any</a>)</h1></header>
+            <header><h1>Dynamic object generators <br/> (<a href="https://github.com/kmmbvnr/django-any">django-any</a>)</h1></header>
             
             
           </div>
@@ -1705,7 +1705,7 @@ aside {
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Custom factories/mixins</h1></header>
+            <header><h1>Application based object generators</h1></header>
             
             
           </div>
@@ -1734,7 +1734,7 @@ aside {
           <div class="inner">
             
             
-            <section><div class="highlight"><pre><span class="lineno"> 1</span> <span class="k">class</span> <span class="nc">MyFactoryMixin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+            <section><div class="highlight"><pre><span class="lineno"> 1</span> <span class="k">class</span> <span class="nc">MyGeneratorMixin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="lineno"> 2</span>     <span class="k">def</span> <span class="nf">get_category</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">):</span>
 <span class="lineno"> 3</span>         <span class="k">return</span> <span class="n">CategoryModel</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
 <span class="lineno"> 4</span> 
@@ -1748,13 +1748,13 @@ aside {
 <span class="lineno">12</span>         <span class="n">old_event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_event</span><span class="p">(</span><span class="s">&quot;Old event&quot;</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="n">yesterday</span><span class="p">)</span>
 <span class="lineno">13</span>         <span class="n">future_event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_event</span><span class="p">(</span><span class="s">&quot;Old event&quot;</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="n">tomorrow</span><span class="p">)</span>
 <span class="lineno">14</span> 
-<span class="lineno">15</span> <span class="k">class</span> <span class="nc">ModelTestCase</span><span class="p">(</span><span class="n">MyFactoryMixin</span><span class="p">,</span> <span class="n">TestCase</span><span class="p">):</span>
+<span class="lineno">15</span> <span class="k">class</span> <span class="nc">ModelTestCase</span><span class="p">(</span><span class="n">MyGeneratorMixin</span><span class="p">,</span> <span class="n">TestCase</span><span class="p">):</span>
 <span class="lineno">16</span>     <span class="o">...</span>
 <span class="lineno">17</span> 
-<span class="lineno">18</span> <span class="k">class</span> <span class="nc">ViewModelTestCase</span><span class="p">(</span><span class="n">MyFactoryMixin</span><span class="p">,</span> <span class="n">TestCase</span><span class="p">):</span>
+<span class="lineno">18</span> <span class="k">class</span> <span class="nc">ViewModelTestCase</span><span class="p">(</span><span class="n">MyGeneratorMixin</span><span class="p">,</span> <span class="n">TestCase</span><span class="p">):</span>
 <span class="lineno">19</span>     <span class="o">...</span>
 <span class="lineno">20</span> 
-<span class="lineno">21</span> <span class="k">class</span> <span class="nc">FormsTestCase</span><span class="p">(</span><span class="n">MyFactoryMixin</span><span class="p">,</span> <span class="n">TestCase</span><span class="p">):</span>
+<span class="lineno">21</span> <span class="k">class</span> <span class="nc">FormsTestCase</span><span class="p">(</span><span class="n">MyGeneratorMixin</span><span class="p">,</span> <span class="n">TestCase</span><span class="p">):</span>
 <span class="lineno">22</span>     <span class="o">...</span>
 </pre></div>
 </section>
@@ -1963,7 +1963,7 @@ imports are implied.</p></section>
       
       
       <tr id="toc-row-12">
-        <th><a href="#slide12">Automatic model factories <br/> (<a href="https://github.com/kmmbvnr/django-any">django-any</a>)</a></th>
+        <th><a href="#slide12">Dynamic object generators <br/> (<a href="https://github.com/kmmbvnr/django-any">django-any</a>)</a></th>
         <td><a href="#slide12">12</a></td>
       </tr>
       
@@ -1975,7 +1975,7 @@ imports are implied.</p></section>
       
       
       <tr id="toc-row-14">
-        <th><a href="#slide14">Custom factories/mixins</a></th>
+        <th><a href="#slide14">Application based object generators</a></th>
         <td><a href="#slide14">14</a></td>
       </tr>
       
