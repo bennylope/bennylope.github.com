@@ -11,7 +11,7 @@ on getting started with in-browser testing in Django, using Selenium.
 Slides are below, or
 [download](https://github.com/downloads/bennylope/django-selenium-tut/intro-django-selenium.pdf)
 from the [example
-repository](https://github.com/downloads/bennylope/django-selenium-tut).
+repository](https://github.com/bennylope/django-selenium-tut).
 Hopefully I'll get a chance to annotate these better and add some more
 examples in the next week or so.
 
