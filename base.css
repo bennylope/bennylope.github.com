@@ -109,6 +109,14 @@ html#index h1 {
 }
 /* ------------- el texto ------------- */
 
+blockquote {
+  margin: 20px;
+  font-style: italic;
+  font-family: Georgia, Times New Roman, Times, serif;
+  line-height: 24px;
+  color: #666;
+}
+
 p {
   font-size: 1.0em;
   line-height: 1.2em;

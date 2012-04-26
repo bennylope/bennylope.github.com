@@ -6,29 +6,38 @@ pageid: index
     <header>
     <h1>{{ site.title }}</h1>
     </header>
-    
+
     <section id="intro_section">
-      <p>As per the latest in thought leadership, we must refocus on identifying holistic synergies 
+      <blockquote>As per the latest in thought leadership, we must refocus on identifying holistic synergies 
         and productizing them for untapped markets. Specifically, synergies which can be strategically 
         leveraged to cross-pollinate innovation across organizational silos. Each silo must 
         own its vertical to allow for unfettered horizontal growth and for the development of streamlined 
-        efficiencies by bubbling up organically.</p>
-    </section>
-
-    <section id="posts">
-    <h3>Posts</h3>
-      <p>I usually post on <a href="http://tumblr.benlopatin.com">Tumblr</a>. I used to post on <a href="http://www.irrationalexpectations.com">Blogger</a>.</p>
-      <ul>
-        {% for post in site.posts %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-        {% endfor %}
-      </ul>
+        efficiencies by bubbling up organically.<br /><br />The Zen of Business Jargon</blockquote>
+        <p></p>
     </section>
 
     <section id="my_content">
-      <h3>Notes</h3>
-      <ul class="li-bullets">
-      <li>It's been a slow year for beer. Inching to 350: <a href="https://spreadsheets.google.com/spreadsheet/ccc?key=0AslkSRhsbAp1cC05VHRTa2wtV3BRbnBwQTRjRkpiQkE&hl=en_US">beer list</a>. [2003]</li>
-      <li>Whoa. I recovered my 10th grade chemistry report on <a href="/aspirin/index.html">aspirin</a>. [1998]</li>
-      </ul>
+    <h3>Notes</h3>
+    <ul class="li-bullets">
+      {% for post in site.posts %}
+      <li><a href="{% if post.link %}{{ post.link }}{% else %}{{ post.url }}{% endif %}">{{ post.title }}</a> [{{ post.date | date: "%Y" }}]</li>
+      {% endfor %}
+    </ul>
     </section>
+
+    <section>
+    <h3>About me, Ben Lopatin</h3> <p>Princpal at <a
+      href="http://www.wellfireinteractive.com">Wellfire Interactive</a>, a
+    DC-based web development firm. We develop bespoke web applications and
+    create content driven websites. I build the engines behind those
+    sites.</p> <p>Occassionally I get to use my extensive experience helping
+    small enterprises design and deploy collaborative systems and
+    processes.</p>
+    <p>You should <a href="http://www.wellfireinteractive.com/contact/">hire my company</a> if you're keen on building a sold
+    web-application or designing a new site without seven layers of account
+    managers.</p>
+    <p>If the collaborative process at your business is broken or absent, a
+    vendor is trying to sell you complex software, or your organization leaks
+    organizational knowledge, contact me. ben [DOT] lopatin at lovely Gmail.</p>
+    </section>
+
