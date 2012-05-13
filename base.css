@@ -93,7 +93,7 @@ h2 {
 
 h3 {
   font-weight: bold;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Georgia;
   font-size: 1.5em;
   margin-top: 1.0em;
   margin-bottom: 0.5em;
@@ -109,12 +109,28 @@ html#index h1 {
 }
 /* ------------- el texto ------------- */
 
+section {
+  margin-bottom: 50px;
+}
+
 blockquote {
   margin: 20px;
   font-style: italic;
   font-family: Georgia, Times New Roman, Times, serif;
   line-height: 24px;
   color: #666;
+}
+
+article ol, article ul {
+  margin: 10px 10px 20px 30px;
+}
+
+article li {
+  list-style: disc;
+}
+
+article ol, article ol li {
+  list-style: decimal;
 }
 
 p {
@@ -125,6 +141,17 @@ p {
 
 a.ilvrgsyngr {
   background-color: #ccf;
+}
+
+ul.li-bullets {
+  background-color: #ffc47f;
+  padding: 24px 20px 30px 20px;
+  border-radius: 15px;
+   list-style: none;
+   margin: 28px 0px 0px 10px; 
+}
+ul.li-bullets li {
+  margin: 5px 5px 15px 5px;
 }
 
 /* ------------- navigation ------------- */
@@ -197,7 +224,4 @@ footer p {
   color: #ccc;
 }
 
-ul.li-bullets {
- list-style: disc;
- margin-left: 10px; 
-}
+
