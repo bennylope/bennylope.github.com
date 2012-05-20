@@ -90,4 +90,6 @@ made ahead of time.
 
 There's nothing wrong with holding on to a few tchotchkes and family
 heirlooms. But you're probably overestimating the future use or
-enjoyment you're going to get from most of the things you cling to.
+enjoyment you're going to get from most of the things you own.
+
+> The things you own end up owning you.
