@@ -17,7 +17,7 @@ pageid: index
     </section>
 
     <section id="my_content">
-    <h3>Notes</h3>
+    <h3>Notes and links</h3>
     <ul class="li-bullets">
       {% for post in site.posts %}
       <li><a href="{% if post.link %}{{ post.link }}{% else %}{{ post.url }}{% endif %}">{{ post.title }}</a> [{{ post.date | date: "%Y" }}]</li>
@@ -26,19 +26,21 @@ pageid: index
     </section>
 
     <section>
-    <h3>About me</h3> <p>Princpal at <a
-      href="http://www.wellfireinteractive.com">Wellfire Interactive</a>, a
-    DC-based web development firm. We develop bespoke web applications and
-    create content driven websites. I build the engines behind those
-    sites.</p>
-    <p>You should <a href="http://www.wellfireinteractive.com/contact/">hire my company</a> if you're keen on building a sold
-    web-application or designing a new site, without seven layers of account
-    managers.</p>
+    <h3>About</h3>
+    <p>Princpal and co-founder at <a
+      href="http://www.wellfireinteractive.com">Wellfire
+      Interactive</a>, a DC-based web development firm. We design and
+    build custom web applications and web sites. I build the engines
+    behind those sites.</p>
+    <p>You should probably <a
+      href="http://www.wellfireinteractive.com/contact/">hire my
+      company</a> if you're keen on building a sold web-application or
+    designing a new site without seven layers of account managers.</p>
     <p>From time to time I get to use my extensive experience helping
     smaller enterprises design and deploy collaborative systems and
-    processes.</p>
-    <p>If the collaborative process in your organization is broken or absent, a
-    vendor is trying to sell you overly complex software, or your company leaks
-    organizational knowledge, contact me. ben [DOT] lopatin at lovely Gmail.</p>
+    processes. If the collaborative process in your organization is
+    broken or absent, a vendor is trying to sell you overly complex
+    software, or your company leaks organizational knowledge, send me
+    your questions: ben [DOT] lopatin at Google's email service.</p>
     </section>
 

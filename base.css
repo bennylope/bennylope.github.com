@@ -59,14 +59,14 @@ bennylope.github.com specific CSS
 html {
   font-size: 18px;
 /*background-color: #666;*/
-  background: white;
+  background: url("images/nz.jpg") no-repeat fixed white;
 }
 
 body {
     padding: 30px;
     margin-left: auto;
     margin-right: auto;
-    background-color: white;
+    background: rgba(255, 255, 255, 0.7);
     max-width: 1024px;
     font-family: Helvetica;
 }
@@ -93,7 +93,7 @@ h2 {
 
 h3 {
   font-weight: bold;
-  font-family: Georgia;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 1.5em;
   margin-top: 1.0em;
   margin-bottom: 0.5em;
@@ -103,7 +103,7 @@ h3 {
 
 html#index h1 {
   color: black;
-  font-size: 3em;
+  font-size: 5em;
   font-family: Georgia;
   margin-bottom: 0.5em;
 }
@@ -119,6 +119,10 @@ blockquote {
   font-family: Georgia, Times New Roman, Times, serif;
   line-height: 24px;
   color: #666;
+  background-color: white;
+  padding: 24px 20px 30px 20px;
+  border-radius: 15px;
+  margin: 28px 0px 0px 10px; 
 }
 
 article ol, article ul {
@@ -144,11 +148,7 @@ a.ilvrgsyngr {
 }
 
 ul.li-bullets {
-  background-color: #ffc47f;
-  padding: 24px 20px 30px 20px;
-  border-radius: 15px;
-   list-style: none;
-   margin: 28px 0px 0px 10px; 
+  list-style: none;
 }
 ul.li-bullets li {
   margin: 5px 5px 15px 5px;
