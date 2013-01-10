@@ -2,5 +2,11 @@
 layout: content
 ---
 <h2>{{ page.title }}</h2>
+
 {{ content }}
+
+{% if page.quora %}
+<p>Originally posted on <a href="{{ page.quora }}" rel="nofollow">Quroa</a> on {{ page.date|date: "%B %d, %Y" }}<p>
+{% else %}
 <p>Posted {{ page.date|date: "%B %d, %Y" }} </p>
+{% endif %}
