@@ -59,7 +59,7 @@ bennylope.github.com specific CSS
 html {
   font-size: 18px;
 /*background-color: #666;*/
-  background: url("images/nz.jpg") no-repeat fixed white;
+  background: no-repeat fixed white;
 }
 
 body {
