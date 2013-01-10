@@ -1,5 +1,3 @@
-http://www.quora.com/Enterprise-Software/Why-is-enterprise-software-often-so-complicated/answer/Ben-Lopatin
-
 ---
 published: true
 title: Why is enterprise software often so complicated?
