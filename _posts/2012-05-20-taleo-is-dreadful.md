@@ -1,5 +1,3 @@
-http://www.quora.com/Taleo/Taleo-is-dreadful-Why-is-it-so-widely-used-Dont-they-have-any-competition/answer/Ben-Lopatin
-
 ---
 published: true
 title: Taleo is dreadful. Why is it so widely used? Don't they have any competition?
