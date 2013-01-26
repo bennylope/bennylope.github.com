@@ -166,6 +166,8 @@ ul.li-bullets li {
   margin: 5px 5px 15px 5px;
 }
 
+section li { line-height: 1.6em }
+
 /* ------------- navigation ------------- */
 
 nav#identities {
