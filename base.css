@@ -98,7 +98,15 @@ h3 {
   margin-top: 1.0em;
   margin-bottom: 0.5em;
   color: #666;
-  /*color: #D53C2E;*/
+}
+
+h4 {
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.0em;
+  margin-top: 1.0em;
+  margin-bottom: 1.0em;
+  color: #689;
 }
 
 html#index h1 {
@@ -192,7 +200,8 @@ p.homeLink  {
 a {
   text-decoration: none;
   padding: 0.2em;
-  color: #d53c2e;
+  color: #689;
+  background-color: #eee;
 }
 a:hover {
   text-decoration: underline;
