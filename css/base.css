@@ -5,31 +5,30 @@ ol,ul{list-style:none}
 blockquote,q{quotes:none}
 blockquote:before,blockquote:after,q:before,q:after{content:none}
 table{border-collapse:collapse;border-spacing:0}
-html{font-size:18px;background:no-repeat fixed #fff}
-body{padding:30px;margin-left:auto;margin-right:auto;background:rgba(255,255,255,0.7);max-width:1024px;font-family:Georgia}
-h1{font-size:1em;line-height:1em;margin-bottom:1.3em;color:#999;font-family:Georgia}
-h2{font-size:3em;line-height:1em;margin-bottom:.5em;font-family:Georgia}
-h3{font-weight:bold;font-family:Helvetica,Arial,sans-serif;font-size:2em;margin-top:1em;margin-bottom:.5em;color:#666}
+html{font-size:18px;font-family:Georgia;background:#fff}
+body{padding:30px;margin-left:auto;margin-right:auto;max-width:1024px}
+h2{font-size:3em;line-height:1em;margin-bottom:.5em}
+h3{font-family:Helvetica,Arial,sans-serif;font-weight:bold;font-size:2em;color:#666;margin-top:1em;margin-bottom:.5em}
 h4{font-weight:bold;font-family:Helvetica,Arial,sans-serif;font-size:1em;margin-top:1em;margin-bottom:1em;color:#689}
-html#index h1{color:#000;font-size:5em;font-family:Georgia;margin-bottom:.5em}
+html#index h1{color:#000;font-size:5em;margin-bottom:.5em}
+header h1{font-size:1em;line-height:1em;margin-bottom:1.3em;color:#999}
 section{margin-bottom:50px}
-blockquote{margin:28px 0 0 10px;font-style:italic;font-family:Georgia,Times New Roman,Times,serif;line-height:24px;color:#666;background-color:#fff;padding:24px 20px 30px 20px;border-radius:15px}
+blockquote{margin:28px 0 0 10px;font-style:italic;line-height:24px;color:#666;padding:24px 20px 30px 20px;-webkit-border-radius:15px;-moz-border-radius:15px;border-radius:15px}
 article ol,article ul{margin:10px 10px 20px 30px}
 article p{max-width:600px}
 article li{list-style:disc}
 article ol,article ol li{list-style:decimal}
 p{font-size:1em;line-height:1.8em;margin-bottom:1em}
-a.ilvrgsyngr{background-color:#ccf}
 ul.li-bullets{list-style:none}
 ul.li-bullets li{margin:5px 5px 15px 5px}
 section li{line-height:1.6em}
 nav#identities{display:block;margin-top:20px;font-size:14px}
 nav#identities ul{list-style:none;display:inline;margin:0}
-nav#identities ul li{list-style:none;display:inline;border-radius:5px}
+nav#identities ul li{list-style:none;display:inline;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px}
 nav#identities a,nav#identities a:hover,nav#identities a:visited{color:#f00}
 p.homeLink{margin-top:1.5em}
 a{text-decoration:none;padding:.2em;color:#689;background-color:#eee}
-a:hover{text-decoration:underline}
+a:hover{text-decoration:none;background-color:#ddd}
 header a{color:#999}
 p.homeLink a{color:#999;font-size:1em}
 footer{display:block;margin-top:40px;margin-right:auto;margin-left:auto}
