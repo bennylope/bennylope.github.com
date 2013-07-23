@@ -1,11 +1,11 @@
 ---
 published: true
-title: "Billing clients: a guide for web developers"
+title: "Invoicing clients: a guide for web developers"
 layout: post
 permalink: /2013/invoicing-for-web-developers/
 ---
 
-On the new Django Discussions forum someone raised [a question about time tracking](http://djangodiscussions.com/t/how-to-invoice-clients/83) which led to a [discussion about invoicing](http://djangodiscussions.com/t/how-to-invoice-clients/83). I thought I'd include here and expand on what I wrote in the hopes that maybe it would allay any confusion for other development shops and even customers who are new to development.
+On the new Django Discussions forum someone raised [a question about time tracking](http://djangodiscussions.com/t/how-to-invoice-clients/83) which led to a discussion about invoicing. I thought I'd include here and expand on what I wrote in the hopes that maybe it would allay any confusion for other development shops and even customers who are new to development.
 
 ### The nuts-and-bolts overview
 
