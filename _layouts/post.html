@@ -8,3 +8,9 @@ layout: content
 {{ content }}
 
 <p>Posted {{ page.date|date: "%B %d, %Y" }} </p>
+
+{% if page.soHelpful %}
+<aside class="soHelpful">
+  Like this post and looking for more help? I do free weekly Skype calls with developers and start-up entreprenuers to help figure out hard problems and get a different perspective. Schedule a call via <a href="http://sohelpful.me/benlopatin">soHelpful</a>.
+</aside>
+{% endif %}

@@ -4,6 +4,8 @@ title: What are good ways to encourage people to contribute knowledge to enterpr
 layout: post
 permalink: /2013/encouraging-contributions-to-enterprise-wikis/
 quora: http://www.quora.com/Enterprise-2-0/What-are-good-ways-to-encourage-people-to-contribute-knowledge-to-enterprise-wiki-systems
+soHelpful: true
+comments: true
 ---
 
 You need to show value and you need to show how it works.

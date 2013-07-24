@@ -4,6 +4,7 @@ title: What is the best way to overcome inertia just before exercise?
 layout: post
 permalink: /2012/overcoming-inertia/
 quora: http://www.quora.com/Exercise/What-is-the-best-way-to-overcome-inertia-just-before-exercise/answer/Ben-Lopatin
+comments: true
 ---
 
 **Make your goal each time simply to start your routine.**

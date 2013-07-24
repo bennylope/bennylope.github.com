@@ -4,6 +4,8 @@ title: Taleo is dreadful. Why is it so widely used? Don't they have any competit
 layout: post
 permalink: /2012/taleo-dreadful-competition/
 quora: http://www.quora.com/Taleo/Taleo-is-dreadful-Why-is-it-so-widely-used-Dont-they-have-any-competition/answer/Ben-Lopatin
+soHelpful: true
+comments: true
 ---
 
 Taleo is enterprise software. With any enterprise software **momentum**

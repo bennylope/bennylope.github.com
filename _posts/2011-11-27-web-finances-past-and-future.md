@@ -2,6 +2,7 @@
 published: true
 title: Web Finance, Past and Future
 layout: post
+comments: true
 ---
 
 Shortly after I started my first job, and started getting paychecks and

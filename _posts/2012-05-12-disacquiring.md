@@ -2,6 +2,7 @@
 published: true
 title: "Disacquiring: The Delight of Relinquishing Things"
 layout: post
+comments: true
 ---
 
 ![I don't miss any of this stuff](/images/cl-posts.png)

@@ -4,6 +4,8 @@ title: What are some common criticisms of Sharepoint as a knowledge sharing tool
 layout: post
 permalink: /2012/sharepoint-knowledge-management-criticisms/
 quora: http://www.quora.com/SharePoint/What-are-some-common-criticisms-of-Sharepoint-as-a-knowledge-sharing-tool/answer/Ben-Lopatin
+soHelpful: true
+comments: true
 ---
 
 In practice SharePoint tends to **encourage information "stovepiping"

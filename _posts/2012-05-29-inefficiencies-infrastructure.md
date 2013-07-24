@@ -4,6 +4,7 @@ title: What are some glaring inefficiencies embedded in modern infrastructure?
 layout: post
 permalink: /2012/inefficiencies-embedded-in-modern-infrastructure/
 quora: http://www.quora.com/Society/what-are-some-glaring-inefficiencies-embedded-in-modern-infrastructure
+comments: true
 ---
 
 You could provide several answers related to a reliance on individual

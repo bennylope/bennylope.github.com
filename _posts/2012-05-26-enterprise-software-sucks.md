@@ -4,6 +4,8 @@ title: Why is enterprise software often so complicated?
 layout: post
 permalink: /2012/why-is-enterprise-software-complicated/
 quora: http://www.quora.com/Enterprise-Software/Why-is-enterprise-software-often-so-complicated/answer/Ben-Lopatin
+soHelpful: true
+comments: true
 ---
 
 Two primary reasons: **the complexity of enterprise requirements** and

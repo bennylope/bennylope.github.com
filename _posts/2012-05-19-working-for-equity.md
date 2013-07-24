@@ -2,6 +2,7 @@
 published: false
 title: "Will You Work For Equity?"
 layout: post
+comments: true
 ---
 
 It's been a while since the question has been put seriously to me, "will
