@@ -35,5 +35,5 @@ p.homeLink a{color:#999;font-size:1em}
 footer{display:block;margin-top:40px;margin-right:auto;margin-left:auto}
 footer p{font-size:14px;margin-top:20px;color:#ccc}
 strong {font-weight: bold;}
-aside.soHelpful { max-width: 600px; padding: 10px; margin: 10px 0 40px 0; border: 2px solid #f00; border-radius: 5px; line-height: 1.5em;}
+aside.soHelpful { max-width: 600px; padding: 10px; margin: 10px 0 40px 0; border-top: 2px solid #f00; line-height: 1.5em;}
 pre { font-family: monospace; margin: 1em 0px; background: #cfc; padding: 0.5em; }
