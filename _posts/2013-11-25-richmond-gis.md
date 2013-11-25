@@ -123,6 +123,9 @@ S3 bucket.
 
 <script src="https://embed.github.com/view/geojson/bennylope/Richmond-GIS/master/Landmarks/VotingStations.shp.geojson?height=400&amp;width=700">&nbsp;</script>
 
+You can access the remainder of the files in the [Richmond GIS
+repository](https://github.com/bennylope/Richmond-GIS/).
+
 ### Next steps
 
 I've started going through some of the larger GeoJSON files and
