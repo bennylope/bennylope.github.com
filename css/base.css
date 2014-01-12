@@ -37,3 +37,4 @@ footer p{font-size:14px;margin-top:20px;color:#ccc}
 strong {font-weight: bold;}
 aside.soHelpful { max-width: 600px; padding: 10px; margin: 10px 0 40px 0; border-top: 2px solid #f00; line-height: 1.5em;}
 pre { font-family: monospace; margin: 1em 0px; background: #cfc; padding: 0.5em; }
+dd { margin-top: 10px; margin-bottom: 30px; }

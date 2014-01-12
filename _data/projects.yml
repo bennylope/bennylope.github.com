@@ -1,0 +1,20 @@
+- name: RVA Data
+  url: http://github.com/rva-data
+  summary: Slow attempt at getting Richmond, VA's city data accessible.
+
+- name: RVA Connect
+  url: http://www.rvaconnect.com
+  summary: Site for tracking events and coworking/event spaces I created.
+
+- name: Django Addendum
+  url: http://wellfire.github.io/django-addendum/
+  summary: A Django app for creating editable microcopy anywhere in your site.
+
+- name: elasticstack
+  url: http://github.com/bennylope/elasticstack
+  summary: Django helpers for working with ElasticSearch and Haystack
+
+- name: Django Organizations
+  url: http://wellfire.github.io/django-organizations/
+  summary: A Django app for adding multi-user group management.
+

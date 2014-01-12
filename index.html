@@ -20,9 +20,22 @@ pageid: index
     <h3>Notes and links</h3>
     <ul class="li-bullets">
       {% for post in site.posts %}
-      <li><a href="{% if post.link %}{{ post.link }}{% else %}{{ post.url }}{% endif %}">{{ post.title }}{% if post.quora %} (Quora answer){% endif %}</a> [{{ post.date | date: "%Y" }}]</li>
+        {% if forloop.index < 8 %}
+        <li><a href="{% if post.link %}{{ post.link }}{% else %}{{ post.url }}{% endif %}">{{ post.title }}{% if post.quora %} (Quora answer){% endif %}</a> [{{ post.date | date: "%Y" }}]</li>
+        {% endif %}
       {% endfor %}
     </ul>
+    <a href="/posts/">More...</a>
+    </section>
+
+    <section>
+    <h3>Projects</h3>
+    <dl>
+      {% for project in site.data.projects %}
+        <dt><a href="{{ project.url }}">{{ project.name }}</a></dt>
+        <dd>{{ project.summary }}</dd>
+      {% endfor %}
+    </dl>
     </section>
 
     <section>
