@@ -6,19 +6,19 @@ blockquote,q{quotes:none}
 blockquote:before,blockquote:after,q:before,q:after{content:none}
 table{border-collapse:collapse;border-spacing:0}
 html{font-size:18px;font-family:Georgia;background:#fff}
-body{padding:30px;margin-left:auto;margin-right:auto;max-width:1024px}
+// body{padding:30px;margin-left:auto;margin-right:auto;max-width:1024px}
 h2{font-size:3em;line-height:1em;margin-bottom:.5em}
 h3{font-family:Helvetica,Arial,sans-serif;font-weight:bold;font-size:2em;color:#666;margin-top:1em;margin-bottom:.5em}
 h4{font-weight:bold;font-family:Helvetica,Arial,sans-serif;font-size:1em;margin-top:1em;margin-bottom:1em;color:#689}
 html#index h1{color:#000;font-size:5em;margin-bottom:.5em}
 header h1{font-size:1em;line-height:1em;margin-bottom:1.3em;color:#999}
-section{margin-bottom:50px}
-blockquote{margin:28px 0 0 10px;font-style:italic;line-height:24px;color:#666;padding:24px 20px 30px 20px;-webkit-border-radius:15px;-moz-border-radius:15px;border-radius:15px}
+blockquote{margin:10px 0 0 10px;font-style:italic;line-height:24px;color:#666;padding:24px 20px 30px 20px;-webkit-border-radius:15px;-moz-border-radius:15px;border-radius:15px}
+article { padding: 20px; }
 article ol,article ul{margin:10px 10px 20px 30px}
-article p{max-width:600px}
+article p{max-width:940px}
 article li{list-style:disc}
 article ol,article ol li{list-style:decimal}
-p{font-size:1em;line-height:1.8em;margin-bottom:1em}
+p{font-size:1.2rem;line-height:1.8em;margin-bottom:1em}
 li { line-height: 28px; }
 ul.li-bullets{list-style:none}
 ul.li-bullets li{margin:5px 5px 15px 5px}
@@ -32,9 +32,15 @@ a{text-decoration:none;padding:.2em;color:#689;background-color:#eee}
 a:hover{text-decoration:none;background-color:#ddd}
 header a{color:#999}
 p.homeLink a{color:#999;font-size:1em}
-footer{display:block;margin-top:40px;margin-right:auto;margin-left:auto}
+footer{display:block; background: #001f3f; }
 footer p{font-size:14px;margin-top:20px;color:#ccc}
 strong {font-weight: bold;}
 aside.soHelpful { max-width: 600px; padding: 10px; margin: 10px 0 40px 0; border-top: 2px solid #f00; line-height: 1.5em;}
 pre { font-family: monospace; margin: 1em 0px; background: #cfc; padding: 0.5em; }
 dd { margin-top: 10px; margin-bottom: 30px; }
+
+section { padding: 10px 30px 30px 30px; }
+section.projects { background: #7fdbff; }
+header.intro { margin: 10px 20px 30px 20px; }
+section.intro { background: #85144b; }
+section.intro blockquote { color: #dddddd; max-width: 940px; margin-left:auto; margin-right: auto; }
