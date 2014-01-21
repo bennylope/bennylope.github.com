@@ -13,9 +13,9 @@ h4{font-weight:bold;font-family:Helvetica,Arial,sans-serif;font-size:1em;margin-
 html#index h1{color:#000;font-size:5em;margin-bottom:.5em}
 header h1{font-size:1em;line-height:1em;margin-bottom:1.3em;color:#999}
 blockquote{margin:10px 0 0 10px;font-style:italic;line-height:24px;color:#666;padding:24px 20px 30px 20px;-webkit-border-radius:15px;-moz-border-radius:15px;border-radius:15px}
-article { padding: 20px; }
+article { max-width: 940px; padding: 20px; margin-left: auto; margin-right: auto;}
 article ol,article ul{margin:10px 10px 20px 30px}
-article p{max-width:940px}
+article p {}
 article li{list-style:disc}
 article ol,article ol li{list-style:decimal}
 p{font-size:1.2rem;line-height:1.8em;margin-bottom:1em}
@@ -44,3 +44,7 @@ section.projects { background: #7fdbff; }
 header.intro { margin: 10px 20px 30px 20px; }
 section.intro { background: #85144b; }
 section.intro blockquote { color: #dddddd; max-width: 940px; margin-left:auto; margin-right: auto; }
+
+@media (max-width: 900px) {
+  article { max-width: 740px; }
+}
