@@ -1,0 +1,9 @@
+{
+  "name": "bennylope",
+  "private": true,
+  "version": "2.0.0",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-stylus": "~0.12.0"
+  }
+}
