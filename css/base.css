@@ -42,8 +42,8 @@ dd { margin-top: 10px; margin-bottom: 30px; }
 section { padding: 10px 30px 30px 30px; }
 section.projects { background: #7fdbff; }
 header.intro { margin: 10px 20px 30px 20px; }
-section.intro { background: #85144b; }
-section.intro blockquote { color: #dddddd; max-width: 940px; margin-left:auto; margin-right: auto; }
+section.intro { background: #ff851b; }
+section.intro blockquote { color: #fff; max-width: 940px; margin-left:auto; margin-right: auto; }
 
 @media (max-width: 900px) {
   article { max-width: 740px; }
