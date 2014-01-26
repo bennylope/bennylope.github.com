@@ -8,7 +8,7 @@ soHelpful: true
 comments: true
 teaser: >
     Open data is the new hotness for municipal governments that want to
-    server their constituents, seem hip, or both. Often the data is
+    serve their constituents, look hip, or both. Often the data is
     available to the public but a reasonable way of accessing it, especially
     programmatically, is wanting. This post begins the odyssey of
     finding, categorizing, and cleaning that data, so that it can be put
