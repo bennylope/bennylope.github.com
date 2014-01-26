@@ -8,7 +8,7 @@ table{border-collapse:collapse;border-spacing:0}
 html{font-size:18px;font-family:Georgia;background:#fff}
 // body{padding:30px;margin-left:auto;margin-right:auto;max-width:1024px}
 h2{font-size:3em;line-height:1em;margin-bottom:.5em}
-h3{font-family:Helvetica,Arial,sans-serif;font-weight:bold;font-size:2em;color:#666;margin-top:1em;margin-bottom:.5em}
+h3{font-family:Helvetica,Arial,sans-serif;font-weight:bold;font-size:2rem;color:#666;margin-top:1rem;margin-bottom:.5rem; line-height: 2rem; }
 h4{font-weight:bold;font-family:Helvetica,Arial,sans-serif;font-size:1em;margin-top:1em;margin-bottom:1em;color:#689}
 html#index h1{color:#000;font-size:5em;margin-bottom:.5em}
 header h1{font-size:1em;line-height:1em;margin-bottom:1.3em;color:#999}
@@ -18,7 +18,8 @@ article ol,article ul{margin:10px 10px 20px 30px}
 article p {}
 article li{list-style:disc}
 article ol,article ol li{list-style:decimal}
-p{font-size:1.2rem;line-height:1.8em;margin-bottom:1em}
+p{font-size:1.5rem;line-height:1.6em;margin-bottom:1em;color:#474747}
+p.teaser { font-size: 0.9rem; margin: 1rem; }
 li { line-height: 28px; }
 ul.li-bullets{list-style:none}
 ul.li-bullets li{margin:5px 5px 15px 5px}
@@ -47,4 +48,5 @@ section.intro blockquote { color: #fff; max-width: 940px; margin-left:auto; marg
 
 @media (max-width: 900px) {
   article { max-width: 740px; }
+  p {font-size: 1rem; line-height: 1.2rem; }
 }

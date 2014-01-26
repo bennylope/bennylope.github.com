@@ -2,6 +2,7 @@
 layout: content
 ---
 <h2>{{ page.title }}</h2>
+{% if page.subtitle %}<h4>{{ page.subtitle }}</h4>{% endif %}
 
 {% if page.quora %}<h4>As answered on <a href="{{ page.quora }}" rel="nofollow">Quroa</a></h4>{% endif %}
 
