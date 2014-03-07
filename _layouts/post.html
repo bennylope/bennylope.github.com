@@ -1,11 +1,15 @@
 ---
-layout: content
+layout: base
+pageid: content
 ---
-<h2>{{ page.title }}</h2>
-{% if page.subtitle %}<h4>{{ page.subtitle }}</h4>{% endif %}
+<article>
+<h1>{{ page.title }}</h1>
+{% if page.subtitle %}<h2>{{ page.subtitle }}</h2>{% endif %}
+
+<p>Posted {{ page.date|date: "%B %d, %Y" }} </p>
 
 {% if page.quora %}<h4>As answered on <a href="{{ page.quora }}" rel="nofollow">Quroa</a></h4>{% endif %}
 
 {{ content }}
-
-<p>Posted {{ page.date|date: "%B %d, %Y" }} </p>
+</article>
+<p class="homeLink"><a href="/" title="Return to homepage">&#8619; Leverage more synergies</a></p>

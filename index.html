@@ -16,28 +16,18 @@ pageid: index
     </section>
 
     <section class="articles">
-    <h3>Articles</h3>
-    <ul class="li-bullets">
+    <h2>Recent Articles</h2>
       {% for post in site.posts %}
-        {% if forloop.index < 8 %}
-        <li>
-          {% if forloop.index == 1 %}
-          <h3>{{ post.title }}{% if post.subtitle %}: {{ post.subtitle }}{% endif %}</h3>
+        {% if forloop.index < 4 %}
+          <h3><a href="{% if post.link %}{{ post.link }}{% else %}{{ post.url }}{% endif %}">{{ post.title }}</a></h3>
           <p class="teaser">{{ post.teaser }}</p>
-          <a href="{% if post.link %}{{ post.link }}{% else %}{{ post.url }}{% endif %}">Continue reading</a>
-          <hr/>
-          {% else %}
-          <a href="{% if post.link %}{{ post.link }}{% else %}{{ post.url }}{% endif %}">{{ post.title }}{% if post.quora %} (Quora answer){% endif %}</a> [{{ post.date | date: "%Y" }}]
-          {% endif %}
-        </li>
         {% endif %}
       {% endfor %}
-    </ul>
     <a href="/posts/">See the archive</a>
     </section>
 
     <section class="projects">
-    <h3>Projects</h3>
+    <h2>Projects</h2>
     <dl>
       {% for project in site.data.projects %}
         <dt><a href="{{ project.url }}">{{ project.name }}</a></dt>

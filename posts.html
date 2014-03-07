@@ -9,9 +9,9 @@ permalink: /posts/
 
     <section id="my_content">
     <h3>Notes and links</h3>
-    <ul class="li-bullets">
+    <ol class="li-bullets" reversed>
       {% for post in site.posts %}
         <li><a href="{% if post.link %}{{ post.link }}{% else %}{{ post.url }}{% endif %}">{{ post.title }}{% if post.quora %} (Quora answer){% endif %}</a> [{{ post.date | date: "%Y" }}]</li>
       {% endfor %}
-    </ul>
+    </ol>
     </section>
