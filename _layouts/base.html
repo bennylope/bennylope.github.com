@@ -5,20 +5,21 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="/css/new.css" type="text/css" media="screen">
     <link rel="shortcut icon" href="/images/beardo-16.png">
+
     <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', '{{ site.analyticscode }}']);
-      _gaq.push(['_setDomainName', '.benlopatin.com']);
-      _gaq.push(['_trackPageview']);
-
+      var _gauges = _gauges || [];
       (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '538908e8eddd5b05700045bf');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
       })();
-
     </script>
+
   </head>
   <body>
     
