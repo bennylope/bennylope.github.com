@@ -6,10 +6,9 @@ pageid: content
 <h1>{{ page.title }}</h1>
 {% if page.subtitle %}<h2>{{ page.subtitle }}</h2>{% endif %}
 
-<p>Published {{ page.date|date: "%B %d, %Y" }} </p>
-
 {% if page.quora %}<h4>As answered on <a href="{{ page.quora }}" rel="nofollow">Quroa</a></h4>{% endif %}
 
 {{ content }}
 </article>
+<p>First published {{ page.date|date: "%B %d, %Y" }} </p>
 <p class="homeLink"><a href="/" title="Return to homepage">&#8619; Leverage more synergies</a></p>
