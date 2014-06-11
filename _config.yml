@@ -1,4 +1,5 @@
 title: "I leverage synergies."
+highlighter: pygments
 markdown: kramdown
 pygments: true
 permalink: /:year/:title/

@@ -9,8 +9,8 @@ body{max-width:900px;margin:.5rem;margin-left:auto;margin-right:auto}
 article{max-width:900px}
 h1,h2,h3,h4,h5{font-family:Helvetica,Arial,sans-serif;margin:.5rem 0 .8rem 0}
 h1{font-size:3rem;margin:3rem 0 1.5rem 0;font-weight:700}
-h2{font-size:2rem;font-weight:600}
-h3{font-size:1.5rem}
+h2{font-size:2rem;font-weight:600;font-style:italic;margin-bottom:3rem;}
+h3{font-size:1.5rem;margin-top:2rem;}
 h4{font-size:1.2rem}
 p{margin:.2rem .2rem 1rem .2rem;font-family:Georgia,serif;font-size:1.2rem;line-height:1.8rem}
 blockquote{font-style:italic;line-height:1.2rem;color:#666;margin:40px}
