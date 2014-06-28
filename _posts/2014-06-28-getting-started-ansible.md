@@ -7,10 +7,12 @@ permalink: /getting-started-with-ansible/
 soHelpful: true
 comments: true
 teaser: >
-    Web application templates should be readable. Sometimes the allure of
-    killing "unnecessary" spaces or migrating styles from another templating
-    paradigm leads to squished template tags in variables. If you're using
-    Django, Jinja, or Liquid templates, these scripts can help.
+    When you start looking at tutorials and guides for a configuration management
+    tool like Ansible, most of them show how to get started or provide a great
+    picture of what a nice complete set up looks like. That's great if you're
+    trying to figure out the basics or start building a new project, but it leaves
+    open the question of how to start applying these tools - and concepts - to
+    existing projects. This is a story on how to do that.
 ---
 
 
