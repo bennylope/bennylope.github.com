@@ -19,3 +19,17 @@ ol{list-style:decimal;padding-left:2rem}
 ol li{margin:1rem 0 .5rem 0}
 dt{font-size:1.4rem;font-weight:600;font-family:Helvetica,Arial,sans-serif;margin-bottom:.4rem}
 dd{margin-bottom:.8rem;font-size:1.2rem}
+
+
+@media only screen and (max-width : 380px) {
+  html { font-size: 100%; }
+  h1 { font-size: 2.0rem; margin: 1rem 0.1rem 2rem 0.5rem; }
+  h2 { font-size: 1.5rem; margin: 2rem 0.1rem 1rem 0.5rem; }
+  h3 { font-size: 1.2rem; margin: 2rem 0.1rem 1rem 0.5rem; font-weight: bold; }
+  p{ margin:.2rem .5rem 1rem .5rem; font-family:Georgia,serif; font-size:1rem; line-height:1.8rem;}
+  blockquote{font-style:italic;line-height:1.2rem;color:#666;margin:0.5rem 0.5rem 2rem 1rem; }
+  dt, dd { margin: 0 0.7rem 1rem 0.7rem; }
+  dt{font-size:1.2rem;font-weight:600;font-family:Helvetica,Arial,sans-serif;margin-bottom:.4rem}
+  dd{margin-bottom:.8rem;font-size:1rem}
+  nav#identities { margin: 1rem 1rem 1rem 1rem; }
+}
