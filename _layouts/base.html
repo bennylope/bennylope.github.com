@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/css/new.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/css/pygments/colorful.css" type="text/css" media="screen">
     <link rel="shortcut icon" href="/images/beardo-16.png">
+    {% if page.canonical %}<link rel="canonical" href="{{ page.canonical }}">{% endif %}
   </head>
   <body>
     {{ content }}
