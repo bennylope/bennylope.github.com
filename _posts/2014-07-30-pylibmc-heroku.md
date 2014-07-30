@@ -18,8 +18,8 @@ Python application, like a Django project. However you can find
 [instances](http://stackoverflow.com/questions/14688799/heroku-django-error-when-installing-pylibmc)
 where people have had difficulty installing it on Heroku.
 
-The solution is actually mentioned in that second link, but I missed the
-import of it until checking out the buildback source code.
+The solution is actually mentioned in that first link, but I missed the
+significance of it until checking out the buildback source code.
 
 <script src="https://gist.github.com/bennylope/0e01a8ffef65374e5e0c.js">&nbsp;</script>
 
