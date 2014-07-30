@@ -19,7 +19,7 @@ Python application, like a Django project. However you can find
 where people have had difficulty installing it on Heroku.
 
 The solution is actually mentioned in that first link, but I missed the
-significance of it until checking out the buildback source code.
+significance of it until checking out the [buildback source code](https://github.com/heroku/heroku-buildpack-python/blob/533def6b57a09a60c9dd7755958f12e56d3bf761/bin/steps/pylibmc#L19).
 
 <script src="https://gist.github.com/bennylope/0e01a8ffef65374e5e0c.js">&nbsp;</script>
 
