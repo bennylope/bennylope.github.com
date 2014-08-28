@@ -3,7 +3,13 @@
   <head>
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/new.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="/css/bootswatch.min.css" type="text/css" media="screen">
+    <style>
+      body {max-width: 900px; margin: 0.5rem auto; color: #333;}
+      footer { border-top: 1px dashed #ccc; padding-top: 30px; margin-top: 20px;}
+      ul.identities { list-style: none; margin: 0 0 2rem 0; padding: 0; display: inline-block;}
+      ul.identities li { list-style: none; padding-right: 20px; display: inline-block;}
+    </style>
     <link rel="stylesheet" href="/css/pygments/colorful.css" type="text/css" media="screen">
     <link rel="shortcut icon" href="/images/beardo-16.png">
     {% if page.canonical %}<link rel="canonical" href="{{ page.canonical }}">{% endif %}
@@ -11,15 +17,15 @@
   <body>
     {{ content }}
     <footer>
-        <p>Unless otherwise noted, all site content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons License</a>.</p>
-      <nav id="identities">
-          <ul>
+        <nav id="identities">
+          <ul class="identities">
             <li><a href="http://twitter.com/bennylope" rel="nofollow"><span>Twitter</a></a></span></li>
             <li><a href="http://www.linkedin.com/in/benlopatin" rel="nofollow"><span>LinkedIn</a></a></span></li>
             <li><a href="http://bennylope.tumblr.com" rel="nofollow"><span>Tumblr</a></span></li>
             <li><a href="http://github.com/bennylope/" rel="nofollow"><span>Github</a></span></li>
           </ul>
         </nav>
+        <p>Unless otherwise noted, all site content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons License</a>. Theme based on <a href="http://thomaspark.me/">Thomas Park's</a> 'Journal' theme for Bootstrap.</p>
     </footer>
     <script type="text/javascript">
       var _gauges = _gauges || [];
