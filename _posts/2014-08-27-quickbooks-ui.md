@@ -7,8 +7,9 @@ permalink: /dashboards-are-hard/
 soHelpful: true
 comments: true
 teaser: >
-    Leave it to Intuit to take an opportunity to provide concise, meaningful
-    data and turn around with a visual abortion.
+    Data dashboard often turn into an opportunity to dump meaningless
+    information on users. A quick visual example of how not to approach this,
+    and a suggested solution.
 ---
 
 This is what I saw today when I opened up our QuickBooks online dashboard:
