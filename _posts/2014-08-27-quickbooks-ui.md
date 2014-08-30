@@ -32,7 +32,7 @@ requirements flow from this. It should not be any more complicated than
 necessary. There should be no extraneous verbiage. Color, size, and shape
 differences all matter.
 
-Here are some simple fixes to start.
+Here are some simple fixes to start:
 
 ![A simple fix](/images/quickbooks-invoice-simplefix.png)
 
