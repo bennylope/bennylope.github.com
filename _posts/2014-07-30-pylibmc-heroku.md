@@ -64,3 +64,7 @@ environment overhead. Mac to Linux already breaks this parity, so you
 need to assume you're working with VM's, e.g. Vagrant, using the same OS
 at your target production system. That's a brilliant idea, but for
 simpler, short-run projects not always necessary.
+
+**Update**: the excellent folks at Memcachier have since updated [their
+documentation](https://www.memcachier.com/documentation#django) to make this
+explicit.
