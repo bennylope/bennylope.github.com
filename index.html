@@ -23,7 +23,7 @@ pageid: index
           <p class="teaser">{{ post.teaser }}</p>
         {% endif %}
       {% endfor %}
-      <p><a href="/posts/">See the archive</a></p>
+      <p><a href="/posts/">Learn more in my other {{ site.posts | size | minus:3 }} posts &raquo;</a></p>
     </section>
 
     <section class="projects">
