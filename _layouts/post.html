@@ -5,9 +5,10 @@ pageid: content
 <article>
 <h1>{{ page.title }}</h1>
 
-<aside>{{ page.teaser }}</aside>
 
 {% if page.subtitle %}<h2>{{ page.subtitle }}</h2>{% endif %}
+
+{% if page.teaser %}<aside>{{ page.teaser }}</aside>{% endif %}
 
 {% if page.quora %}<h4>As answered on <a href="{{ page.quora }}" rel="nofollow">Quroa</a></h4>{% endif %}
 
