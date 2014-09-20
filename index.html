@@ -30,8 +30,17 @@ pageid: index
     <h2>Projects</h2>
     <dl>
       {% for project in site.data.projects %}
-        <dt><a href="{{ project.url }}">{{ project.name }}</a></dt>
-        <dd>{{ project.summary }}</dd>
+          <dt>
+              <a href="{{ project.url }}">{{ project.name }}</a>
+              {% if project.button %}
+                <iframe src="{{ project.button }}"
+                    allowtransparency="true" frameborder="0" scrolling="0"
+                    width="104" height="20"></iframe>
+              {% endif %}
+          </dt>
+        <dd>
+          {{ project.summary }}
+        </dd>
       {% endfor %}
     </dl>
     </section>
