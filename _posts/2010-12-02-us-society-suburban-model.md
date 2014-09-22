@@ -2,7 +2,8 @@
 published: true
 title: Why does U.S. society cling to the suburban model despite its inefficiency, unsustainability, and many social ills?
 layout: post
-permalink: /2010/us-society-suburban-model/
+permalink: /us-society-suburban-model/
+redirect_from: /2010/us-society-suburban-model/
 quora: http://www.quora.com/Why-does-U-S-society-cling-to-the-suburban-model-despite-its-inefficiency-unsustainability-and-many-social-ills/answer/Ben-Lopatin
 comments: true
 ---

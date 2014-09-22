@@ -2,7 +2,8 @@
 published: true
 title: What are good ways to encourage people to contribute knowledge to enterprise wiki systems?
 layout: post
-permalink: /2013/encouraging-contributions-to-enterprise-wikis/
+permalink: /encouraging-contributions-to-enterprise-wikis/
+redirect_from: /2013/encouraging-contributions-to-enterprise-wikis/
 quora: http://www.quora.com/Enterprise-2-0/What-are-good-ways-to-encourage-people-to-contribute-knowledge-to-enterprise-wiki-systems
 soHelpful: true
 comments: true

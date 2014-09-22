@@ -3,6 +3,8 @@ published: true
 title: "Disacquiring: The Delight of Relinquishing Things"
 layout: post
 comments: true
+permalink: /the-delight-of-disacquiring/
+redirect_from: /2012/disacquiring/
 ---
 
 ![I don't miss any of this stuff](/images/cl-posts.png)

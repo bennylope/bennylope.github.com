@@ -3,7 +3,8 @@ author: Ben
 title: "Meet Django Organizations"
 layout: post
 comments: true
-permalink: /blog/meet-django-organizations/
+permalink: /meet-django-organizations/
+redirect_from: /blog/meet-django-organizations/
 canonical: http://www.wellfireinteractive.com/blog/meet-django-organizations/
 teaser: >
     Useful open-source projects start by first scratching your own itch,

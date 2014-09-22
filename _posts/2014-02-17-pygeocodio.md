@@ -3,7 +3,8 @@ published: true
 title: "Geocoding with Pygeocodio"
 subtitle: "Writing a Python API wrapper"
 layout: post
-permalink: /2014/geocoding-with-pygeocodio/
+permalink: /geocoding-with-pygeocodio/
+redirect_from: /2014/geocoding-with-pygeocodio/
 soHelpful: true
 comments: true
 teaser: >

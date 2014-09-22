@@ -2,7 +2,8 @@
 published: true
 title: Is double majoring in Engineering and Business a good idea?
 layout: post
-permalink: /2013/double-majoring-in-engineering-and-business
+permalink: /double-majoring-in-engineering-and-business/
+redirect_from: /2013/double-majoring-in-engineering-and-business/
 comments: true
 quora: http://www.quora.com/Double-Majors/Is-double-majoring-in-Engineering-and-Business-a-good-idea
 ---

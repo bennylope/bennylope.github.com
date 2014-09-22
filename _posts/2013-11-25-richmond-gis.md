@@ -3,7 +3,8 @@ published: true
 title: "Freeing Public City Data"
 subtitle: "Making Richmond's GIS data accessible"
 layout: post
-permalink: /2013/richmond-gis-data/
+permalink: /richmond-gis-data/
+redirect_from: /2013/richmond-gis-data/
 soHelpful: true
 comments: true
 teaser: >

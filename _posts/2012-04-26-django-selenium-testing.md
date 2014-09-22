@@ -3,7 +3,8 @@ published: true
 title: Getting started with Selenium testing in Django 1.4
 layout: post
 comments: true
-soHelpful: true
+permalink: /starting-with-selenium-django14/
+redirect_from: /2012/django-selenium-testing/
 ---
 
 Last Tuesday's [Django District](http://www.django-district.org) meetup

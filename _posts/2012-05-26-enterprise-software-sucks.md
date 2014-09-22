@@ -2,7 +2,8 @@
 published: true
 title: Why is enterprise software often so complicated?
 layout: post
-permalink: /2012/why-is-enterprise-software-complicated/
+permalink: /why-is-enterprise-software-complicated/
+redirect_from: /2012/why-is-enterprise-software-complicated/
 quora: http://www.quora.com/Enterprise-Software/Why-is-enterprise-software-often-so-complicated/answer/Ben-Lopatin
 soHelpful: true
 comments: true

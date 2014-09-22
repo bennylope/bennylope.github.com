@@ -2,8 +2,8 @@
 published: true
 title: "Finding the Needle: DjangoCon 2013"
 layout: post
-permalink: /2013/finding-the-needle-djangocon-2013/
-soHelpful: true
+permalink: /finding-the-needle-djangocon-2013/
+redirect_from: /2013/finding-the-needle-djangocon-2013/
 comments: true
 ---
 

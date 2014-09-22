@@ -2,7 +2,8 @@
 author: Ben
 title: "Finding the Needle: Wellfire at DjangoCon 2013!"
 layout: post
-permalink: /blog/finding-the-needle-djangocon-2013/
+permalink: /finding-the-needle-djangocon-2013/
+redirect_from: /blog/finding-the-needle-djangocon-2013/
 canonical: http://www.wellfireinteractive.com/blog/finding-the-needle-djangocon-2013/
 published: true
 categories: development

@@ -2,7 +2,8 @@
 published: true
 title: What are some common criticisms of Sharepoint as a knowledge sharing tool?
 layout: post
-permalink: /2012/sharepoint-knowledge-management-criticisms/
+permalink: /sharepoint-knowledge-management-criticisms/
+redirect_from: /2012/sharepoint-knowledge-management-criticisms/
 quora: http://www.quora.com/SharePoint/What-are-some-common-criticisms-of-Sharepoint-as-a-knowledge-sharing-tool/answer/Ben-Lopatin
 soHelpful: true
 comments: true

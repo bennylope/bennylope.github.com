@@ -2,7 +2,8 @@
 author: Ben
 title: "Continuous Cross-browser Screenshots"
 layout: post
-permalink: /blog/continuous-cross-browser-screenshots/
+permalink: /continuous-cross-browser-screenshots/
+redirect_from: /blog/continuous-cross-browser-screenshots/
 published: true
 categories: development
 comments: true

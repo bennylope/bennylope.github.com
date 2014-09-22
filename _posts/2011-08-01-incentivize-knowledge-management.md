@@ -2,7 +2,8 @@
 published: true
 title: What are the best ways to incentivize people to use "Enterprise 2.0" knowledge management / collaboration tools in an organizaton?
 layout: post
-permalink: /2011/incentivizing-enterprise-knowledge-management/
+permalink: /incentivizing-enterprise-knowledge-management/
+redirect_from: /2011/incentivizing-enterprise-knowledge-management/
 quora: http://www.quora.com/What-are-the-best-ways-to-incentivize-people-to-use-Enterprise-2-0-knowledge-management-collaboration-tools-in-an-organizaton/answer/Ben-Lopatin
 soHelpful: true
 comments: true

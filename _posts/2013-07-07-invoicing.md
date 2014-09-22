@@ -2,7 +2,8 @@
 published: true
 title: "Invoicing clients: a guide for web developers"
 layout: post
-permalink: /2013/invoicing-for-web-developers/
+permalink: /invoicing-for-web-developers/
+redirect_from: /2013/invoicing-for-web-developers/
 soHelpful: true
 comments: true
 ---

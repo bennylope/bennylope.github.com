@@ -3,7 +3,7 @@ published: false
 title: The business of web design and a new dawn of podcasting?
 layout: post
 comments: true
-permalink: /2013/business-of-web-design-podcasts/
+permalink: /business-of-web-design-podcasts/
 ---
 
 I've recently rediscovered podcasts, or at least I've discovered some

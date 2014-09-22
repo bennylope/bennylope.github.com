@@ -3,6 +3,8 @@ published: true
 title: Web Finance, Past and Future
 layout: post
 comments: true
+permalink: /web-finances-past-and-future/
+redirect_from: /2011/web-finances-past-and-future/
 ---
 
 Shortly after I started my first job, and started getting paychecks and
