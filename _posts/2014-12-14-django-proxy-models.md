@@ -9,6 +9,8 @@ teaser: >
     framework, but they do seem to get short shrift. Here's a look
     into how to use this feature to create new and clean interfaces to
     data without making changes to your database.
+return_link: /simple-search-manager-methods/
+return_text: Proxy models? How about search managers!?
 ---
 
 Django's proxy models are one of those features that I remember reading
@@ -18,8 +20,8 @@ about how to best make use of them.
 
 ### What are they?
 
-A proxy model is just a different class interface for the same
-underlying database model.
+A proxy model is just a another class that provides a different
+interface for the same underlying database model.
 
 That's it. Really.
 
@@ -28,10 +30,31 @@ Typically creating a subclass of a model results in a new database table
 with a reference back to the original model's table - multi-table
 inheritance.
 
-A proxy model doesn't get it's own database table, it operates on the
-original table.
+A proxy model doesn't get it's own database table. Instead it operates
+on the original table.
 
-### What's the big deal?
+{% highlight python %}
+class MyModel(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class UpperModel(MyModel):
+    class Meta:
+        proxy = True
+
+    def __str__(self):
+        return self.name.upper()
+{% endhighlight %}
+
+In the contrived example above we've created a second model class, a
+proxy class. If you were to compare the field values for the instance at
+primary key `12` for either a `MyModel` or `UpperModel` instance they
+would be exactly the same. The only difference is that the `UpperModel`
+instance would print as the upper case name of the model.
+
+It's a contrived example, so let's examine the real usefulness.
 
 ### When to use them?
 
@@ -141,9 +164,23 @@ class GalleryManager(models.Manager):
 
 Well what good is this, you say?
 
-Now we can create distinct admin interfaces.
+For one, it provies a nice interface for content type specific views. If
+you have an infographic view, for example, the view can fetch the
+specific infographic from `Infographic.objects.get(pk=view_pk)`.
+
+And moreover, now we can create distinct admin interfaces.
 
 ### In the admin
+
+The benefit here is that we can create different admin interfaces for
+different objects that happen to be stored in the same database table.
+Perhaps a blog post has an author and an author photo while a news item
+should only have a title, summary, and outbound link.
+
+Since we have proxy models for these, we can create different admin
+interfaces (remember that Django picks up on registered models).
+
+
 
 ### Managers and a better interface
 
@@ -192,14 +229,13 @@ be able to do is create an instance of one of our classes without having
 to specify the `type` value. Since the default value for the base model
 is `image`, we don't n
 
-The base model's
-default type is `image` so if we do this
+The base model's default type is `image` so if we do this...
 
 {% highlight python %}
 image = Image.objects.create(image=some_image_file, caption="")
 {% endhighlight %}
 
-We get back an image, that is, a `MediaAsset` with its `type` attribute
+...we get back an image, that is, a `MediaAsset` with its `type` attribute
 set to `image`. For a video we need to ensure that the `create` method
 updates the keyword argument to the base manager, and then this is
 valid:
@@ -236,35 +272,20 @@ class MediaAsset(models.Admin):
         return some_image_thumbanil(self.image)
 {% endhighlight %}
 
-
 Seeing the specific class name is also helpful in understanding exactly
 what you're working with.
-
-Proxy models have managers just like regular models, so we can 
 
 Having unique manager classes allows you to treat the proxy models as
 first class models in the rest of your code. You can use the managers to
 ensure the standard model interace is applied.
 
-Here's a manager class that extends the `create` method, simply ensuring
-that every new instance created with 
+### To Use and Not To Use
 
-{% highlight python %}
-class ImageManager(models.Manager):
-    def get_queryset(self):
-        return super(ImageManager, self).get_queryset().filter(type='image')
-
-    def create(self, **kwargs):
-        kwargs.update(type='image')
-        return super(ImageManager, self).create(**kwargs)
-{% endhighlight %}
-
-### When not to use proxy models
+There's nothing complicated about proxy models, there's just a little
+bit of thought required to how they can solve your problems.
 
 The use case for proxy models, I've found, is the exception, rather than
-the rule.
-
-The key here is that our models, our end models, that is, are all pretty
-closely related. The content attributes don't differ all that much. If
-your models differ greatly and you've no need for simple aggregation
-then skip the proxy models.
+the rule. The key here is that our models, our end models, that is, are
+all pretty closely related. The content attributes don't differ all that
+much. If your models differ greatly and you've no need for simple
+aggregation then skip the proxy models.
