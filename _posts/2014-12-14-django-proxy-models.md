@@ -88,7 +88,7 @@ the different types, as well as detailed views for individual stories.
 Aggregating heteregoenous content types isn't straight forward using
 Django's ORM. We could make use of the `ContentType` model and filter on
 objects that were in one of our several story model types, or we could
-join together several querysets as lists as parse as Python. We could
+join together several querysets as Python lists. We could
 also perform a UNION query in a Raw queryset. That's pretty appealing
 but the one thing I don't like about adding too many raw queries into
 Django apps is the fragility.
@@ -112,7 +112,7 @@ class Story(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField(blank=True, null=True)
     infographic = models.ImageField(blank=True, null=True)
-    infographic = models.URLField(blank=True, null=True)
+    link = models.URLField(blank=True, null=True)
     gallery = models.ForeignKey(Gallery, blank=True, null=True)
 {% endhighlight %}
 
@@ -184,7 +184,7 @@ interfaces (remember that Django picks up on registered models).
 
 ### Managers and a better interface
 
-In this second exampel, we have media assets that need to be used in a
+In this second example, we have media assets that need to be used in a
 gallery. There are two useful models, an image and a video.
 
 {% highlight python %}
@@ -227,7 +227,8 @@ You see what we did here is extend the `create` method available for
 the `Video` class, and *not* for the `Image` model. What we want to do
 be able to do is create an instance of one of our classes without having
 to specify the `type` value. Since the default value for the base model
-is `image`, we don't n
+is `image`, we don't need to specify a `create` method for `Image`
+instances - they're the default.
 
 The base model's default type is `image` so if we do this...
 
