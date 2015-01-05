@@ -12,7 +12,7 @@ teaser: >
 ---
 
 I mostly work from a home office. Also co-working spaces. And coffee shops,
-friends's homes, occasionally hotels, airport terminals, airplanes, even
+friends' homes, occasionally hotels, airport terminals, airplanes, even
 historic lakeside palazzos, and over rural satellite connections in
 [Middle Earth](https://en.wikipedia.org/wiki/Haast,_New_Zealand). I've
 been writing this draft on the road in Philadelphia.
@@ -47,7 +47,7 @@ you gain in sharing between devices you often lose in offline access,
 from mail to project management.
 
 The solution here is to use a tool or process that at least mirrors this
-information lococally.
+information locally.
 
 Important emails? If not available in a local email client, ensure
 they're in a notes application (e.g. Evernote). Sharing files? Use a
@@ -80,8 +80,8 @@ Think of a multiplexer, like
 machine via SSH, you start a terminal session that is associated with or attached to your SSH
 connection. Lose the connection, lose your terminal session. With tmux, you
 create a terminal session associated with a *tmux deamon*, a background
-process that is running indepenently from your SSH connection. Close your SSH connection and it's still there. This will
-not only save you when your connection inevetiably drops but lets you close
+process that is running independently from your SSH connection. Close your SSH connection and it's still there. This will
+not only save you when your connection inevitably drops but lets you close
 your connection and walk away to let some job keep running.
 
 #### Jump host
@@ -90,8 +90,8 @@ A jump server is in and of itself a great help. I keep a small (1GB)
 instance available on [Digital Ocean](https://www.digitalocean.com/?refcode=5eeefd1f4dfe) with my SSH configuration synced and
 various deployment scripts, etc. If I need to initiate an SSH based
 deployment, I typically do so from there in a tmux session. I don't
-worry about even a slight network burp interupting it. (Of course the
-same could happen to my droplet, the data center, or something inbetween
+worry about even a slight network burp interrupting it. (Of course the
+same could happen to my droplet, the data center, or something between
 the data center and the target machine, but I'm pretty confident the
 likelihood there is far less than from a coffee shop).
 
@@ -110,7 +110,7 @@ let the script do its work.
 
 ### Documentation
 
-No internet connection means no Stack Overflow, sorry. For the a while I
+No internet connection means no Stack Overflow, sorry. For a while I
 relied on local copies of major packages I used so that I could
 read the docs when I had poor connectivity (I still keep local copies!
 see below). Now my primary documentation source is a Mac app called
@@ -133,12 +133,12 @@ As most of my work is Python-based, I also use devpi as a PyPI caching layer.
 The short of this is that if I try to install Django 1.6.5 in a new virtualenv
 but I've already downloaded it from PyPI, I'll actually download it from
 localhost, skipping the hit to PyPI. This is faster, to be sure, but also saves
-a lot of headaches when there's no netwrok connection. It solves those edge
-cases where you want to add a requirement to a project that you've arleady
-downloaded, but moreover it makes running tox tests 'safe' to do without an
-INternet connection. I can add or rebuild all of my tox environments to test
+a lot of headaches when there's no network connection. It solves those edge
+cases where you want to add a requirement to a project that you've
+already downloaded, but moreover it makes running tox tests 'safe' to do without an
+Internet connection. I can add or rebuild all of my tox environments to test
 against different versions of Python, different versions of Django, and rest
-assured that I can do that wihtout having to hit PyPI.
+assured that I can do that without having to hit PyPI.
 
 ### Databases
 
