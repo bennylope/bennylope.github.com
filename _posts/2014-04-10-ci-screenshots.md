@@ -20,7 +20,7 @@ Trying to check changes on multiple browsers and multiple devices is hard. In
 the old days shops kept old computers lying around to test against different OS's and
 older browsers. A lot of that can be virtualized on your desktop now, but
 that's still kind of a pain in the tuchus. And adding in tablets and mobile
-phones just deepens the hole. Thankfully, there's a better way.
+phones doesn't make testing any easier. Thankfully, there's a better way.
 
 ### Virtualized browsers with BrowserStack
 
