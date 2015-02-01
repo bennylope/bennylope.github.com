@@ -6,7 +6,7 @@ layout: post
 published: true
 teaser: >
     While proxy models aren't the most critical feature in the Django
-    framework, but they do seem to get short shrift. Here's a look
+    framework, they do seem to get short shrift. Here's a look
     into how to use this feature to create new and clean interfaces to
     data without making changes to your database.
 return_link: /simple-search-manager-methods/
@@ -14,13 +14,13 @@ return_text: Proxy models? How about search managers!?
 ---
 
 Django's proxy models are one of those features that I remember reading
-about and thinking, "oh, cool... I guess" and then moving along. But
-from time to time they come in very handy. There's not that much written
-about how to best make use of them.
+about and thinking, "oh, cool... I guess" and then moving along. From
+time to time, they do come in very handy, but there's not that much
+written about how to best make use of them
 
 ### What are they?
 
-A proxy model is just a another class that provides a different
+A proxy model is just another class that provides a different
 interface for the same underlying database model.
 
 That's it. Really.
@@ -30,7 +30,7 @@ Typically creating a subclass of a model results in a new database table
 with a reference back to the original model's table - multi-table
 inheritance.
 
-A proxy model doesn't get it's own database table. Instead it operates
+A proxy model doesn't get its own database table. Instead it operates
 on the original table.
 
 {% highlight python %}
@@ -50,27 +50,27 @@ class UpperModel(MyModel):
 
 In the contrived example above we've created a second model class, a
 proxy class. If you were to compare the field values for the instance at
-primary key `12` for either a `MyModel` or `UpperModel` instance they
+primary key `12` for either an instance of `MyModel` or `UpperModel` they
 would be exactly the same. The only difference is that the `UpperModel`
-instance would print as the upper case name of the model.
+instance would print as the uppercase name of the model.
 
 It's a contrived example, so let's examine the real usefulness.
 
 ### When to use them?
 
 There are certainly legacy or brownfield use cases, when you need to fit
-your models around an existing database. But they're useful in new
-projects, too.
+your models around an existing database, but they're useful in new
+projects too.
 
 Let's say you've got a content type that has some different sub-types
 which all differ in some minor way. There's the main content type, which
-we'll call a "story". Some stories have slightly different content
-needs, like a big image file that is displayed for one, a geographic
-reference for another. With these exceptions the content types all look
+we'll call a "story". Some stories have slightly different content needs - one may require an
+image file that is displayed and another a geographic reference.
+With these exceptions the content types all look
 roughly similar and behave in the same way.
 
 You could create distinct models for each of these with a distinct
-database table for each. But do we really need a separate table for each
+database table for each, but do we really need a separate table for each
 of these? This is unnecessary and it'll make aggregating these stories
 significantly more challenging if we want to use the ORM.
 
@@ -85,11 +85,11 @@ to all of these models to the content editors. On the front end, there's
 going to be a single list view of all stories, and then list views for
 the different types, as well as detailed views for individual stories.
 
-Aggregating heteregoenous content types isn't straight forward using
+Aggregating heterogeneous types isn't straight forward using
 Django's ORM. We could make use of the `ContentType` model and filter on
 objects that were in one of our several story model types, or we could
 join together several querysets as Python lists. We could
-also perform a UNION query in a Raw queryset. That's pretty appealing
+also perform a UNION query in a Raw queryset. That's pretty appealing,
 but the one thing I don't like about adding too many raw queries into
 Django apps is the fragility.
 
@@ -142,8 +142,8 @@ The `proxy = True` statement in the `class Meta` section indicates that
 these classes are proxy models. It's the manager class that we're using
 here to differentiate the classes.
 
-Each manager class simply returns a queryset filters on the appropriate
-`type`.
+Each manager class simply returns a queryset that filters for the
+appropriate `type` value.
 
 {% highlight python %}
 class FeatureManager(models.Manager):
@@ -164,7 +164,7 @@ class GalleryManager(models.Manager):
 
 Well what good is this, you say?
 
-For one, it provies a nice interface for content type specific views. If
+For one, it provides a nice interface for content type specific views. If
 you have an infographic view, for example, the view can fetch the
 specific infographic from `Infographic.objects.get(pk=view_pk)`.
 
@@ -185,7 +185,7 @@ interfaces (remember that Django picks up on registered models).
 ### Managers and a better interface
 
 In this second example, we have media assets that need to be used in a
-gallery. There are two useful models, an image and a video.
+gallery. There are two useful models: an image and a video.
 
 {% highlight python %}
 class MediaAsset(models.Admin):
@@ -205,7 +205,7 @@ class Video(MediaAsset):
         proxy = True
 {% endhighlight %}
 
-Again with the managers. Here's what these managers look like though.
+Again with the managers. Here's what these managers look like though:
 
 {% highlight python %}
 class ImageManager(models.Manager):
@@ -224,20 +224,20 @@ class VideoManager(models.Manager):
 {% endhighlight %}
 
 You see what we did here is extend the `create` method available for
-the `Video` class, and *not* for the `Image` model. What we want to do
+the `Video` class and *not* for the `Image` model. What we want to do
 be able to do is create an instance of one of our classes without having
 to specify the `type` value. Since the default value for the base model
 is `image`, we don't need to specify a `create` method for `Image`
 instances - they're the default.
 
-The base model's default type is `image` so if we do this...
+The base model's default type is `image`, so if we do this...
 
 {% highlight python %}
 image = Image.objects.create(image=some_image_file, caption="")
 {% endhighlight %}
 
-...we get back an image, that is, a `MediaAsset` with its `type` attribute
-set to `image`. For a video we need to ensure that the `create` method
+...we get back an image, or rather, a `MediaAsset` with its `type` attribute
+set to `image`. For a video, we need to ensure that the `create` method
 updates the keyword argument to the base manager, and then this is
 valid:
 
@@ -245,18 +245,18 @@ valid:
 video = Video.objects.create(video=some_embed_url, caption="")
 {% endhighlight %}
 
-Now, why bother with this? It's not *necessary* but what it allows us to
+Now, why bother with this? It's not *necessary*, but what it allows us to
 do is provide an interface that differs in class only. If you're using
 class based views, all you need to do is specify the class name in the
 view and everything else flows from that.
 
 Now we have a gallery view that displays all of the media assets for a
-given gallery, and for any asset CRUD needs we can provide type specific
-views without worrying in the code we're using about this type
-specification.
+given gallery, and for any asset CRUD needs we can provide class specific
+views without checking for the `type` value in the code and filtering on
+that in our views.
 
 In the case of the gallery view, we don't want logic checks in the
-template for the type of asset for generating the thumbnails, so we'll
+template for the type of asset used for generating the thumbnails, so we'll
 add this method to the underlying `MediaAsset` class to provide a
 consistent interface.
 
@@ -273,20 +273,20 @@ class MediaAsset(models.Admin):
         return some_image_thumbanil(self.image)
 {% endhighlight %}
 
-Seeing the specific class name is also helpful in understanding exactly
+Seeing the specific class name is also helpful for understanding exactly
 what you're working with.
 
 Having unique manager classes allows you to treat the proxy models as
 first class models in the rest of your code. You can use the managers to
-ensure the standard model interace is applied.
+ensure the standard model interface is applied.
 
-### To Use and Not To Use
+### To use and not to use
 
 There's nothing complicated about proxy models, there's just a little
-bit of thought required to how they can solve your problems.
+bit of thought required in regards to how they can solve your problems.
 
-The use case for proxy models, I've found, is the exception, rather than
-the rule. The key here is that our models, our end models, that is, are
+The use case for proxy models, I've found, is the exception rather than
+the rule. The key here is that our models, our end models that is, are
 all pretty closely related. The content attributes don't differ all that
 much. If your models differ greatly and you've no need for simple
-aggregation then skip the proxy models.
+aggregation, then skip the proxy models.
