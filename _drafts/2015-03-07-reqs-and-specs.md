@@ -9,55 +9,145 @@ teaser: >
     guess how much money they spent cleaning it up.
 ---
 
+It starts innocently enough. A few mockups, some user flows, a form that
+everyone loves, an application born of high quality design. A beautiful
+application that looks exactly like it was supposed to and providing
+little of the intended value.
 
-What are the differences between specifications and requirements? 
+### Specifications: no substitute for requirements
 
-It's a question that comes up implicitly in a lot of projects where
-clients come to you or come to us with this preconceived notion of what
-the application is going to look like, what the site is going to look
-like perhaps. It's going to do this it's going to do that. So and so
+Confusing specifications and requirements is a common mistake
+in early stage projects. Having spent weeks, months or possibly
+even years thinking about the end product it's not surprising that
+clients have a preconceived notion of exactly what their application is
+going to look like, how exactly each part should work.
+
+So and so
 wants it to look like this. They really like the feature from this app
 or this site and so it's gotta do this. Well of course there may be a
 much more structured approach where we've got some wireframes already
 and we've got some designs that should make it easier for you to put the
-proposal together. 
+proposal together.
 
 When we put together a project plan and you start developing, there are
 two ways to do it: there are specs and requirements. Requirements are
 the 'what's necessary' question. What do you need to do? Specifications
-are the 'how.' How are you going to do that? 
+are the 'how.' How are you going to do that?
 
-![Horse and cart, Johann Adam Klein](/images/horse-and-cart.jpg)
+{% include image.html src="/images/horse-and-cart.jpg" alt="Horse and cart, Johann Adam Klein" caption="The project team decides to put the horse first." %}
 
-### Driving
+So just what are the differences between specifications and
+requirements?
+
+### The destination is not the route
+
+Consider this scenario. You're out on the street in Istanbul preparing
+to head to the Istanbul Modern to take in some Turkish art prior to
+leaving the next day. It seems fairly far away and you don't have your
+own car, so you find a taxi to get there.
+
+The first thing you probably do after getting in the taxi is tell the
+driver where you want to go. You've seen the map and can tell which
+streets directly get you there, but you don't need to tell the driver
+which roads to take. Or perhaps you do and find yourself sitting in a
+traffic jam after arguing with the driver not to take his preferred
+route, the one that went around the traffic jam he expected along your
+preferred route.
+
+{% include image.html src="/images/istanbul-taxis.jpg" alt="Istanbul taxis, Ben Lopatin" caption="This is not a one-way street." %}
+
+What you're doing in telling the driver the destination
+is providing requirements. Requesting a specific
+route is providing specifications. Instead you could provide your
+requirements to the driver, that you want
+to get to museum and you'd like to get there by 2 o'clock. Now your
+driver can take this information and based on his knowledge of the city
+and its traffic patterns decide what route to take to ensure your
+requirements are met. Even with your map of the city and feigned
+knowledge your own specifications here almost certainly having failed.
+
+If you happen to know all the winding roads in the city of seven hills that
+might work out for you, but chances are pretty good the only outcome
+from specifying your route rather than simply providing your destination
+is going to be a slower trip, at best.
+
+### Pain points
+
+The costs of doing this wrong, and the payoffs of doing this right
+differ in a software project than in a taxi trip.
+
+Or the cost of getting this wrong.
+
+Every project is conceived to solve problems.
+
+As a project owner, you risk a totally failed project, of course. But
+catastrphic 
+
+As a consultant, the risk of d
+As a consultant it's important to shape a project where you bear any
+risk of project succcess.
+
+### Requirements and goals
+
+It's possible, too, that our driver might have told us that given the
+traffic congestion, our limited time, and short distance, that it would
+be in our interest to walk or perhaps take a different mode of
+transport.
+
+In our Instanbul goal we stopped short in talking only about
+requirements. Here we're still relying on the driver as only a technical
+expert to decide on and navigate a route through the city's narrow and
+congested streets. We arrived on time at the museum but were somewhat
+underwhelmed by the museum. Had we discussed our *goals* with the driver
+this might have been a different outcome. Our goal was to enjoy some
+Turkish art in the one afternoon we had left. Implicit in this at least
+is that we want to get the best and most unique experience in the
+shortest amount of time. If we knew that our driver knew something not
+just about driving cars, not just about choosing routes through the
+city, but also about the city itself, including it's museums, we could
+have added the purpose, the goal of our trip. Now with the driver's aid
+we might have gone to a different museum altogether. "An afternoon in
+Istanbul? No, no, you want the Muesum of Islamic Art!" We're skeptical -
+no human forms! - but take the driver's advice anyhow and are surprised
+by how absorbed one can become just in tiling.
+
+How is this possible? It's possible with expertise and trust.
+
+There's an art to knowing when to work at which level, and with what
+people, whether employees or contractors. If there's an expertise
+mismatch, as in you're an expert and you're working with someone 
+
+### Design prototypes as requirement helpers
+
+Not specs, but be careful in using them.
+
+### Stepping back from specifications
+
+Ideally you start this way in your project.
+
+To be clear specifications in and of themselves are not necessarily a
+very-bad-thing. But when they lead a project and when they appear in the
+absence of *articulated* project goals and requirements, they need to be
+reassesed in light of these things.
+
+So the first step is to plainly articulate the project goals. If you're
+spending money on a project you had better be able to clearly justify
+why you're doing so!
+
+Think of the difference between deciding where you want to go and how
+you want to get there in a city, especially a new city.
 
 Figure out where you want to go. Then how are you going to get there
 (the road). Then how you might change direction as needed. Don't specify
 the lane you'll drive now. Actually figure out why you want to go there.
 
-### Conversations with Jesus
 
-So here's a good example: You're talking to someone who is a great
-carpenter and you want to have this custom bookshelf built, and you're
-like 'I know exactly what I want,' so you give him specs. It's got to be
-this tall and this wide and it's got to have this many shelves. So the
-carpenter spends a couple of weeks and you get this bookshelf back and
-it's beautiful and amazing.
-
-The only trouble is that it doesn't fit exactly. It's almost a little
-too tight. And you know what? It doesn't account for the number of books
-you have because you gave them the specs. If you had said here are the
-requirements - it needs to fit in this space and I like to be able to
-get books that I read frequently easily. I've got a whole bunch of
-really big books - they're really big art books and then just a whole
-bunch of paperbacks. Now the carpenter has requirements. So he might
-take those specs and he's going to generate specs based on the
-requirements. So the difference here is that you're taking an expert,
-someone who knows the problem space and can formulate better solutions. 
+> You told the taxi driver what streets to take, instead of where you
+> wanted to go. Enjoy the gridlock.
 
 ### Bring forth the requirements!
 
-So requirements are really a software development parlance. A user store
+Requirements come in many different shapes. A user story
 is an example of a requirement. It's really just a way of formulating a
 requirement. Whether or not you do agile scrum or whatever the next
 methodology of the moment is going to be, a user store is still a great
@@ -75,7 +165,7 @@ the ones who are actually involved and the specs are probably...they're
 going to...if it's purely backend or they're developing the stuff, it's
 going to be they develop as well. If you don't do it with their input,
 then now you're creating these arbitrary constraints that may not help
-you solve your requirements. 
+you solve your requirements.
 
 So going back, this carpenter example is a prime example of how this
 works. You bring the requirements and you….Now, if you don't...there's
@@ -97,6 +187,15 @@ it's a loose specification and you can build to it and then you can very
 quickly and you can stop and say great, now let's check this out. Does
 this work? Does this do what we want it to do? How does it feel? Ok,
 let's fix this, let's redo it maybe.
+
+### Why? The project goals
+
+### What? The project requirements
+
+### How? The project specifications
+
+The pedantic reader might at this point that specifications may really
+describe in grave detail the 'what' rather than a 'how' activity.
 
 ### Specified requirements and prototypes
 
@@ -146,7 +245,7 @@ and that the blocks will have to fit in different holes, then perhaps
 sizing it exactly with the exact same shape as the initial hole might be
 really bad.
 
-![Wooden blocks. Photo by Flickr user rosipaw https://www.flickr.com/photos/rosipaw/4643095630/](/images/wooden-blocks.jpg)
+{% include image.html src="/images/wooden-blocks.jpg" alt="Wooden blocks. Photo by Flickr user rosipaw https://www.flickr.com/photos/rosipaw/4643095630" %}
 
 That's a little bit of a bad example because we don't assume a problem
 space that we have is going to be so big, but it does get to the point
@@ -159,4 +258,5 @@ to get that type of information from, then this is a much bigger
 problem. So, that's a bit about specs and requirements differences, and
 I hope that when you look at your next project, you start with
 requirements.
+
 
