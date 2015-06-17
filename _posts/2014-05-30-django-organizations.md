@@ -5,7 +5,7 @@ layout: post
 comments: true
 permalink: /meet-django-organizations/
 redirect_from: /blog/meet-django-organizations/
-canonical: http://www.wellfireinteractive.com/blog/meet-django-organizations/
+canonical: https://wellfire.co/blog/meet-django-organizations/
 teaser: >
     Useful open-source projects start by first scratching your own itch,
     then scratching it again, and yet again. One of our own itches has been

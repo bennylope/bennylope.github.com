@@ -1,5 +1,5 @@
 ---
 published: true
 title: "Stretching Haystack's ElasticSearch backend (Wellfire blog)"
-link: http://www.wellfireinteractive.com/blog/custom-haystack-elasticsearch-backend/
+link: https://wellfire.co/blog/custom-haystack-elasticsearch-backend/
 ---

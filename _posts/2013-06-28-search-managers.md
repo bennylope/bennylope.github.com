@@ -4,7 +4,7 @@ title: "Simple search managers: fat managers & skinny views"
 subtitle: "A basic search and filtering pattern"
 layout: post
 permalink: /simple-search-manager-methods/
-canonical: http://www.wellfireinteractive.com/blog/simple-search-manager-methods/
+canonical: https://wellfire.co/blog/simple-search-manager-methods/
 published: true
 categories: development
 comments: true

@@ -3,6 +3,7 @@ title: "Featured items and content rivers with Django CMS"
 permalink: /featured-items-content-rivers-django-cms/
 layout: post
 comments: true
+canonical: https://wellfire.co/blog/featured-items-content-rivers-django-cms/
 published: true
 date: 2015-06-01
 teaser: >

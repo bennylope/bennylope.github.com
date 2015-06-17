@@ -15,7 +15,7 @@ once it's available (unless I bomb the talk).
 * Presentation slides on Speakerdeck
   [https://speakerdeck.com/bennylope/finding-the-needle-djangocon-us-2013](https://speakerdeck.com/bennylope/finding-the-needle-djangocon-us-2013)
 * My blog post on extending Haystack backends
-  [http://www.wellfireinteractive.com/blog/custom-haystack-elasticsearch-backend/](http://www.wellfireinteractive.com/blog/custom-haystack-elasticsearch-backend/)
+  [https://wellfire.co/blog/custom-haystack-elasticsearch-backend/](https://wellfire.co/blog/custom-haystack-elasticsearch-backend/)
 * elasticstack sample code for extending Haystack and the ElasticSearch
   backend [https://github.com/bennylope/elasticstack](https://github.com/bennylope/elasticstack)
 * The Factbook example app on Heroku
@@ -23,4 +23,4 @@ once it's available (unless I bomb the talk).
 * The Factbook source code
   [https://github.com/bennylope/ciafactbook](https://github.com/bennylope/ciafactbook)
 * Bonus! A clean, testable pattern for filtering quersets in search-like
-  views [http://www.wellfireinteractive.com/blog/simple-search-manager-methods/](http://www.wellfireinteractive.com/blog/simple-search-manager-methods/)
+  views [https://wellfire.co/blog/simple-search-manager-methods/](https://wellfire.co/blog/simple-search-manager-methods/)

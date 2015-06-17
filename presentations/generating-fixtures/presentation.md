@@ -198,7 +198,7 @@
 * Ben Lopatin, February 2012
 * Twitter [@bennylope](http://twitter.com/bennylope)
 * GitHub [bennylope](http://github.com/bennylope)
-* Principal/Developer @ [Wellfire Interactive](http://www.wellfireinteractive.com)
+* Principal/Developer @ [Wellfire Interactive](https://wellfire.co)
 
 
 <p style="color: #666; font-size: 0.8em;">None of the code in this presentation has been tested. Many module

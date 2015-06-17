@@ -7,7 +7,7 @@ redirect_from: /blog/continuous-cross-browser-screenshots/
 published: true
 categories: development
 comments: true
-canonical: http://www.wellfireinteractive.com/blog/continuous-cross-browser-screenshots/
+canonical: https://wellfire.co/blog/continuous-cross-browser-screenshots/
 teaser: >
     Trying to check changes on multiple browsers and multiple devices is hard. In
     the old days shops kept old computers lying around to test against different OS's and
