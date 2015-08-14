@@ -23,13 +23,13 @@ people actually using the site.
 For Django projects, the best solution we've found so far to this
 problem is
 [django-filer](http://django-filer.readthedocs.org/en/latest/). Filer is an application that combines
-convenient built-in model fields for developers with a familiar file
+convenient model fields for developers with a familiar file
 tree like structure for users. Combined with standard image fields like
 captions and alt text, as well as extra thumbnailing support, filer
 stands out as a superior way to manage image content.
 
 This is all well and good when you're starting a new project, but it's
-never too late to make the transition to django-filer. Let's walk
+never too late to make the transition to django-filer. Here we'll walk
 through the process of rescuing your image content and surfacing it for
 your users.
 
@@ -37,7 +37,8 @@ your users.
 
 Installation is a perfunctory first step. You'll need to download
 django-filer (preferably by adding it to your project's pip
-requirements file). You should install easy-thumbnails, too.
+requirements file) along with easy-thumbnails, which filer uses to show,
+well, thumbnails of your images.
 
 {% highlight bash %}
 pip install easy_thumbnails django-filer
@@ -53,6 +54,9 @@ INSTALLED_APPS = (
 )
 {% endhighlight %}
 
+'breeds' listed above is an app which tracks dog breeds in our imaginary
+project.
+
 Filer maintains its own database tables for tracking files and folders,
 so you'll need to migrate the database changes it introduces.
 
@@ -65,9 +69,6 @@ filer backend. However to make any significant use of the filing system
 you'll need to add filer's fields to your models.
 
 ### Add the new Filer fields
-
-Our example site is a site devoted to dogs, so all of the models related
-to dogs.
 
 Here's a snippet from the basic breed model used to show different
 breeds of dog:
@@ -139,6 +140,33 @@ for the app `breeds`.
 In our data migration we're going to cycle through all of the existing
 `Breed` instances and either find or create new `FilerImage` instances
 for each image path.
+
+{% highlight python %}
+def create_filer_images(apps, schema_editor):
+    from filer.models import Image
+    Breed = apps.get_model('breeds', 'Breed')
+    for breed in Breed.objects.all():
+        img, created = Image.objects.get_or_create(file=breed.image.file, defaults={
+            'name': breed.name,
+            'description': breed.description,
+        })
+        breed.img = img
+        breed.save()
+
+
+class Migration(migrations.Migration):
+
+    dependencies = [
+        ('filer', '0002_auto_20150606_2003'),
+        ('breeds', '0002_auto_20150814_1400'),
+    ]
+
+    operations = [
+        migrations.RunPython(create_filer_images),
+    ]
+{% endhighlight %}
+
+And using South for older versions of Django:
 
 {% highlight python %}
 class Migration(DataMigration):
