@@ -97,7 +97,7 @@ class Breed(models.Model):
     name = models.CharField(max_length=140)
     image = models.ImageField(upload_to="breeds")
     description = models.TextField(blank=True)
-    img = ImageField(null=True)
+    img = FilerImageField(null=True)
 {% endhighlight %}
 
 Pretty easy! You'll notice two important things right off the bat. The
@@ -233,7 +233,7 @@ get much simpler than that.
 {% highlight python %}
 class Breed(models.Model):
     name = models.CharField(max_length=140)
-    img = ImageField(null=False)
+    img = FilerImageField(null=False)
     description = models.TextField(blank=True)
 {% endhighlight %}
 
@@ -247,7 +247,7 @@ would.
 {% highlight python %}
 class Breed(models.Model):
     name = models.CharField(max_length=140)
-    img = ImageField(null=False)
+    img = FilerImageField(null=False)
     description = models.TextField(blank=True)
 
     @property
@@ -264,7 +264,7 @@ rather pointless one by this time.
 {% highlight python %}
 class Breed(models.Model):
     name = models.CharField(max_length=140)
-    image = ImageField(null=False, db_column="img")
+    image = FilerImageField(null=False, db_column="img")
     description = models.TextField(blank=True)
 {% endhighlight %}
 
