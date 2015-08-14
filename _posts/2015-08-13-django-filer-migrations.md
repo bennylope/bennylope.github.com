@@ -185,15 +185,16 @@ class Migration(DataMigration):
         pass
 {% endhighlight %}
 
-The first thing to notice is the no good, very bad, terrible thing I've
-done, which is import the models into the migration file. This is
+The first thing to notice is the no good, very bad, terrible thing here,
+directlyly importing the models into the migration file. This is
 exactly what the default migration template tells you **not** to do!
 There are good reasons for not doing this, generally, however here
 following the guidelines doesn't work. Filer uses multitable inheritence
-to subclass `File` in the `Image` model, so South's internal schema
+to subclass `File` in the `Image` model, so South's internal schema (and
+likewise the subsequence Django machinery)
 doesn't see a relationship between our table and the `Image` table. So
 instead we import the models with the implicit understanding that we'll
-squash these migrations later (its terrible to find long since removed
+squash these migrations later (its terrible anyhow to find long since removed
 apps in your migrations).
 
 The next thing to notice is that we're using the `get_or_create` method
@@ -204,6 +205,8 @@ desired.
 
 The `ImageField` on our model is really a foreign key so we need to
 create our `Image` instance and then assign it to the individual breed.
+
+{% include image.html src="/images/django-filer-vizsla.png" alt="filer" caption="Both the old ImageField and the FilerImageField shown" %}
 
 ### Update all of your \{\{ templates \}\}
 
@@ -273,11 +276,13 @@ class Breed(models.Model):
     description = models.TextField(blank=True)
 {% endhighlight %}
 
+### Removing the old field
+
 The follow up here would be to remove the old field altogether. This,
-however, is a post-deployment step. You should only do this once you're
+however, is a post-deployment step. **You should only do this once you're
 ready to squash or remove your migrations, since the way we've
 implemented the data migration here depends on the presence of specific
-fields on the model. Simplest way to do this? Just remove the content
+fields on the model.** Simplest way to do this? Just remove the content
 from the data migration so that it does nothing and imports none of your
 models.
 
