@@ -158,7 +158,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('filer', '0002_auto_20150606_2003'),
-        ('breeds', '0002_auto_20150814_1400'),
+        ('breeds', '0002_breed_img'),
     ]
 
     operations = [
