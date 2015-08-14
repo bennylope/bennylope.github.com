@@ -37,18 +37,19 @@ your users.
 
 Installation is a perfunctory first step. You'll need to download
 django-filer (preferably by adding it to your project's pip
-requirements file).
+requirements file). You should install easy-thumbnails, too.
 
 {% highlight bash %}
-pip install django-filer
+pip install easy_thumbnails django-filer
 {% endhighlight %}
 
 Next add it to your `INSTALLED_APPS` tuple:
 
 {% highlight python %}
 INSTALLED_APPS = (
+    'easy_thumbnails',
     'filer',
-    'mycoolphotos',
+    'breeds',
 )
 {% endhighlight %}
 
