@@ -119,6 +119,12 @@ I've heard voiced before, but in reality all we need to do is ensure we
 capture the references to these files and then delete the old references
 - which is really all a file field is, image fields included.
 
+For current versions of Django that looks like this:
+
+{% highlight bash %}
+python manage.py makemigrations --empty breeds
+{% endhighlight %}
+
 Using South with an older version of Django, the command looks like
 this:
 
@@ -264,7 +270,7 @@ rather pointless one by this time.
 {% highlight python %}
 class Breed(models.Model):
     name = models.CharField(max_length=140)
-    image = FilerImageField(null=False, db_column="img")
+    image = FilerImageField(null=False, db_column="img_id")
     description = models.TextField(blank=True)
 {% endhighlight %}
 
