@@ -231,18 +231,35 @@ comptability with the foreign key presented by the `ImageField`.
 
 ### Swapping out the old field
 
-The last step is swapping out the old field. Strictly speaking this
-isn't necessary to begin use of your new filer fields, but there's
-little reason at this point to keep the field. Removing it is simple:
-delete the field definition and create a new schema migration. Doesn't
-get much simpler than that.
+The last step is swapping out the old field. The primary way of doing
+this is to make the old field nullable and ensure it's no longer
+required. You can take care of this in your forms, and if you're using
+the Django admin's default ModelForm you'll need to ensure this field is
+allowed to be blank.
 
 {% highlight python %}
 class Breed(models.Model):
     name = models.CharField(max_length=140)
+    image = models.ImageField(upload_to="breeds", null=True, blank=True)
     img = FilerImageField(null=False)
     description = models.TextField(blank=True)
 {% endhighlight %}
+
+The follow up here would be to remove the old field altogether. This,
+however, is a post-deployment step. You should only do this once you're
+ready to squash or remove your migrations, since the way we've
+implemented the data migration here depends on the presence of specific
+fields on the model. Simplest way to do this? Just remove the content
+from the data migration so that it does nothing and imports none of your
+models.
+
+This kind of data migration is a one-shot migration to deal with
+legacy content. Once you've executed it you don't need it anymore. You
+won't be running the migration again in your production environment,
+only in fresh environments like test or development machines, in which
+case there is no legacy content. So if you do decide to get rid of the
+old field and/or rename the new field, clean up that data migration
+first.
 
 I referenced a couple of work arounds with regard to changing the field
 name in the rest of your code, i.e. templates, forms, views, etc. Both
@@ -275,9 +292,13 @@ class Breed(models.Model):
     description = models.TextField(blank=True)
 {% endhighlight %}
 
+### Rehashing the game plan
+
 The key to everything here is ensuring that you have the required
-sequence of database migrations (or migration operations).
+sequence of database migrations.
 
 1. Add the new _nullable_ field
 2. Create and link filer images
-3. Remove the old field
+3. Make the old field nullable
+4. Deploy
+5. Remove the old field and clean up migrations (optional)
