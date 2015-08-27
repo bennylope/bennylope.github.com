@@ -6,9 +6,9 @@ published: true
 date: 2015-08-27
 teaser: >
     Professional kitchens hum by practicing mise en place, ordering
-    everything carefully and keeping this clean. You can do the same in
-    a distributed software project by taking care with how patches are
-    created and merged in.
+    everything carefully and keeping the kitchen clean. You can do the
+    same in a distributed software project by taking care with how
+    patches are created and merged in.
 ---
 
 This post is a note to self and an explanation for present and future
