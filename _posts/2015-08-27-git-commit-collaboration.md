@@ -324,3 +324,11 @@ situation. Working with inherited code I often find the need to reformat
 the entire file before really working on it, and that I maintain as a
 distinct commit so it doesn't obfuscate the changes I'm making to the
 codebase.
+
+I wrote this with the rebasing order of first rebase from master and
+then interactively rebase your feature branch, but *it probably makes
+more sense to interactively rebase and squash your feature branch first,
+and then rebase against `acme/master`*. The reason is conflicts. With
+fewer commits, you'll have to deal with conflicts fewer times - although
+it doesn't fix the conflicts! - and you may clean up changes in your own
+code which has the effect of at least simplifying the conflicts.
