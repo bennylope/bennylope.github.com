@@ -17,7 +17,7 @@ team members and collaborators. YMMV.
 The goal is twofold: to ensure a *useful* history of project changes
 with explanations for what and mostly why things changed the way they
 did, and to make merging the change into the main project - with
-everythign that entails (testing, building, deploying) - as easy as
+everything that entails (testing, building, deploying) - as easy as
 possible for the people doing that.
 
 The goal outlined below simplifies the process by limiting us to one
