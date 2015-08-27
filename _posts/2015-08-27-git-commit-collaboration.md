@@ -26,16 +26,17 @@ commit that can be cleanly merged into the main project.
 
 ### Assumptions
 
-There are two remote repos, yours and the main project repo.
+There are two remote repos, yours and the main project repo. Since this
+is the Acme Corp's repo and I'm going to name it `acme`.
 
 You have a local feature branch, called `my-cool-new-feature` where
 you've been working on code. The only changes right now in this branch
 are commits you've made specific to your feature.
 
-The `master` branch of the main project repo represents code that is in
+The `acme/master` branch of the main project repo represents code that is in
 the wild.
 
-The `master` branch has been getting updates since you created your
+The `acme/master` branch has been getting updates since you created your
 original feature branch.
 
 People like it when you make their lives easier for them, even if that
@@ -43,8 +44,7 @@ means a bit of extra work for you right now!
 
 ### Step 1: updating from the main repo
 
-Make sure you have the main repo referenced locally. Since this is the
-Acme Corp's repo and I'm going to name it `acme`.
+Make sure you have the main repo referenced locally.
 
 {% highlight bash %}
 git remote add acme git@githost.com:acme/serious-software.git
