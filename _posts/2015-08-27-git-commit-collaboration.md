@@ -119,6 +119,9 @@ Date:   Fri Aug 14 13:05:52 2015 -0400
     [#123123123]
 {% endhighlight %}
 
+There, one explantory commit. We'll see below what makes that particular
+commit message better.
+
 ### Step 2: crafting a clean patch commit
 
 So we want to create a single commit from the numerous feature branch
