@@ -20,7 +20,8 @@ did, and to make merging the change into the main project - with
 everything that entails (testing, building, deploying) - as easy as
 possible for the people doing that.
 
-The goal outlined below simplifies the process by limiting us to one
+The process outlined below simplifies the merge process (for the
+maintainer) by limiting us to one
 commit that can be cleanly merged into the main project.
 
 ### Assumptions
