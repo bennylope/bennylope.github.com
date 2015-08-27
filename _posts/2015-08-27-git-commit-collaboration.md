@@ -4,7 +4,15 @@ permalink: /git-commits-for-collaboration/
 layout: post
 published: true
 date: 2015-08-27
+teaser: >
+    Professional kitchens hum by practicing mise en place, ordering
+    everything carefully and keeping this clean. You can do the same in
+    a distributed software project by taking care with how patches are
+    created and merged in.
 ---
+
+This post is a note to self and an explanation for present and future
+team members and collaborators. YMMV.
 
 The goal is twofold: to ensure a *useful* history of project changes
 with explanations for what and mostly why things changed the way they
@@ -64,6 +72,8 @@ doing that even if you know the outcome will be as expected by pulling
 from the `acme` repo!
 
 ### Clean patch commits
+
+Let's look at what clean patch commits mean before proceeding.
 
 The goal of the patch commit - or pull request commit - is to be
 readable, to explain to the maintainer what happened and most
