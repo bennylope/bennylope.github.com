@@ -224,8 +224,8 @@ class VideoManager(models.Manager):
 {% endhighlight %}
 
 You see what we did here is extend the `create` method available for
-the `Video` class and *not* for the `Image` model. What we want to do
-be able to do is create an instance of one of our classes without having
+the `Video` class and *not* for the `Image` model. What we want is to be able to
+create an instance of one of our classes without having
 to specify the `type` value. Since the default value for the base model
 is `image`, we don't need to specify a `create` method for `Image`
 instances - they're the default.
