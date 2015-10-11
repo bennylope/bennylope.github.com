@@ -15,7 +15,7 @@ examples](http://www.haskellforall.com/2015/10/basic-haskell-examples.html).
 Regarding the state of example Haskell code, often using advanced langauge
 idioms:
 
-    So I would like to swing the pendulum in the other direction by just writing five small but useful programs without any imports, language extensions, or advanced features. These are programs that you could write in any other language and that's the point: you can use Haskell in the same way that you use other languages.
+> So I would like to swing the pendulum in the other direction by just writing five small but useful programs without any imports, language extensions, or advanced features. These are programs that you could write in any other language and that's the point: you can use Haskell in the same way that you use other languages.
 
 Followed by five examples:
 
