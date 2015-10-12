@@ -15,7 +15,11 @@ examples](http://www.haskellforall.com/2015/10/basic-haskell-examples.html).
 Regarding the state of example Haskell code, often using advanced langauge
 idioms:
 
-> So I would like to swing the pendulum in the other direction by just writing five small but useful programs without any imports, language extensions, or advanced features. These are programs that you could write in any other language and that's the point: you can use Haskell in the same way that you use other languages.
+> So I would like to swing the pendulum in the other direction by just
+> writing five small but useful programs without any imports, language
+> extensions, or advanced features. These are programs that you could
+> write in any other language and that's the point: you can use Haskell
+> in the same way that you use other languages.
 
 Followed by five examples:
 
@@ -29,20 +33,66 @@ I imagine 4 & 5 could be combined in some way for very precocious children.
 
 Haskell has had my interest for a while but I've made far less progress
 learning the language than seems reasonable for someone who can tie his own
-shoes, in no small part because it's so
-difficult to get started doing anything productive . It's a much more
+shoes, in no small part because it's much more
+difficult to get started doing anything productive compared to a host of
+other languages. It's a much more
 interesting language than Go, for example, but Go fulfills it's promise of
-programmer productivity quite quickly. The resolution, for me at least, is to
+programmer productivity almost immediately. The resolution, for me at least, is to
 find basic programs that actually *do things* (i.e. IO). So for my own
 benefit, and perhaps yours, too, if you're in my boat, is to work with
-these examples.
+these examples, explaining and extending to the more uniquely usable
+tools.
 
 I'm going to examine the todo example and walk through it line by line to
 examine and explain what it's doing. Keep in mind that unlike Haskell I make no
 claims on my own correctness (my mother would be surprised to hear that, I'm
-sure). I've tried to transcribe Gabriel's code as exactly as possible with the
-exception of function ordering so that I can start with the program entry point
-and work down from there.
+sure). That includes explanation of concept as well as my language, which
+is almost certainly insufficiently precise even when it is accurate.
+
+Here's the full example as originally presented, however in my
+walkthrough I've rearragned the order to start with the entry point and
+go from there.
+
+```haskell
+putTodo :: (Int, String) -> IO ()
+putTodo (n, todo) = putStrLn (show n ++ ": " ++ todo)
+
+prompt :: [String] -> IO ()
+prompt todos = do
+    putStrLn ""
+    putStrLn "Current TODO list:"
+    mapM_ putTodo (zip [0..] todos)
+    command <- getLine
+    interpret command todos
+
+interpret :: String -> [String] -> IO ()
+interpret ('+':' ':todo) todos = prompt (todo:todos)
+interpret ('-':' ':num ) todos =
+    case delete (read num) todos of
+        Nothing -> do
+            putStrLn "No TODO entry matches the given number"
+            prompt todos
+        Just todos' -> prompt todos'
+interpret  "q"           todos = return ()
+interpret  command       todos = do
+    putStrLn ("Invalid command: `" ++ command ++ "`")
+    prompt todos
+
+delete :: Int -> [a] -> Maybe [a]
+delete 0 (_:as) = Just as
+delete n (a:as) = do
+    let n' = n - 1
+    as' <- n' `seq` delete n' as
+    return (a:as')
+delete _  []    = Nothing
+
+main = do
+    putStrLn "Commands:"
+    putStrLn "+ <String> - Add a TODO entry"
+    putStrLn "- <Int>    - Delete the numbered entry"
+    putStrLn "q          - Quit"
+    prompt []
+```
 
 ## Do something: the entrypoint
 
@@ -68,7 +118,7 @@ more used to imperative paradigms. I'm pretty sure this is true because I read
 it on the Internet.
 
 Monadic means related to monads. And a monad is either a burrito or a calzone.
-More on that later.
+A *little* bit more on this later.
 
 The next four lines are function calls to the `putStrLn` function. In the
 context of this `do` block this is pretty obvious to the unitiated: the
@@ -90,6 +140,68 @@ line, where as `putStr` simply prints the string without a newline. `putStr` is
 to `putStrLn` as Ruby's `print` is to `puts`, roughly.
 
 The last line of the `main` function calls the `prompt` function an empty list.
+
+### do or then
+
+As I mentioned, it's possible to write this kind of code without using
+`do`. Here's the `main` function written without the benefit of `do`
+notation.
+
+```haskell
+main =
+    putStrLn "Commands:" >>
+    putStrLn "+ <String> - Adda TODO entry" >>
+    putStrLn "- <Int>    - Delete the numbered entry" >>
+    putStrLn "q          - Quit" >>
+    prompt []
+```
+
+The "then" operator is used to chain operations. Here's the type
+signature of the `>>` or "then" operator:
+
+```haskell
+(>>) :: Monad m => m a -> m b -> m b
+```
+
+The description from the Haskell docs is reasonably helpful:
+
+> Sequentially compose two actions, discarding any value produced by the
+> first, like sequencing operators (such as the semicolon) in imperative
+> languages.
+
+That's exactly what we want to happen here.
+
+### So, what's a monad?
+
+There's a slew of explanations of what a monad is. An infamous attempt
+compares [monads to burritos](http://blog.plover.com/prog/burritos.html).
+Maybe this makes sense once you grok the concept of monads already, but
+I didn't find the explanation terribly helpful.
+
+A monad has a precise definition with regard to category theory, but
+better or at least shallower explanations are that monads are sequenced
+operations. Functions in Haskell are not sequentially applied, and
+monads allow you to do this. They also provide a way out when it comes
+to dealing with side effects which a pure functional programming
+otherwise prohibits.
+
+My suspicion is that it's possible to get reasonably far reading and
+writing Haskell code without fully grokking monads, and that once that
+is achieved they won't look half as complicated as they're presented.
+
+For now let's hold that a monad is a type class that sequences
+operations - even if that's terribly wrong.
+
+### Type classes
+
+Short aside about type classes: the best analogy for type classes in Python are abstract base classes, or if
+you're not familiar with abstact base classes, in practice the use of dunder
+methods. For instance you might write a function in Python that iterates over
+an object - we call this "iteration" - without needing to know what class the
+object is an instance of. It could be a string, a generator object, a class of
+your own creation - anything that defines a `__next__` method. So if a class
+defines a `__next__` method as well as an `__iter__` method then it's an
+iterator. This is conceptually similar to a type class.
 
 ## Prompt for input
 
@@ -269,17 +381,6 @@ Back to our `putTodo` function, the `show` function uses the `Int` type's
 then be concatenated with the spacer string and the todo itself, and the
 resulting `String` is used as a parameter for the `putStrLn` function.
 
-### Type classes
-
-Short aside about type classes: the best analogy for type classes in Python are abstract base classes, or if
-you're not familiar with abstact base classes, in practice the use of dunder
-methods. For instance you might write a function in Python that iterates over
-an object - we call this "iteration" - without needing to know what class the
-object is an instance of. It could be a string, a generator object, a class of
-your own creation - anything that defines a `__next__` method. So if a class
-defines a `__next__` method as well as an `__iter__` method then it's an
-iterator. This is conceptually similar to a type class.
-
 ### Parantheses and function parameters
 
 Another sidenote: parantheses are unnecessary for calling functions in Haskell.
@@ -295,9 +396,10 @@ putStrLn show n ++ ": " ++ todo
 ```
 
 Thinking as best I can as a compiler, I'd not necessarily recognize the
-evaluation order, so it needs to be syntactically enforced. An alternative way
-of writing this, and seemingly more idiomatic from the Haskell code I've seen,
-is to use the `$` operator:
+evaluation order - does `show` need to be evaluated first before calling
+`putStrLn`?  - so it needs to be syntactically enforced. An alternative
+way of writing this, and seemingly more idiomatic from the Haskell code
+I've seen, is to use the `$` operator:
 
 ```haskell
 putStrLn $ show n ++ ": " ++ todo
@@ -355,21 +457,22 @@ user input. Here's the type signature for the operator:
 It's takes a single element of type class `a`, a list of type class `a`, and
 returns a list of type class `a`. The way it's written here works because of
 how the arguments are interpreted. Substituting `cons` for `:` and as a non-infix
-function, it might look like this:
+function, it might look like this in Python:
 
 ```python
 cons("+", cons(" ", todo))
 ```
 
-Or more appropriately:
+Or more appropriately in Clojure:
 
 ```clojure
-(cons 1 (cons 2 [3,4,5]))
+(cons "+" (cons " " todo))
 ```
 
 The choice of quotation mark is significant, as well. Single quotes `'` are
-used for characters, double quotes `"` for strings. A string is syntactic sugar
-for a list of characters. If you try this in ghci you'll encounter an error:
+used for characters, double quotes `"` for strings. (Also, the `String`
+type is just an alias to a list of characters, e.g. `[Char]`.)
+If you try this in ghci you'll encounter an error:
 
 ```haskell
 ("+":" ":"My new todo")
@@ -601,14 +704,14 @@ It's synonymous, at least in this case, with this line:
 Just (a:as')
 ```
 
+`return` is a function with this type signautre:
+
+```haskell
+return :: Monad m => a -> m a
+```
+
+Given that `Just` is an instance of `Maybe` which is a `Monad`, we can
+see the equivalence - at least in this specific case.
 The explicit use of `Just` makes more sense to me, but having seen the `return`
 used enough in similar looking blocks of code, it smells like there's probably
 a reason to use `return` - I just couldn't tell you what it is.
-
-## Full code
-
-The full todo example code is available on [Gabriel's
-site](http://www.haskellforall.com/2015/10/basic-haskell-examples.html)
-or you can use the gist below.
-
-<script src="https://gist.github.com/bennylope/02b2ec6673d0a4840d17.js"></script>
