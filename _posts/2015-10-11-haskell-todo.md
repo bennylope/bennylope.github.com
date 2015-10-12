@@ -49,9 +49,9 @@ claims on my own correctness (my mother would be surprised to hear that, I'm
 sure). That includes explanation of concept as well as my language, which
 is almost certainly insufficiently precise even when it is accurate.
 
-Here's the full example as originally presented, however in my
-walkthrough I've rearragned the order to start with the entry point and
-go from there.
+Here's the full example as originally presented (the code on Gabriel's
+site has been updated a bit). In my walkthrough I've rearragned the
+order to start with the entry point and go from there.
 
 ```haskell
 putTodo :: (Int, String) -> IO ()
