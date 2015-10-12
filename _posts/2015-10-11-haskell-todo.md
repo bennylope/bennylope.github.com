@@ -203,6 +203,8 @@ your own creation - anything that defines a `__next__` method. So if a class
 defines a `__next__` method as well as an `__iter__` method then it's an
 iterator. This is conceptually similar to a type class.
 
+Or in Go, an interface.
+
 ## Prompt for input
 
 The `prompt` function below is responsible for outputting a prompt to the user,
