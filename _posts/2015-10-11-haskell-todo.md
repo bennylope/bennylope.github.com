@@ -135,7 +135,7 @@ putStrLn :: String -> IO ()
 ```
 
 I'm sure that clears it right up. It says that the function takes an argument
-of type `String` and returns an IO monad. It prints to the screen with a new
+of type `String` and returns a value that implements the IO monad. It prints to the screen with a new
 line, where as `putStr` simply prints the string without a newline. `putStr` is
 to `putStrLn` as Ruby's `print` is to `puts`, roughly.
 
@@ -226,7 +226,9 @@ monad (calzone). The particular input it's getting for the list of strings is a
 list of our todos.
 
 This function uses the `do` notation as well, which is a good indicator that
-it's *doing* some IO. The first two lines we can now already understand. The
+it's *doing* some IO (edit: this is false, it only indicates that the
+block is "monadic" not necessarily IO related). The first two lines we
+can now already understand. The
 function is outputting some text. It could be condensed into one line if we
 wanted (same in pretty much any language) but the `putStrLn` function call with
 the blank string is nicely explicit.
@@ -717,3 +719,6 @@ see the equivalence - at least in this specific case.
 The explicit use of `Just` makes more sense to me, but having seen the `return`
 used enough in similar looking blocks of code, it smells like there's probably
 a reason to use `return` - I just couldn't tell you what it is.
+
+**Updated**: I made a few minor edits after publishing this, thanks to
+everyone who gave feedback after taking the time to read.
