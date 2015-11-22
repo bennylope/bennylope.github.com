@@ -12,6 +12,9 @@ div#banner { display: block; margin: 0 0 0 5px; padding: 2px; border-bottom: 1px
 figure img { max-width: 100%; }
 figure figcaption { padding: 3px; background: rgba(255, 255, 255, .90); position: relative; bottom: 40px; margin: 10px; }
 
+div#dj-book { background-color: #0bba0b; padding: 2rem; margin-bottom: 3rem; color: white; }
+div#dj-book a { color: #ffd401; }
+
 @media only screen and (max-width : 380px) {
   html { font-size: 100%; }
   h1 { font-size: 2.0rem; margin: 1rem 0.1rem 2rem 0.5rem; }

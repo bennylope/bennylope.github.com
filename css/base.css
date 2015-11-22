@@ -34,3 +34,5 @@ header a{color:#999}
 p.homeLink a{color:#999;font-size:1em}
 footer{display:block;margin-top:40px;margin-right:auto;margin-left:auto}
 footer p{font-size:14px;margin-top:20px;color:#ccc}
+
+div#dj-book { background-color: #ccf; }
