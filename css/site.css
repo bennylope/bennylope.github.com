@@ -1,5 +1,5 @@
 body {max-width: 900px; margin: 0.5rem auto; color: #333;}
-p { font-size: 18px; line-height: 32px; letter-spacing: 0.166667px; margin-bottom: 20px; }
+p { font-size: 20px; line-height: 1.5; letter-spacing: 0.166667px; margin-bottom: 20px; }
 li { font-size: 18px; line-height: 24px; }
 footer p { border-top: 1px dashed #ccc; padding-top: 30px; margin-top: 20px; font-size: 12px; line-height: 18px;}
 ul.identities { list-style: none; margin: 0 0 2rem 0; padding: 0; display: inline-block;}
