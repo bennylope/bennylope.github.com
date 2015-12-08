@@ -5,7 +5,7 @@ layout: post
 published: true
 date: 2015-12-08
 teaser: >
-    A couple of analytics head scratchers and simple fixes.
+    A couple of analytics head scratchers and simple solutions.
 ---
 
 While most of my work with my clients is related to building or fixing
