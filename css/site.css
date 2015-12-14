@@ -1,6 +1,10 @@
-body {max-width: 900px; margin: 0.5rem auto; color: #333;}
-p { font-size: 20px; line-height: 1.5; letter-spacing: 0.166667px; margin-bottom: 20px; }
-li { font-size: 18px; line-height: 24px; }
+body {max-width: 900px; margin: 0.5rem auto; color: #333; font-family: "Minion Pro", Georgia;}
+article h1 { line-height: 1.4; }
+article h2 { font-size: 32px; line-height: 1.5; margin: 3.5rem 0 2.5rem 0; }
+article h3 { font-size: 26px; line-height: 1.5; margin: 1.5rem 0 0.8rem 0; }
+p { font-size: 20px; line-height: 1.6; letter-spacing: 0.166667px; margin-bottom: 20px; }
+li { font-size: 20px; line-height: 1.2; }
+
 footer p { border-top: 1px dashed #ccc; padding-top: 30px; margin-top: 20px; font-size: 12px; line-height: 18px;}
 ul.identities { list-style: none; margin: 0 0 2rem 0; padding: 0; display: inline-block;}
 ul.identities li { list-style: none; padding-right: 20px; display: inline-block;}
@@ -12,15 +16,19 @@ div#banner { display: block; margin: 0 0 0 5px; padding: 2px; border-bottom: 1px
 figure img { max-width: 100%; }
 figure figcaption { padding: 3px; background: rgba(255, 255, 255, .90); position: relative; bottom: 40px; margin: 10px; }
 
-div#dj-book { background-color: #0bba0b; padding: 2rem; margin-bottom: 3rem; color: white; }
+div#dj-book { background-color: #0bba0b; padding: 2rem; margin: 3rem 0 3rem 0; color: white; }
 div#dj-book a { color: #ffd401; }
+
+@media only screen and (min-width : 931px) {
+}
 
 @media only screen and (max-width : 380px) {
   html { font-size: 100%; }
-  h1 { font-size: 2.0rem; margin: 1rem 0.1rem 2rem 0.5rem; }
-  h2 { font-size: 1.5rem; margin: 2rem 0.1rem 1rem 0.5rem; }
-  h3 { font-size: 1.2rem; margin: 2rem 0.1rem 1rem 0.5rem; font-weight: bold; }
-  p{ margin:.2rem .5rem 1rem .5rem; font-size:1rem; line-height:1.8rem;}
+  body { padding: 0 10px 0 10px; }
+  article h1 { font-size: 2.0rem; margin: 1rem 0.1rem 2rem 0.5rem; }
+  article h2 { font-size: 1.5rem; margin: 2rem 0.1rem 1rem 0.5rem; }
+  article h3 { font-size: 1.2rem; margin: 2rem 0.1rem 1rem 0.5rem; font-weight: bold; }
+  p { margin:.2rem 0.5rem 1rem 0.5rem; font-size: 20px; }
   blockquote{font-style:italic;line-height:1.2rem;color:#666;margin:0.5rem 0.5rem 2rem 1rem; }
   dt, dd { margin: 0 0.7rem 1rem 0.7rem; }
   dt{font-size:1.2rem;font-weight:600;font-family:Helvetica,Arial,sans-serif;margin-bottom:.4rem}
@@ -30,10 +38,11 @@ div#dj-book a { color: #ffd401; }
 
 @media only screen and (max-width : 930px) and (min-width : 381px) {
   html { font-size: 100%; }
+  body { padding: 0 10px 0 10px; }
   h1 { font-size: 2.0rem; margin: 1rem 1rem 2rem 1rem; }
   h2 { font-size: 1.5rem; margin: 2rem 1rem 1rem 1rem; }
   h3 { font-size: 1.2rem; margin: 2rem 1rem 1rem 1rem; font-weight: bold; }
-  p{ margin: 0.2rem 1rem 1rem 1rem; font-size:1rem; line-height:1.8rem;}
+  p { margin: 0.2rem 1rem 1rem 1rem; font-size:20px; line-height:1.6;}
   blockquote{font-style:italic;line-height:1.2rem;color:#666;margin:0.5rem 0.5rem 2rem 1rem; }
   dt, dd { margin: 0 0.7rem 1rem 0.7rem; }
   dt{font-size:1.2rem;font-weight:600;font-family:Helvetica,Arial,sans-serif;margin-bottom:.4rem}

@@ -16,7 +16,7 @@ pageid: content
 </article>
 
 
-<p>First published {{ page.date|date: "%B %d, %Y" }} </p>
+<p><em>Originally published {{ page.date|date: "%e %B %Y" }} </em></p>
 {% include book.html %}
 <p class="homeLink">
 <a href="{% if page.return_link %}{{ page.return_link }}{% else %}/{% endif %}"
