@@ -126,8 +126,12 @@ The structure of a list comprehension is something like this:
 <delimiter> <element expression> for <element> in <iterator> <conditional with element> <delimter>
 ```
 
-When you break it out into its abstract form the potential really shows
-through. Let's start switching around the delimiters.
+Breaking this down we see that the square brackets are the delimiters
+used to contain the scope of the comprehension. They also indicate the
+type of object returned. We can change the delimiters used and now also
+change what kind of object is returned.
+
+Let's start switching around the delimiters.
 
 ### Dictionary comprehensions
 
@@ -168,7 +172,7 @@ Here's the set of vowels from our sentence, in uppercase:
 ```python
 sentence = "The quick brown fox jumps over the lazy dog"
 vowels = {'a', 'e', 'i', 'o', 'u'}
-vowels = {upper(i) for i in sentence if i in vowels}
+set_of_vowels = {upper(i) for i in sentence if i in vowels}
 ```
 
 ### Tuple... nah! Generator expressions
