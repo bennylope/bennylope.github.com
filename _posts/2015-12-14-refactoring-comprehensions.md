@@ -5,7 +5,11 @@ layout: post
 published: true
 date: 2015-12-14
 teaser: >
-    A couple of analytics head scratchers and simple solutions.
+    List comprehensions help keep code both concise and clear while
+    adding a slight performance boost. Comprehensions of all kinds,
+    including set and dictionary comprehensions, as well as the related
+    generator expression form, are useful tools for building and
+    cleaning up existing codebases.
 ---
 
 When digging into a codebase to either for the expressed purpose of
