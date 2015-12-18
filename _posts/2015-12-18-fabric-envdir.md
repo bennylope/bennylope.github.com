@@ -166,7 +166,7 @@ def list():
     padding = 30 if longest_key < 30 else longest_key
     print_str = "{{:<{}}} {{}}".format(padding)
     for var in sorted(environment.keys()):
-        print print_str.format(var, environment[var])
+        print(print_str.format(var, environment[var]))
 
 
 @task
