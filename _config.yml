@@ -1,7 +1,5 @@
 title: "I leverage synergies."
 highlighter: pygments
-markdown: redcarpet
-highlighter: pygments
 permalink: /:year/:title/
 copyright_year: 2015
 paginate: 10
