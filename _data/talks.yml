@@ -1,0 +1,33 @@
+- title : "This Old Pony: Working with Legacy Django Apps"
+  event: "DjangoCon 2016"
+  location: "Philadelphia, PA"
+  youtubeId: 16x6AOmSOFQ
+  date: 2016-07-20
+  speakerdeckId: 59c4e2ad5a0b4e6fb7b14796c7de7c42
+  slides: https://speakerdeck.com/bennylope/this-old-pony-working-with-legacy-django-projects
+  description: >
+    There are a lot of examples out there for how to start a *new*
+    Django project, but how do you start working on an *old* Django
+    project? This talk from DjangoCon 2016 in Philadelphia provides
+    some answers for how to get started.
+
+- title: "Crafting Better API Clients"
+  youtubeId: e1mOk9uokhc
+  speakerdeckId: 6c3af95405254438a06bace32eb6ae0a
+  slides: https://speakerdeck.com/bennylope/crafting-better-api-clients
+  location: "Richmond, VA"
+  description: >
+    This was a talk first from PyTennesee in 2015 and reprised at
+    APICraft RVA a few months later.
+
+- title : "Finding the Needle: Search and Django"
+  event: "DjangoCon 2013"
+  location: "Chicago, IL"
+  youtubeId: k9NpO7VzWVw
+  slides: https://speakerdeck.com/bennylope/finding-the-needle-djangocon-us-2013
+  date: 2013-09-03
+  speakerdeckId: a195d1e0f7050130b0617a614700254e
+  description: >
+    From DjangoCon 2013 in Chicago, this is an intermediate-level talk
+    on how to integrate search functionality into a Django project,
+    with some ElasticSearch biases.

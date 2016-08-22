@@ -45,6 +45,25 @@ pageid: index
     </dl>
     </section>
 
+    <section class="talks">
+        <h2>Talks</h2>
+        {% for talk in site.data.talks %}
+            <h4>{{ talk.title }}</h4>
+            {% if talk.youtubeId %}
+                <div class="embed-wrapper">
+                <iframe width="900" height="564"
+                                    src="https://www.youtube.com/embed/{{ talk.youtubeId }}"
+                                    frameborder="0" allowfullscreen></iframe>
+                </div>
+            {% else %}
+                <script async class="speakerdeck-embed"
+                        data-id="{{ talk.speakerdeckId }}"
+                        data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+            {% endif %}
+            <p>{{ talk.description }} <a href="{{ talk.slides }}">Slides</a>.</p>
+        {% endfor %}
+    </section>
+
     <section class="about">
     <h2>About</h2>
     <p>I'm Ben Lopatin, aka bennylope. I'm co-founder, principal consultant, and lead Pythonista at <a href="https://wellfire.co">Wellfire Interactive</a>,

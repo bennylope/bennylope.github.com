@@ -51,3 +51,17 @@ div#dj-book a { color: #ffd401; }
   dd{margin-bottom:.8rem;font-size:1rem}
   nav#identities { margin: 1rem 1rem 1rem 1rem; }
 }
+
+.embed-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;     /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.embed-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
