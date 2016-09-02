@@ -3,6 +3,9 @@ published: true
 title: "Single value unpacking in Python"
 layout: post
 permalink: /python-single-value-unpacking/
+teaser: >
+    Unpacking single value tuples because asking forgiveness is better
+    than asking permission.
 ---
 
 Just a short description of a non-surprising but non-obvious feature of
