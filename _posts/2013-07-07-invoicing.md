@@ -12,7 +12,15 @@ On the new Django Discussions forum someone raised [a question about time tracki
 
 ### The nuts-and-bolts overview
 
-Timesheets and invoices are all managed through Harvest. Invoices are sent out with net-15 terms and an automatic reminder is created for late invoices through [Harvest](http://try.hrv.st/5ahy) ([non-referral link](http://www.getharvest.com)). Additionally we have [Zencash](http://www.zencash.com/) integrated with Harvest so that when an invoice is sent via email a hard copy is mailed as well. We also have reminder postcards and thank you postcards configured to be sent out automatically for overdue invoices and paid invoices, respectively.
+Timesheets and invoices are all managed through Harvest. Invoices are
+sent out with net-15 terms and an automatic reminder is created for late
+
+invoices through [Harvest](http://try.hrv.st/5ahy) (referral
+link). Additionally we have
+[Zencash](http://www.zencash.com/) integrated with Harvest so that when
+an invoice is sent via email a hard copy is mailed as well. We also have
+reminder postcards and thank you postcards configured to be sent out
+automatically for overdue invoices and paid invoices, respectively.
 
 Now let's break this down.
 
