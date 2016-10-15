@@ -14,7 +14,7 @@ This is a compendium of *my answers* to common questions about setting
 up a business as an independent consultant or freelancer. Many of these
 are simply the best and most straightforward answer. They come from
 several years of running a consulting partnership and somehow managing
-to not sink it.
+not to sink it.
 
 These are questions that are largely *necessary* but hardly sufficient
 to running a good business. People like to get caught up in these
