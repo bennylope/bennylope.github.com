@@ -47,6 +47,12 @@ The alternatives are, one, to operate as a "naked" sole proprietor, that is,
 running everything in your name, perhaps with a trade name (DBA, or
 doing business as), or two, create a C corporation.
 
+Here's some advice I ran across years ago about how to decide between LLC and C corp:
+
+> And here’s a mini-rant on the choice of corporate entity and location.  For 99% of companies, there is ONLY ONE QUESTION you need to ask when it comes to incorporating: is it likely my business will ever take institutional investment (i.e. a big VC round)?  If no, incorporate as an LLC (or an S-Corp) in your own state.  If yes, incorporate as a Delaware corporation.  End of story.  Do not get all creative and find some exotic state to incorporate in.  There is no point and you will regret it later. - [Kosher Bacon: 5 Things That Don’t Make You An Entrepreneur (and 5 Things That Do)](https://kosherbaconblog.com/2013/09/09/5-things-that-dont-make-you-an-entrepreneur-and-5-things-that-do/)
+
+So that rules out C corps.
+
 > I've heard about S corporations and B corporations, what about those?
 
 First of all, a B corporation is not a legally recognized distinction.
