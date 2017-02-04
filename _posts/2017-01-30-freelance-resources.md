@@ -137,10 +137,11 @@ the dollar value of your W2 payments won't be that high.)
 #### Tropical MBA
 
 The [Tropical MBA](http://www.tropicalmba.com/) is a hit or miss podcast if
-you're looking for material relevant to freelancing. It's core audience is
-location independent (think a beach in Southeast Asia) entrepreneurs building
-product businesses. That said there's a reasonable degree of overlap if you pick
-your episodes, and it's one of the best produced podcasts I've listened to. That
+you're looking for material relevant to freelancing. Its core audience is
+location independent entrepreneurs building
+product businesses (e.g. working from a beach in Southeast Asia selling cat
+condos on the Internet). That said there's a reasonable degree of overlap if you
+pick your episodes, and it's one of the best produced podcasts I've listened to. That
 sounds like such a superficial compliment but there's a small joy in hearing the
 back and forth move smoothly like a practiced ballet.
 
