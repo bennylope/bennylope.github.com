@@ -25,6 +25,19 @@ are not bad. They're not perfect, but they're each sufficiently useful in their 
 
 #### Design Is A Job
 
+> Fuck you, pay me. [Mike Monteiro]
+
+This is a book for designers. It's also for people who aren't designers. If
+you work with (partner with) designers or do anything vaguely creative - which
+includes software development - this is worth a read.
+
+> This book is a guide to making a living as a designer. It contains the
+> fundamentals of being a working designer, including working with clients and
+> others, valuing your work, and getting paid. This book will look at ways to
+> communicate and apply these fundamentals to every aspect of your job. The goal
+> is to expand your view of your job as a designer to include not just your
+> talent, but the business and communication aspects as well.
+
 #### Independent Consulting Manual
 
 #### Lean Customer Development
@@ -94,9 +107,47 @@ Selected episode: [Giving Advice Away For Free](https://devchat.tv/freelancers/2
 
 #### Making Money Online
 
+You may not like this podcast. And that's okay. The hosts, they won't care. It
+took me a little while to warm up to to it. It's weird. But I like weird things,
+so here we are. Nick swears a lot. I like swearing. Unless you're Samuel L
+Jackson you probably can't get away with saying 'fuck' in every sentence and not
+sounding like an asshole though. Salty language is just that, salt that helps
+flavor our prose, and like salt there's an optimal quantity before it overwhelms
+the total flavor of the dish. Whatever. It is a good podcast though, really.
+
+The hosts, Kai and Nick, are both *independent consultants* and the episodes range over topics
+related to life as a freelancer, er, independent consultant, and the business of
+running your own consulting business.
+
+Selected episode: [How You Signify To People What You Do](https://makemoneyonline.exposed/archive/036/)
+
+(Note: in one otherwise helpful episode Nick yells at you that you must
+*necessarily* be on W2 payroll to secure a home mortgage; we know that if the
+existential quantifier is true then the universal quantifier for the inverse
+must be false, ergo this is not necessarily true. It is certainly *easier* to
+secure a mortage with W2 statements but any lender is going to know that its
+still your business. Further if you're paying yourself on payroll then you'd
+better be doing that because you're filing as an S corp in which case unless
+you're truly a million dollar consultant you're likely not paying yourself *in
+salary* toward the upper end of the pay scale, if you know what I mean, so
+the dollar value of your W2 payments won't be that high.)
+
 #### Stacking The Bricks
 
 #### Tropical MBA
+
+The [Tropical MBA](http://www.tropicalmba.com/) is a hit or miss podcast if
+you're looking for material relevant to freelancing. It's core audience is
+location independent (think a beach in Southeast Asia) entrepreneurs building
+product businesses. That said there's a reasonable degree of overlap if you pick
+your episodes, and it's one of the best produced podcasts I've listened to. That
+sounds like such a superficial compliment but there's a small joy in hearing the
+back and forth move smoothly like a practiced ballet.
+
+The selected episode won't teach you how to get better clients, sorry. It's just
+a terribly good episode ranging over various topics with an interesting thinker.
+
+Selected episode: [A Conversation With Ribbonfarm's Venkat Rao](http://www.tropicalmba.com/ribbonfarm/)
 
 #### Kalzumeus Software
 
