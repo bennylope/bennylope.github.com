@@ -82,8 +82,15 @@ to the milquetoast inspirational quotes your friends like to share on Facebook.
 2. Engaging topics and speakers (hosts and guests)
 3. Easy to listen to (technical issues, quality, etc).
 
-This podcast is geared toward *freelance developers* so may be less relevant to people working in other disciplines. The hosts include a regular circle who bring different
-experiences, both technical and business, and without a 
+This podcast is geared toward *freelance developers* so may be less relevant to
+people working in other disciplines. The hosts include a regular circle who
+bring different experiences, both technical and business. Whether they have a
+guest or not you get different perspectives even when everyone's in agreement.
+
+Good for strategic and tactical advice, as well as being a great outlet to feel
+like you're not struggling through a problem on your own.
+
+Selected episode: [Giving Advice Away For Free](https://devchat.tv/freelancers/203-fs-giving-advice-away-for-free)
 
 #### Making Money Online
 
@@ -92,6 +99,15 @@ experiences, both technical and business, and without a
 #### Tropical MBA
 
 #### Kalzumeus Software
+
+An infrequent podcast and one only incidentally related to freelancing. This is
+patio11's podcast, or Patrick McKenzie if you prefer. The podcast is primarily
+geared toward an audience of software developers and solo founders but a great
+deal of the content (customer onboarding, [balancing business and
+family](http://www.kalzumeus.com/2015/01/15/kalzumeus-podcast-episode-10-putting-the-family-in-family-business/)) is
+pertinent to the independent consultant and freelancer.
+
+Selected episode: [Teaching As Marketing](http://www.kalzumeus.com/2013/08/27/kalzumeus-podcast-episode-6/)
 
 #### Double Your Freelancing Podcast
 
@@ -104,3 +120,10 @@ experiences, both technical and business, and without a
 #### The Businessology Show
 
 #### Bizcraft
+
+[Bizcraft](http://unmatchedstyle.com/bizcraft) is, as best I can tell, d-e-d dead, but for a while it was one of my
+favorite business podcasts. The setup is Carl Smith of nGen Works and Gene
+Crawford of Period Three discussing various aspects of running agencies, usually
+over beers. I'm not sure how early in the day they started recording.
+
+Selected episode: [Next Steps, Working Too Hard & Time](http://unmatchedstyle.com/news/bizcraft-episode-32.php)
