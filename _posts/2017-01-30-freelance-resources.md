@@ -10,20 +10,20 @@ teaser: >
 
 NOTE: Very much in progress but published by request as its still moderately useful.
 
-### Books
+# Books
 
 Let's get this out of the way: most business books are bad. Like, really bad. These books, not all business books,
 are not bad. They're not perfect, but they're each sufficiently useful in their own way.
 
-#### Flawless Consulting
+## Flawless Consulting
 
-#### Million Dollar Consulting
+## Million Dollar Consulting
 
-#### The Positioning Manual
+## The Positioning Manual
 
-#### Hourly Billing is Nuts
+## Hourly Billing is Nuts
 
-#### Design Is A Job
+## Design Is A Job
 
 > Fuck you, pay me. [Mike Monteiro]
 
@@ -38,11 +38,11 @@ includes software development - this is worth a read.
 > is to expand your view of your job as a designer to include not just your
 > talent, but the business and communication aspects as well.
 
-#### Independent Consulting Manual
+## Independent Consulting Manual
 
-#### Lean Customer Development
+## Lean Customer Development
 
-#### Little Red Schoolhouse
+## Little Red Schoolhouse
 
 You write emails and documents to your clients and consisently fail to get the responses - and results - that you'd like.
 This is because you're writing for you and you're not motiviating the problem for your client, the cost of the problem to
@@ -58,7 +58,7 @@ you guessed it, the Little Red Schoolhouse. Originally developed in the English 
 pleasure of taking an [upper level writing course](http://www.faculty.virginia.edu/schoolhouse/WP/380main.html) taught by Greg Colomb and Jon D'Errico
 at the University of Virginia based on Colomb's experience teaching at Chicago. You'd be hard pressed to find a better guide to effective writing.
 
-#### Man's Search for Meaning
+## Man's Search for Meaning
 
 Another non-business book. A two part book including Viktor Frankl's personal account of surviving life in Nazi concentration camps and finding meaning
 in deprevation and amid the loss of everything you hold dear (Frankl lost almost his entire family, including his wife). The second part of the book
@@ -85,9 +85,9 @@ The point is not to contrast your superficial "first world" struggles with that 
 that you have both freedom and *responsibility* for how you face the world and the meaning you find, and make in it. It's a cold dip in the ocean compared
 to the milquetoast inspirational quotes your friends like to share on Facebook.
 
-### Podcasts
+# Podcasts
 
-#### The Freelancer's Show
+## The Freelancer's Show
 
 [The Freelancer's Show](https://devchat.tv/freelancers) is hands down my favorite 'freelancing' related podcast. I'm using three main criteria:
 
@@ -105,7 +105,7 @@ like you're not struggling through a problem on your own.
 
 Selected episode: [Giving Advice Away For Free](https://devchat.tv/freelancers/203-fs-giving-advice-away-for-free)
 
-#### Making Money Online
+## Making Money Online
 
 You may not like this podcast. And that's okay. The hosts, they won't care. It
 took me a little while to warm up to to it. It's weird. But I like weird things,
@@ -132,9 +132,9 @@ you're truly a million dollar consultant you're likely not paying yourself *in
 salary* toward the upper end of the pay scale, if you know what I mean, so
 the dollar value of your W2 payments won't be that high.)
 
-#### Stacking The Bricks
+## Stacking The Bricks
 
-#### Tropical MBA
+## Tropical MBA
 
 The [Tropical MBA](http://www.tropicalmba.com/) is a hit or miss podcast if
 you're looking for material relevant to freelancing. Its core audience is
@@ -150,7 +150,7 @@ a terribly good episode ranging over various topics with an interesting thinker.
 
 Selected episode: [A Conversation With Ribbonfarm's Venkat Rao](http://www.tropicalmba.com/ribbonfarm/)
 
-#### Kalzumeus Software
+## Kalzumeus Software
 
 An infrequent podcast and one only incidentally related to freelancing. This is
 patio11's podcast, or Patrick McKenzie if you prefer. The podcast is primarily
@@ -161,17 +161,17 @@ pertinent to the independent consultant and freelancer.
 
 Selected episode: [Teaching As Marketing](http://www.kalzumeus.com/2013/08/27/kalzumeus-podcast-episode-6/)
 
-#### Double Your Freelancing Podcast
+## Double Your Freelancing Podcast
 
-#### Freelance Transformation
+## Freelance Transformation
 
-#### Ditching Hourly
+## Ditching Hourly
 
-#### The Three Month Vacation
+## The Three Month Vacation
 
-#### The Businessology Show
+## The Businessology Show
 
-#### Bizcraft
+## Bizcraft
 
 [Bizcraft](http://unmatchedstyle.com/bizcraft) is, as best I can tell, d-e-d dead, but for a while it was one of my
 favorite business podcasts. The setup is Carl Smith of nGen Works and Gene
