@@ -3,7 +3,7 @@ author: Ben
 title: "Safe Content Updates Through Testing"
 layout: post
 comments: true
-category: content
+category: programming
 permalink: /testing-url-remapping-with-pyresttest/
 canonical: https://wellfire.co/learn/testing-url-redirect-remapping/
 teaser: >

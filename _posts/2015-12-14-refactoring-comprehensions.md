@@ -2,6 +2,7 @@
 title: "Python refactoring: comprehensions for great good"
 permalink: /python-refactoring-with-comprehensions/
 layout: post
+category: programming
 published: true
 date: 2015-12-14
 teaser: >

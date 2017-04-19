@@ -2,6 +2,7 @@
 published: true
 title: "Introducing Ansible into Legacy Projects"
 subtitle: "Getting started when you've already started"
+category: programming
 layout: post
 permalink: /getting-started-with-ansible/
 soHelpful: true

@@ -4,6 +4,7 @@ subtitle: "Adding internationalization suppport for the non-CMS snippet manager"
 layout: post
 permalink: /adding-i18n-support-django-addendum/
 soHelpful: true
+category: programming
 published: true
 comments: true
 teaser: >

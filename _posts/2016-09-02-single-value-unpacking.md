@@ -3,6 +3,7 @@ published: true
 title: "Single value unpacking in Python"
 layout: post
 permalink: /python-single-value-unpacking/
+category: programming
 teaser: >
     Unpacking single value tuples because asking forgiveness is better
     than asking permission.

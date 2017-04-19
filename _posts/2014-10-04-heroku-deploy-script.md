@@ -1,6 +1,7 @@
 ---
 title: "Heroku's little helper script"
 subtitle: "Or, typing is tedious"
+category: programming
 layout: post
 permalink: /a-heroku-helper-script/
 soHelpful: true

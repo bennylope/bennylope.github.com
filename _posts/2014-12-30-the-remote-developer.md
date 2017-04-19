@@ -2,6 +2,7 @@
 title: "The portable developer"
 subtitle: "Writing code away from your desk"
 layout: post
+category: programming
 permalink: /the-portable-developer/
 published: true
 comments: true

@@ -2,6 +2,7 @@
 title: "Educational Resources for Consultants, Solopreneurs, and Freelancers"
 permalink: /freelance-knowledge-resources/
 layout: post
+category: business
 published: true
 date: 2017-01-30
 teaser: >

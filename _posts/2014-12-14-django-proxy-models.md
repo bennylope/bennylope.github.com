@@ -2,6 +2,7 @@
 title: "How to use Django's Proxy Models"
 subtitle: "Modeling custom behavior without touching the database"
 permalink: /using-django-proxy-models/
+category: programming
 layout: post
 published: true
 teaser: >

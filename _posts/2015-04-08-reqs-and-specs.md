@@ -3,6 +3,7 @@ title: "Requirements and specifications: confusing the why, the how, and the wha
 permalink: /requirements-and-specifications/
 layout: post
 published: true
+category: programming
 date: 2015-04-08
 teaser: >
     They tried turning specifications into user stories. You'll never

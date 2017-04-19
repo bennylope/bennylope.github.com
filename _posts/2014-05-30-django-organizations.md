@@ -4,6 +4,7 @@ title: "Meet Django Organizations"
 layout: post
 comments: true
 permalink: /meet-django-organizations/
+category: programming
 redirect_from: /blog/meet-django-organizations/
 canonical: https://wellfire.co/blog/meet-django-organizations/
 teaser: >

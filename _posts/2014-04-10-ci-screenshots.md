@@ -3,6 +3,7 @@ author: Ben
 title: "Continuous Cross-browser Screenshots"
 layout: post
 permalink: /continuous-cross-browser-screenshots/
+category: programming
 redirect_from: /blog/continuous-cross-browser-screenshots/
 published: true
 categories: development

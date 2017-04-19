@@ -2,6 +2,7 @@
 title: "Automated linting with flake8 and pre-commit hooks"
 permalink: /flake8-pre-commit-hooks/
 layout: post
+category: programming
 published: true
 date: 2015-03-27 15:40:15
 teaser: >

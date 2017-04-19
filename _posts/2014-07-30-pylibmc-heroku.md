@@ -2,6 +2,7 @@
 published: true
 title: "Installing pylibmc on Heroku"
 subtitle: "That which is not documented will cause you grief"
+category: programming
 layout: post
 permalink: /pylibmc-and-heroku/
 soHelpful: true

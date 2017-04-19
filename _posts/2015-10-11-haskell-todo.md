@@ -1,6 +1,7 @@
 ---
 title: "Basic Haskell: an examination of the todo list"
 permalink: /basic-haskell-todo/
+category: programming
 layout: post
 published: true
 date: 2015-10-11

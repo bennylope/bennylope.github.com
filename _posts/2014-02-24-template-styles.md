@@ -3,6 +3,7 @@ published: true
 title: "Cleaning Django template tags"
 subtitle: "Lint-like checking for spacing style in templates"
 layout: post
+category: programming
 permalink: /cleaning-django-template-tags/
 redirect_from: /2014/cleaning-django-template-tags/
 soHelpful: true

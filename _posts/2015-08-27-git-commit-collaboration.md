@@ -1,5 +1,6 @@
 ---
 title: "Git commits for collaboration"
+category: programming
 permalink: /git-commits-for-collaboration/
 layout: post
 published: true

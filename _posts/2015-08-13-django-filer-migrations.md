@@ -1,6 +1,7 @@
 ---
 title: "Migrating assets to Django Filer"
 permalink: /migrating-to-django-filer/
+category: programming
 layout: post
 published: true
 date: 2015-08-13

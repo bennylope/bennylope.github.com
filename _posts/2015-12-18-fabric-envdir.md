@@ -3,6 +3,7 @@ title: "Managing configuration with envdir, remotely"
 permalink: /managing-envdir-with-fabric/
 layout: post
 published: true
+category: programming
 date: 2015-12-18
 teaser: >
     envdir lets you manage persistent key/value data for

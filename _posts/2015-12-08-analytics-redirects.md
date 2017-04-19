@@ -1,6 +1,7 @@
 ---
 title: "When the numbers don't make sense: Google Analytics tracking issues"
 permalink: /google-analytics-tracking-mismatches/
+category: programming
 layout: post
 published: true
 date: 2015-12-08
