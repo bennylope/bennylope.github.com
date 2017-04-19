@@ -10,14 +10,28 @@ teaser: >
 
 NOTE: Very much in progress but published by request as its still moderately useful.
 
+I've organized this primarily by media type, but it might be useful to create a
+cross-listing by areas of focus. Let me know what you think by tooting at me on
+the Twootstroms: [@bennylope](https://twitter.com/bennylope).
+
 # Books
 
-Let's get this out of the way: most business books are bad. Like, really bad. These books, not all business books,
-are not bad. They're not perfect, but they're each sufficiently useful in their own way.
+Let's get this out of the way: most business books are bad. Like, really bad.
+These books, not all business books, are not bad. They're not perfect, but
+they're each sufficiently useful in their own way.
 
 ## Flawless Consulting
 
 ## Million Dollar Consulting
+
+A bit on the breezy side, stylistically, but a 'classic' if such a thing exists,
+for independent consultants. That's one thing that's particular to the author
+and the intended audience: this is geared toward *independent consultants*. That
+is there's a presumption of *consulting* and further of doing so *indepdently*.
+That does not mean not working with other people, or, as works for me, actually
+having a business partner, but the advice here is not all that useful if you're
+a consultant in a larger firm or work for someone else - clients
+notwithstanding.
 
 ## The Positioning Manual
 
