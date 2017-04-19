@@ -46,7 +46,7 @@ pageid: index
               {% endif %}
           </dt>
         <dd>
-          {{ project.summary }}
+          {{ project.summary }} <span class="label project-{{ project.type }}">{{ project.type }}</span>
         </dd>
       {% endfor %}
     </dl>
