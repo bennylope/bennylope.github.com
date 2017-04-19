@@ -55,6 +55,37 @@ pageid: index
 
     </div>
 
+
+    <section class="talks">
+        <h2>Talks</h2>
+        {% for talk in site.data.talks %}
+            <h4>{{ talk.title }}</h4>
+        <div class="row">
+            <div class="col-sm-6">
+                <iframe width="450" height="282"
+                                    src="https://www.youtube.com/embed/{{ talk.youtubeId }}"
+                                    frameborder="0" allowfullscreen></iframe>
+                </div>
+            <div class="col-sm-6">
+                <script async class="speakerdeck-embed"
+                        data-id="{{ talk.speakerdeckId }}"
+                        data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+            </div>
+            </div>
+            <p>{{ talk.description }} <a href="{{ talk.slides }}">Slides</a>.</p>
+        {% endfor %}
+    </section>
+
+    <section class="about">
+    <h2>About</h2>
+    <p>This is the homepage of Ben Lopatin, aka bennylope. I'm co-founder, principal consultant, and lead Pythonista at <a href="https://wellfire.co">Wellfire Interactive</a>,
+    a DC-based web development agency. We've been using Django to build
+    successful business platform applications and beautiful web sites for over
+    6 years running now.
+    We love solving people's business problems with them, so if you're building or rebuilding on the web
+    <a href="https://wellfire.co/contact/">contact us</a>.</p>
+    </section>
+
 <section class="awesome">
     <h2>Stickers</h2>
     <p>I designed these just for you. Express your love for Python and impress your parents at the same time.</p>
@@ -71,37 +102,3 @@ pageid: index
             <div style="text-align: center; display: table-cell;"><a href="https://www.stickermule.com/marketplace/14342-i-pep8" style="display: inline-block;font-size: 1.2rem;padding: 17px 25px;background-color: #5ba4e6;border-radius: 6px;overflow: hidden;text-align: center;vertical-align: middle;cursor: pointer;border: none;color: #FFF;font-weight: bold;font-family: 'Helvetica Neue',Helvetica, Arial, sans-serif;text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);letter-spacing: 0px;line-height: 1.2;-webkit-font-smoothing: antialiased;-webkit-box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.15);-ms-box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.15);-moz-box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.15);-o-box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.15);box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.15);text-decoration: none;">Get this sticker</a></div></div></div>
 
 </section>
-
-    <section class="talks">
-        <h2>Talks</h2>
-        {% for talk in site.data.talks %}
-            <h4>{{ talk.title }}</h4>
-            {% if talk.youtubeId %}
-                <div class="embed-wrapper">
-                <iframe width="900" height="564"
-                                    src="https://www.youtube.com/embed/{{ talk.youtubeId }}"
-                                    frameborder="0" allowfullscreen></iframe>
-                </div>
-            {% else %}
-                <script async class="speakerdeck-embed"
-                        data-id="{{ talk.speakerdeckId }}"
-                        data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
-            {% endif %}
-            <p>{{ talk.description }} <a href="{{ talk.slides }}">Slides</a>.</p>
-        {% endfor %}
-    </section>
-
-    <section class="about">
-    <h2>About</h2>
-    <p>I'm Ben Lopatin, aka bennylope. I'm co-founder, principal consultant, and lead Pythonista at <a href="https://wellfire.co">Wellfire Interactive</a>,
-    a DC-based web development agency. We've been using Django to build
-    successful business platform applications and beautiful web sites for over
-    6 years running now.
-    We love solving people's business problems with them, so if you're building or rebuilding on the web
-    <a href="http://wellfireinteractive.com/contact/">contact us</a>.</p>
-    <p>I also do some occassional consulting for businesses that are a little off-track
-    on development projects or general product/technology strategy. That includes
-    pointed Django and Python debugging.</p>
-    <p>If you find yourself in the Finger Lakes give me a holler &mdash; <a href="https://twitter.com/bennylope">@bennylope</a> &mdash;
-    and we'll grab a beer, or coffee, or both.</p>
-    </section>

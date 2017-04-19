@@ -21,13 +21,33 @@
   summary: Slow attempt at getting Richmond, VA's city data accessible.
   type: data
 
-- name: RVA Connect
-  url: http://www.rvaconnect.com
-  summary: Site for tracking events and coworking/event spaces I created.
-  type: site
-
 - name: Django Addendum
   url: http://benlopatin.com/django-addendum/
   summary: A Django app for creating editable microcopy anywhere in your site.
   type: django
   button: http://ghbtns.com/github-btn.html?user=bennylope&repo=django-addendum&type=watch&count=true
+
+- name: Screenshooter
+  url: https://github.com/bennylope/screenshooter
+  summary: An automation tool for generating cross-browser screenshots (e.g. in a CI build).
+  type: ruby
+  button: http://ghbtns.com/github-btn.html?user=bennylope&repo=screenshooter&type=watch&count=true
+
+- name: pydiscourse
+  url: https://github.com/bennylope/pydiscourse
+  summary: A Python library for the Discourse API; maintained and packaged fork.
+  type: python
+  button: http://ghbtns.com/github-btn.html?user=bennylope&repo=pydiscourse&type=watch&count=true
+
+- name: SmartyStreets.py
+  url: https://github.com/bennylope/smartystreets.py
+  summary: A Python wrapper for the SmartyStreets geocoding and address validation API.
+  type: python
+  button: http://ghbtns.com/github-btn.html?user=bennylope&repo=smartystreets.py&type=watch&count=true
+
+- name: Django Quagga
+  url: http://benlopatin.com/django-quagga/
+  summary: A maintained fork of the now deprecated Django Zebra with support for newer Django versions.
+  type: django
+  button: http://ghbtns.com/github-btn.html?user=bennylope&repo=django-quagga&type=watch&count=true
+
