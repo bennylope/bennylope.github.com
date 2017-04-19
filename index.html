@@ -8,12 +8,16 @@ pageid: index
     </header>
 
     <section class="intro">
-      <blockquote>As per the latest in thought leadership, we must refocus on identifying holistic synergies 
+      <blockquote>As per the latest in thought leadership, we must refocus on identifying holistic synergies
         and productizing them for untapped markets. Specifically, synergies which can be strategically 
         leveraged to cross-pollinate innovation across organizational silos. Each silo must 
         own its vertical to allow for unfettered horizontal growth and for the development of streamlined 
         efficiencies by bubbling up organically.<br /><br />The Zen of Business Jargon</blockquote>
     </section>
+
+<div class="row">
+
+    <div class="col-sm-6">
 
     <section class="articles">
     <h2>Recent Articles</h2>
@@ -25,8 +29,10 @@ pageid: index
       {% endfor %}
       <p><a href="/posts/">Learn more in my other {{ site.posts | size | minus:3 }} posts &raquo;</a></p>
     </section>
+        </div>
 
 
+    <div class="col-sm-6">
     <section class="projects">
     <h2>Projects</h2>
     <dl>
@@ -45,6 +51,9 @@ pageid: index
       {% endfor %}
     </dl>
     </section>
+    </div>
+
+    </div>
 
 <section class="awesome">
     <h2>Stickers</h2>

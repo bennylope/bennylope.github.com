@@ -21,6 +21,8 @@ figure figcaption { padding: 3px; background: rgba(255, 255, 255, .90); position
 div#dj-book { background-color: #0bba0b; padding: 2rem; margin: 3rem 0 3rem 0; color: white; }
 div#dj-book a { color: #ffd401; }
 
+section.intro { margin: 40px 20px ;}
+
 @media only screen and (min-width : 931px) {
 }
 
