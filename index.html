@@ -24,7 +24,7 @@ pageid: index
       {% for post in site.posts %}
         {% if forloop.index < 4 %}
           <h3><a href="{% if post.link %}{{ post.link }}{% else %}{{ post.url }}{% endif %}">{{ post.title }}</a></h3>
-          <p class="teaser">{{ post.teaser }}</p>
+          <p class="teaser">{{ post.teaser }} <span class="label label-{{ post.category }}">{{ post.category }}</span></p>
         {% endif %}
       {% endfor %}
       <p><a href="/posts/">Learn more in my other {{ site.posts | size | minus:3 }} posts &raquo;</a></p>
@@ -46,7 +46,7 @@ pageid: index
               {% endif %}
           </dt>
         <dd>
-          {{ project.summary }} <span class="label project-{{ project.type }}">{{ project.type }}</span>
+          {{ project.summary }} <span class="label label-{{ project.type }}">{{ project.type }}</span>
         </dd>
       {% endfor %}
     </dl>
@@ -87,7 +87,7 @@ pageid: index
     </section>
 
 <section class="awesome">
-    <h2>Stickers</h2>
+    <h2>Stickers &#x1F49D; &#x1F49D; &#x1F49D;</h2>
     <p>I designed these just for you. Express your love for Python and impress your parents at the same time.</p>
     <div style="position: relative; max-width: 320px; display: inline-block">
         <div style="padding: 30px 0px 0px 0px;display: table;background-color: #fff;border-top-right-radius: 4px;border-top-left-radius: 4px;text-align: center;position: relative;min-height: 58px;width: 100%;">

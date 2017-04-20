@@ -6,7 +6,7 @@ layout: post
 permalink: /simple-search-manager-methods/
 canonical: https://wellfire.co/blog/simple-search-manager-methods/
 published: true
-categories: development
+category: programming
 comments: true
 teaser: >
     Most search requirements are pretty simple and can be satisfied

@@ -3,6 +3,7 @@ published: true
 title: "Finding the Needle: DjangoCon 2013"
 layout: post
 permalink: /finding-the-needle-djangocon-2013/
+categories: events
 redirect_from: /2013/finding-the-needle-djangocon-2013/
 comments: true
 ---

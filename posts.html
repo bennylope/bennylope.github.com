@@ -9,9 +9,12 @@ permalink: /posts/
 
     <section id="my_content">
     <h3>Notes and links</h3>
-    <ul>
+    <ul class="post-list">
       {% for post in site.posts %}
-        <li><a href="{% if post.link %}{{ post.link }}{% else %}{{ post.url }}{% endif %}">{{ post.title }}{% if post.quora %} (Quora answer){% endif %}</a> [{{ post.date | date: "%Y" }}]</li>
+        <li>
+            <a href="{% if post.link %}{{ post.link }}{% else %}{{ post.url }}{% endif %}">{{ post.title }}</a>
+            <span class="label label-{{ post.category }}">{{ post.category }}</span>
+            </li>
       {% endfor %}
     </ul>
     </section>

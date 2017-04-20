@@ -2,6 +2,7 @@
 published: true
 title: Getting started with Selenium testing in Django 1.4
 layout: post
+category: programming
 comments: true
 permalink: /starting-with-selenium-django14/
 redirect_from: /2012/django-selenium-testing/

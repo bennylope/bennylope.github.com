@@ -6,7 +6,7 @@ permalink: /finding-the-needle-djangocon-2013/
 redirect_from: /blog/finding-the-needle-djangocon-2013/
 canonical: https://wellfire.co/blog/finding-the-needle-djangocon-2013/
 published: true
-categories: development
+categories: events
 comments: true
 description: "DjangoCon 2013 in Chicago was a great opportunity to meet other Django developers, to learn from them, and to share some of the lessons we've learned."
 ---

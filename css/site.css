@@ -21,10 +21,38 @@ figure figcaption { padding: 3px; background: rgba(255, 255, 255, .90); position
 div#dj-book { background-color: #0bba0b; padding: 2rem; margin: 3rem 0 3rem 0; color: white; }
 div#dj-book a { color: #ffd401; }
 
-.project-django { background-color: forestgreen; }
-.project-python { background-color: blue; }
-.project-ruby { background-color: red; }
-.project-data { background-color: black; }
+.label {font-family: Arial, sans-serif ; text-transform: uppercase; font-size: 12px; }
+.label-django { background-color: #0C4B33; }
+.label-python { background-color: #2b5b84; }
+.label-ruby { background-color: #CC342D; }
+.label-data { background-color: black; }
+.label-programming { background-color: #9400d3; }
+.label-business { background-color: green; }
+
+ul.post-list {
+   margin: 20px 0;
+  padding: 0;
+}
+ul.post-list li {
+  padding: 10px 5px;
+  list-style: none;
+}
+
+ul.post-list li a {
+  padding: 3px;
+  line-height: 1.4rem;
+}
+ul.post-list li:hover {
+}
+ul.post-list li a:hover {
+}
+
+ul.post-list li .label {
+  opacity: 0.25;
+}
+ul.post-list li:hover .label {
+  opacity: 1;
+}
 
 section.intro { margin: 40px 20px ;}
 

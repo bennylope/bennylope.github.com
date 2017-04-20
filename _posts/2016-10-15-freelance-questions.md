@@ -4,6 +4,7 @@ title: "What should I use? Answers for new freelancers and independent consultan
 layout: post
 comments: true
 permalink: /freelance-faq/
+category: business
 teaser: >
     Focus on your game, not what to wear. A compendium of answers to
     questions new business owners waste time on that have

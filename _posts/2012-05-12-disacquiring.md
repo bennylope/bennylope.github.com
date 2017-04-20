@@ -4,6 +4,7 @@ title: "Disacquiring: The Delight of Relinquishing Things"
 layout: post
 comments: true
 permalink: /the-delight-of-disacquiring/
+category: thoughts
 redirect_from: /2012/disacquiring/
 ---
 
