@@ -3,8 +3,8 @@
   <head>
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/bootswatch.min.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="/css/site.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="/css/reset.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="/css/simple.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/css/pygments/colorful.css" type="text/css" media="screen">
     <link rel="shortcut icon" href="/images/beardo-16.png">
     {% if page.canonical %}<link rel="canonical" href="{{ page.canonical }}">{% endif %}
@@ -15,15 +15,14 @@
     {% endif %}
     {{ content }}
     <footer>
+      <p>Unless otherwise noted, all site content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons License</a>.</p>
         <nav id="identities">
           <ul class="identities">
             <li><a href="http://twitter.com/bennylope" rel="nofollow"><span>Twitter</a></a></span></li>
-            <li><a href="http://www.linkedin.com/in/benlopatin" rel="nofollow"><span>LinkedIn</a></a></span></li>
-            <li><a href="http://bennylope.tumblr.com" rel="nofollow"><span>Tumblr</a></span></li>
             <li><a href="http://github.com/bennylope/" rel="nofollow"><span>Github</a></span></li>
+            <li><a href="http://www.linkedin.com/in/benlopatin" rel="nofollow"><span>LinkedIn</a></a></span></li>
           </ul>
         </nav>
-        <p>Unless otherwise noted, all site content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons License</a>. Theme based on <a href="http://thomaspark.me/">Thomas Park's</a> 'Journal' theme for Bootstrap.</p>
     </footer>
 
     <!-- Piwik -->
