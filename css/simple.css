@@ -14,11 +14,11 @@ h2 {
     font-weight: 900;
     font-style: italic;
     font-size: 3rem;
-    margin: 2rem 0 1rem 0;
+    margin: 3rem 0 1rem 0;
 }
 h3 {
     font-size: 2.0rem;
-    margin: 1rem 0;
+    margin: 2rem 0 1rem 0;
     font-weight: 800;
 }
 
@@ -63,13 +63,18 @@ blockquote {
     line-height: 1.5rem;
 }
 
+pre {
+    background-color: #fff0f0;
+    padding: 2rem;
+    overflow-x:scroll;
+}
+
 aside {
-    font-style: italic;
     line-height: 1.8rem;
-    border-left: 6px solid #444;
-    padding: 0 0 0 1.5rem;
+    padding: 1rem 2rem 1.5rem 2rem;
     margin: 2rem 0;
-    font-color: #999;
+    color: #eee;
+    background-color: #333;
 }
 
 
