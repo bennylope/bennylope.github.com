@@ -46,7 +46,7 @@ pageid: index
       {% for post in site.posts %}
         {% if forloop.index < 4 %}
           <h3><a href="{% if post.link %}{{ post.link }}{% else %}{{ post.url }}{% endif %}">{{ post.title }}</a></h3>
-          <p class="teaser">{{ post.teaser }} <span class="label label-{{ post.category }}">{{ post.category }}</span></p>
+        <p class="teaser">{{ post.teaser }}</p>
         {% endif %}
       {% endfor %}
       <p><a href="/posts/">Learn more in my other {{ site.posts | size | minus:3 }} posts &raquo;</a></p>
@@ -61,6 +61,7 @@ pageid: index
       {% for project in site.data.projects %}
           <dt>
               <a href="{{ project.url }}">{{ project.name }}</a>
+              <span class="label label-{{ project.type }}">{{ project.type }}</span>
               {% if project.button %}
                 <iframe src="{{ project.button }}"
                     allowtransparency="true" frameborder="0" scrolling="0"
@@ -68,7 +69,7 @@ pageid: index
               {% endif %}
           </dt>
         <dd>
-          {{ project.summary }} <span class="label label-{{ project.type }}">{{ project.type }}</span>
+          {{ project.summary }}
         </dd>
       {% endfor %}
     </dl>

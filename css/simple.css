@@ -31,10 +31,10 @@ Lists
  */
 
 dt {
-    margin: 1rem 0 0.5rem 0;
+    margin: 1.5rem 0 0.5rem 0;
 }
 dd {
-    margin: 0.5rem 0 1rem 0;
+    margin: 0.5rem 0 1.75rem 0;
 }
 
 li {
@@ -79,6 +79,25 @@ aside {
 
 
 /*
+page components
+ */
+
+footer {
+    margin: 4rem 0 0 0;
+    padding: 0.8rem;
+    font-size: 1rem;
+    color: #eee;
+    background-color: #333;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+}
+
+
+
+/*
 Special stuff
  */
 
@@ -100,3 +119,33 @@ ul.identities li {
     padding-right: 20px;
     display: inline-block;
 }
+
+.label {
+    border: 1px solid #000;
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 0.6rem;
+    vertical-align: middle;
+    font-weight: bold;
+    line-height: 1;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: .25em;
+    font-family: Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.label:empty {
+    display: none;
+}
+
+.label-django { background-color: #0C4B33; }
+.label-python { background-color: #2b5b84; }
+.label-ruby { background-color: #CC342D; }
+.label-data { background-color: black; }
+.label-programming { background-color: #9400d3; }
+.label-business { background-color: green; }
+.label-events { background-color: hotpink; }
+.label-thoughts { background-color: cornflowerblue; }
+
