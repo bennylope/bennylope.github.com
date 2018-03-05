@@ -73,8 +73,8 @@ aside {
     line-height: 1.8rem;
     padding: 1rem 2rem 1.5rem 2rem;
     margin: 2rem 0;
-    color: #eee;
-    background-color: #333;
+    color: #333;
+    background-color: #eee;
 }
 
 
@@ -83,16 +83,17 @@ page components
  */
 
 footer {
+    border-top: 3px solid #333;
     margin: 4rem 0 0 0;
     padding: 0.8rem;
     font-size: 1rem;
-    color: #eee;
-    background-color: #333;
+    color: #333;
+    background-color: #eee;
     text-align: center;
 }
 
 footer a {
-    color: white;
+    color: red;
 }
 
 
