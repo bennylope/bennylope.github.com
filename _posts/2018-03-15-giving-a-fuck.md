@@ -18,7 +18,7 @@ and hastily written.
 
 This week's book: The Subtle Art of Not Giving a Fuck by Mark Manson.
 
-Or, as I described to a friend: "Buddhism for Stevedores" (apologies to actual Buddhists).
+Or, as I described to a friend: "Buddhism for Stevedores" (apologies to actual Buddhists. And stevedores.)
 
 This is a self-help book.
 
