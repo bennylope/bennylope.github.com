@@ -1,5 +1,5 @@
 ---
-title: "The Spanish Civil War"
+title: "Book notes: The Spanish Civil War"
 permalink: /the-spanish-civil-war/
 layout: post
 category: books

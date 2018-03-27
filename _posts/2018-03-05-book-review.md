@@ -1,5 +1,5 @@
 ---
-title: "Against Empathy"
+title: "Book notes: Against Empathy"
 permalink: /against-empathy/
 layout: post
 category: books

@@ -1,5 +1,5 @@
 ---
-title: "The Subtle Art of Not Giving a Fuck"
+title: "Book notes: The Subtle Art of Not Giving a Fuck"
 permalink: /the-subtle-art/
 layout: post
 category: books
