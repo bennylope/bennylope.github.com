@@ -2,7 +2,7 @@
 title: "The Spanish Civil War"
 permalink: /the-spanish-civil-war/
 layout: post
-category: other
+category: books
 published: true
 date: 2018-03-21
 teaser: >

@@ -141,6 +141,7 @@ ul.identities li {
     display: none;
 }
 
+.label-books { background-color: #CC342D; }
 .label-django { background-color: #0C4B33; }
 .label-python { background-color: #2b5b84; }
 .label-ruby { background-color: #CC342D; }

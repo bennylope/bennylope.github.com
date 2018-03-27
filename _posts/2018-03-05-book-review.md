@@ -2,7 +2,7 @@
 title: "Against Empathy"
 permalink: /against-empathy/
 layout: post
-category: other
+category: books
 published: true
 date: 2018-03-04 
 teaser: >

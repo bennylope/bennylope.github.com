@@ -2,7 +2,7 @@
 title: "The Subtle Art of Not Giving a Fuck"
 permalink: /the-subtle-art/
 layout: post
-category: other
+category: books
 published: true
 date: 2018-03-15 
 teaser: >
