@@ -83,8 +83,10 @@ pageid: index
         <h2>Talks</h2>
         {% for talk in site.data.talks %}
             <h3>{{ talk.title }}</h3>
+        <div class="aside">
         <p>{{ talk.description }}</p>
         <p><a href="{{ talk.slides }}">Slides</a>, <a href="https://www.youtube.com/watch?v={{ talk.youtubeId }}">Video</a></p>
+        </div>
         {% endfor %}
     </section>
 
@@ -92,10 +94,11 @@ pageid: index
 
     <section class="about">
     <h2>About</h2>
-    <p>This is the homepage of Ben Lopatin, aka bennylope. I'm co-founder, principal consultant, and lead Pythonista at <a href="https://wellfire.co">Wellfire Interactive</a>,
-    a DC-based web development agency. We've been using Django to build
-    successful business platform applications and beautiful web sites for over
-    6 years running now.
-    We love solving people's business problems with them, so if you're building or rebuilding on the web
-    <a href="https://wellfire.co/contact/">contact us</a>.</p>
+        <p>This is the homepage of Ben Lopatin, aka bennylope. I help businesses with Django sites get the most from their investment beyond launch day.</p>
+        <p>
+
+        I'm co-founder, principal consultant, and lead Pythonista at <a href="https://wellfire.co">Wellfire Interactive</a>,
+    a DC-based Django consulting and development shop, and we specialize in working with existing Django
+            projects.
+    <a href="https://wellfire.co/contact/">Contact us!</a></p>
     </section>
