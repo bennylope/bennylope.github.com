@@ -14,12 +14,15 @@ pageid: content
 
 {{ content }}
 
-<p class="pub-date"><em>Originally published {{ page.date|date: "%B %Y" }} </em></p>
+    <aside class="post-footer">
+        Originally published {{ page.date|date: "%B %Y" }}
+
+    </aside>
 
 </article>
 
 
-{% include book.html %}
+<!--{% include book.html %}-->
 <p class="homeLink">
 <a href="{% if page.return_link %}{{ page.return_link }}{% else %}/{% endif %}"
    title="{% if page.return_text %}{{ page.return_text }}{% else %}Return to synergy headquarters{% endif %}">

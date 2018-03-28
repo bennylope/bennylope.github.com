@@ -6,17 +6,46 @@ body {
     font-size: 1.5rem;
 }
 
-h1, h2, h3 {
-    font-family: Georgia;
+@font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 600;
+    /*src: local('Oswald SemiBold'), local('Oswald-SemiBold'), url(https://fonts.gstatic.com/s/oswald/v16/TK3hWkUHHAIjg75-xhsTus9CAZek1w.woff2) format('woff2');*/
+    src: local('Oswald SemiBold'), local('Oswald-SemiBold'), url(fonts/oswald-semibold.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Oswald Light'), local('Oswald-Light'), url(https://fonts.gstatic.com/s/oswald/v16/TK3hWkUHHAIjg75-sh0TtM9CAZek1wEt.woff2) format('woff2');
+    /*src: local('Oswald Light'), local('Oswald-Light'), url(fonts/oswald-light.woff2) format('woff2');*/
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'Chunk';
+    src: url('fonts/Chunkfive-webfont.eot'); /* IE9 Compat Modes */
+    src: url('fonts/Chunkfive-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('fonts/Chunkfive-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+    url('fonts/Chunkfive-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('fonts/Chunkfive-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
 h1 {
+    font-family: 'Chunk';
+    font-weight: 500;
     font-size: 4rem;
     margin: 2rem 0 1rem 0;
 }
 
-h2 {
+h2, h3 {
+    font-family: 'Oswald';
     font-weight: 600;
+}
+
+h2 {
     font-size: 3rem;
     margin: 3rem 0 1rem 0;
 }
@@ -55,8 +84,9 @@ Text
 
 
 p {
+    font-size: 1.5rem;
     margin: 1rem 0 1.5rem 0;
-    line-height: 2rem;
+    line-height: 2.5rem;
 }
 
 
@@ -79,6 +109,11 @@ aside {
     margin: 2rem 0;
     color: #333;
     background-color: #eee;
+    border-left: 5px solid #2b5b84;
+}
+
+aside.post-footer {
+    font-size: 1rem;
 }
 
 
@@ -87,7 +122,7 @@ page components
  */
 
 footer {
-    border-top: 3px solid #333;
+    border-top: 2px solid #2b5b84;
     margin: 4rem 0 0 0;
     padding: 0.8rem;
     font-size: 1rem;
@@ -98,6 +133,20 @@ footer {
 
 footer a {
     color: red;
+}
+
+div#banner {
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+}
+
+div#banner a {
+    font-family: Oswald !important;
+    border-bottom: 2px solid #2b5b84;
+    font-weight: 300;
+}
+div#banner a {
+    text-decoration: none;
 }
 
 
