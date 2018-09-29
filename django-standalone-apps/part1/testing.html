@@ -1,0 +1,924 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Testing outside of a project · Django Standalone Apps</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="author" content="Ben Lopatin">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="structure.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="intro.html">
+            
+                <a href="intro.html">
+            
+                    
+                    The Components of a Django Reusable App
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="scope.html">
+            
+                <a href="scope.html">
+            
+                    
+                    Defining the Scope
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="structure.html">
+            
+                <a href="structure.html">
+            
+                    
+                    Structure of a reusable app
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="testing.html">
+            
+                <a href="testing.html">
+            
+                    
+                    Testing outside of a project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    Documentation
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    Migrations
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" >
+            
+                <span>
+            
+                    
+                    Templates
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" >
+            
+                <span>
+            
+                    
+                    Static files
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" >
+            
+                <span>
+            
+                    
+                    Namespacing
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" >
+            
+                <span>
+            
+                    
+                    Packaging
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../part2/intro.html">
+            
+                <a href="../part2/intro.html">
+            
+                    
+                    Scoping and Extracting Reusable Apps
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" >
+            
+                <span>
+            
+                    
+                    Scoping
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    Separate
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" >
+            
+                <span>
+            
+                    
+                    Reversal
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" >
+            
+                <span>
+            
+                    
+                    Example extraction
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Next Steps and More Advanced Cases
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" >
+            
+                <span>
+            
+                    
+                    Settings
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" >
+            
+                <span>
+            
+                    
+                    i18n
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" >
+            
+                <span>
+            
+                    
+                    Backwards compatibility
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" >
+            
+                <span>
+            
+                    
+                    Futureproofing
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" >
+            
+                <span>
+            
+                    
+                    Contrib modules
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" >
+            
+                <span>
+            
+                    
+                    Migration strategies
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" >
+            
+                <span>
+            
+                    
+                    Modularity
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Managing Django Reusable Apps
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" >
+            
+                <span>
+            
+                    
+                    Licensing
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" >
+            
+                <span>
+            
+                    
+                    Releases
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" >
+            
+                <span>
+            
+                    
+                    Documentation
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" >
+            
+                <span>
+            
+                    
+                    Testing
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" >
+            
+                <span>
+            
+                    
+                    Automating
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" >
+            
+                <span>
+            
+                    
+                    Databases
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" >
+            
+                <span>
+            
+                    
+                    Collaborating
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" >
+            
+                <span>
+            
+                    
+                    Templates for app
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="http://benlopatin.com" target="blank" class="gitbook-link">
+            &copy; Ben Lopatin
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Testing outside of a project</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="testing-part-i-beyond-the-django-project">Testing, part I: beyond the Django project</h1>
+<h2 id="why-test">Why test?</h2>
+<p>Everyone says that you should test. It sounds obvious, if testing is
+good, we should do it. But this begs the question about the benefits of
+testing.</p>
+<p>Testing serves several purposes. Written in conjunction with, or before
+your application code, tests help provide a <em>working specification</em>
+against which your code can be verified. In this capacity they can also
+help reshape the code and interface, as if you&apos;re adding some feature
+from scratch a test will give you your first chance of using it.</p>
+<p>Once in place, even otherwise trivial tests serve to <em>protect against
+regressions</em> introduced by seemingly trivial changes to the codebase.</p>
+<p>While not their primary use, tests can also provide an <em>example of how to
+use your code</em>. In this capacity they&apos;re certainly not a replacement for
+proper documentation, but tests as code examples - especially when tests
+are run automatically - are a form of documentation that you can at
+least trust is up to date.</p>
+<p>Underlying all of this is the fact that computer programs are
+written by human beings and we&apos;re terribly unreliable when it comes to
+writing reliable code on our own (apologies if this does not apply to
+you). There&apos;s all kinds of stuff we can&apos;t predict, stuff we&apos;re not good
+at seeing right away, and interactions we don&apos;t see at the surface of
+our code.</p>
+<p>Testing doesn&apos;t solve all of these problems but tests
+provide a potent tool to remove a lot of uncertainty about our code.
+Ultimately <em>tests provide confidence</em>, both for you and other users of
+your app - and don&apos;t forget that &quot;future you&quot; is one of those users!</p>
+<h2 id="review-testing-apps-from-a-django-project">Review: testing apps from a Django project</h2>
+<p>Django provides a way to run tests in Django apps by using the <code>test</code>
+management command combined with the app name.</p>
+<pre><code>python manage.py test myapp
+</code></pre><p>If the app looks like this:</p>
+<pre><code>myapp/
+    __init__.py
+    models.py
+    tests.py
+</code></pre><p>Then the command <code>python manage.py test myapp</code> will run all
+of the tests in <code>myapp.tests</code>.</p>
+<p>This works well when you&apos;re working from a larger Django project, for
+example if you&apos;re developing your app in the context of a working
+project. It&apos;s of much less help if your app is a standalone library
+where the code is intended to be managed from <em>outside of a project</em>.</p>
+<h2 id="testing-the-app">Testing the app</h2>
+<p>If you&apos;ve worked with other Python packages before, you&apos;ll have noticed
+that they&apos;re mostly tested in a straightforward way. There&apos;s usually a
+test module and the <code>setup.py</code> file defines where the test script is.
+That works for Django apps, too, with the caveat that much Django
+functionality must be run from the context of a Django project.</p>
+<p>To motivate some reasonable ways of testing a standalone app, let&apos;s
+consider the most immediately strategy for testing the app: testing from
+whatever project you&apos;re using the app in (presuming you are extracting
+it).</p>
+<p>This means that to test the <code>myapp</code> app, it needs to be installed on the
+same path as your working project, i.e. the same virtual environment,
+and that it needs to be in your working project&apos;s <code>INSTALLED_APPS</code>. When
+it&apos;s time to test changes to <code>myapp</code> you&apos;ll need to go back to the
+working project to run them.</p>
+<p>If this sounds less than sensible, you&apos;re on the right track. It doesn&apos;t
+allow testing of the app by itself, which means it&apos;s not repeatable for
+anyone else who isn&apos;t working with your project. And even then it&apos;s a
+pain in the tucchus.</p>
+<h2 id="testing-outside-of-a-project">Testing outside of a project</h2>
+<p>We did this stupid thing because in order to test a Django app we need a
+lot of stuff from Django. If you try to run a test of some code that
+imports Django machinery, like models, for instance, you&apos;ll get errors
+that Django&apos;s improperly configured. So to deal with this we need a
+Django project.</p>
+<h3 id="using-an-example-project">Using an example project</h3>
+<p>Next step is to create an example project in the package root that will
+be a stripped down project only including our app. Now we can run
+manage.py commands directly in our package and test the app. Just add a
+bash script at the project root that will execute the tests no matter
+where they&apos;re located.</p>
+<p>Here&apos;s what the layout would look like:</p>
+<pre><code>django_project/
+    sample_project
+        __init__.py
+        settings.py
+        url.spy
+        wsgi.py
+    __init__.py
+    manage.py
+myapp/
+    __init__.py
+    models.py
+    tests.py
+setup.py
+</code></pre><p>Then to run the tests for your app you&apos;d run them from the example
+project just as if it were a production-ready Django project.</p>
+<pre><code>cd django_project
+python manage.py test myapp
+</code></pre><p>This <em>works</em> and is an improvement over the original example, but for
+most scenarios is cumbersome and unnecessary.</p>
+<h3 id="using-a-testing-script">Using a testing script</h3>
+<!-- TODO: use pytest -->
+<p>Of course, Django doesn&apos;t demand that we have project scaffolding, just
+that Django settings are configured. So a better solution is a Python
+script that configures those minimalist settings and then runs the
+tests.</p>
+<p>The script needs to do three things:</p>
+<ol>
+<li>Define or configure Django settings</li>
+<li>Trigger Django initialization (i.e. with <code>django.setup()</code>)</li>
+<li>Execute the test runner</li>
+</ol>
+<p>In the first example here the script configures settings in-place for
+Django and then uses a test runner from the Django Nose plugin. Testing,
+Part II will cover alternative test runners in more depth, but for now
+this suffices to show the overall sequence.</p>
+<pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/env python</span>
+
+<span class="hljs-keyword">import</span> sys
+
+<span class="hljs-keyword">try</span>:
+    <span class="hljs-keyword">import</span> django
+    <span class="hljs-keyword">from</span> django.conf <span class="hljs-keyword">import</span> settings
+
+    settings.configure(
+        DEBUG=<span class="hljs-keyword">True</span>,
+        USE_TZ=<span class="hljs-keyword">True</span>,
+        DATABASES={
+            <span class="hljs-string">&quot;default&quot;</span>: {
+                <span class="hljs-string">&quot;ENGINE&quot;</span>: <span class="hljs-string">&quot;django.db.backends.sqlite3&quot;</span>,
+            }
+        },
+        ROOT_URLCONF=<span class="hljs-string">&quot;tests.urls&quot;</span>,
+        INSTALLED_APPS=[
+            <span class="hljs-string">&quot;django.contrib.auth&quot;</span>,
+            <span class="hljs-string">&quot;django.contrib.contenttypes&quot;</span>,
+            <span class="hljs-string">&quot;django.contrib.sites&quot;</span>,
+            <span class="hljs-string">&quot;myapp&quot;</span>,
+        ],
+        SITE_ID=<span class="hljs-number">1</span>,
+        NOSE_ARGS=[<span class="hljs-string">&apos;-s&apos;</span>],
+        FIXTURE_DIRS=[<span class="hljs-string">&apos;tests/fixtures&apos;</span>]
+    )
+    django.setup()
+
+    <span class="hljs-keyword">from</span> django_nose <span class="hljs-keyword">import</span> NoseTestSuiteRunner
+
+<span class="hljs-keyword">except</span> ImportError:
+    <span class="hljs-keyword">raise</span> ImportError(<span class="hljs-string">&quot;To fix this error, run: pip install -r requirements.txt&quot;</span>)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run_tests</span><span class="hljs-params">(*test_args)</span>:</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> test_args:
+        test_args = [<span class="hljs-string">&apos;tests&apos;</span>]
+
+    test_runner = NoseTestSuiteRunner(verbosity=<span class="hljs-number">1</span>)
+    failures = test_runner.run_tests(test_args)
+    <span class="hljs-keyword">if</span> failures:
+        sys.exit(failures)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    run_tests(*sys.argv[<span class="hljs-number">1</span>:])
+</code></pre>
+<p>The Django documentation includes a suggested pattern for testing
+standalone apps that uses a separate settings module.</p>
+<pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/env python</span>
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> sys
+
+<span class="hljs-keyword">import</span> django
+<span class="hljs-keyword">from</span> django.conf <span class="hljs-keyword">import</span> settings
+<span class="hljs-keyword">from</span> django.test.utils <span class="hljs-keyword">import</span> get_runner
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:
+    os.environ[<span class="hljs-string">&apos;DJANGO_SETTINGS_MODULE&apos;</span>] = <span class="hljs-string">&apos;tests.test_settings&apos;</span>
+    django.setup()
+    TestRunner = get_runner(settings)
+    test_runner = TestRunner()
+    failures = test_runner.run_tests([<span class="hljs-string">&quot;tests&quot;</span>])
+    sys.exit(bool(failures))
+</code></pre>
+<p>The first example looks more verbose because it includes the settings in
+place, and because it handles extra arguments for Nose.</p>
+<p>The main difference between configuring settings manually and using an
+environment variable module definition is that in the latter case Django
+makes changes to the environment variables for the process itself:</p>
+<blockquote>
+<p>Django sets the os.environ[&apos;TZ&apos;] variable to the time zone you specify
+in the <code>TIME_ZONE</code> setting</p>
+</blockquote>
+<p>In Testing, Part II in section 4 we&apos;ll examine a yet better way of
+managing your tests and test configuration.</p>
+<h2 id="testing-application-relationships">Testing application relationships</h2>
+<p>What do you do if your app absolutely requires interfacing with another Django
+app - e.g. one that should use your own? In this case you&apos;ll want to
+create a separate Django app that you can include in your test script.</p>
+<p>Let&apos;s say your app provides base models. For our example it&apos;s a very
+basic e-commerce module that lets people make a product out of any model
+they want, adding some basic fields like price, a SKU, and whether it&apos;s
+actively sold or not.</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ProductBase</span><span class="hljs-params">(models.Model)</span>:</span>
+    sku = models.CharField()
+    price = models.DecimalField()
+    is_in_stock = models.BooleanField()
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+        abstract = <span class="hljs-keyword">True</span>
+</code></pre>
+<p>In this case you&apos;ll need to add and include a small test app that
+depends on your base app. In your test script or wherever you set up
+Django for testing include this app as an installed app.</p>
+<p>For your tests let&apos;s say you want to write an integration test that
+shows a product on a page. Your app doesn&apos;t actually have any products
+since you only have an abstract base model, so you&apos;ll need to use a &apos;concrete&apos;
+model. This is where your example app comes into play.</p>
+<p>This app need only provide the bare minimum to be an app.</p>
+<pre><code>test_app/
+    __init__.py
+    models.py
+</code></pre><p>And in your models file define a model using your app&apos;s abstract base
+model.</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> myapp.models <span class="hljs-keyword">import</span> ProductBase
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Pen</span><span class="hljs-params">(ProductBase)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;Product class for writing instruments&quot;&quot;&quot;</span>
+    name = models.CharField()
+    pen_type = models.CharField()
+</code></pre>
+<p>In your testing script, make sure to add the example app to <code>INSTALLED_APPS</code>.</p>
+<pre><code class="lang-python">INSTALLED_APPS = [
+    <span class="hljs-string">&apos;myapp&apos;</span>,
+    <span class="hljs-string">&apos;test_app&apos;</span>,
+]
+</code></pre>
+<p>Your tests in this case should live in a separate, top level module
+outside of your app.</p>
+<pre><code>myapp/
+    __init__.py
+    models.py
+test_app/
+    __init__.py
+    models.py
+tests/
+    __init__.py
+    test_models.py
+</code></pre><h2 id="testing-without-django">Testing without Django</h2>
+<p>Lastly, in many cases you can eschew all of this!</p>
+<p>The emphasis here is on Django <em>apps</em>, that is, Python modules that can
+be installed and included in a Django project to use models, template
+tags, management commands, etc. But in many cases the functionality
+provided by apps can be tested as plain old Python code.</p>
+<p>This will be the case with anything in your app that requires setup,
+like models. However this isn&apos;t true of every part of Django or every
+part of your app. And in fact if your app doesn&apos;t have any models, and
+you don&apos;t have any request related functionality to test - especially at
+an integration test level - then
+you can forgo with setting up or using Django&apos;s test modules, sticking
+to the standard library&apos;s <code>unittest</code> - or any other testing framework
+you so choose.</p>
+<p>In most cases, testing forms, the logic in template tags and filters,
+etc, is not dependent on any of the parts of Django that require project
+setup.</p>
+<p>Why would you do this? It&apos;s extraoridnarily doubtful that the
+performance gains from using unittest over <code>django.test</code> are going to be
+noticeable to say nothing of impactful. However if these are the only
+tests that you need then your testing environment will be simpler to set
+up and run.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="structure.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Structure of a reusable app">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Testing outside of a project","level":"1.2.3","depth":2,"next":{"title":"Documentation","level":"1.2.4","depth":2,"ref":"","articles":[]},"previous":{"title":"Structure of a reusable app","level":"1.2.2","depth":2,"path":"part1/structure.md","ref":"part1/structure.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Ben Lopatin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Django Standalone Apps","gitbook":"*"},"file":{"path":"part1/testing.md","mtime":"2018-09-29T17:42:20.169Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-09-29T17:43:34.447Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

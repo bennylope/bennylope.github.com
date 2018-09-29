@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>The Components of a Django Reusable App · Django Standalone Apps</title>
+        <title>Structure of a reusable app · Django Standalone Apps</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="scope.html" />
+    <link rel="next" href="testing.html" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="scope.html" />
     
 
     </head>
@@ -102,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="intro.html">
+        <li class="chapter " data-level="1.2" data-path="intro.html">
             
                 <a href="intro.html">
             
@@ -129,7 +129,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="structure.html">
+        <li class="chapter active" data-level="1.2.2" data-path="structure.html">
             
                 <a href="structure.html">
             
@@ -572,7 +572,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >The Components of a Django Reusable App</a>
+        <a href=".." >Structure of a reusable app</a>
     </h1>
 </div>
 
@@ -587,14 +587,132 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="basic-components-of-a-django-app">Basic Components of a Django App</h1>
-<p>If you&apos;ve never created a Python package before, or if you have but have
-never created a Django-app as a Python package, then this section is for
-you. We&apos;ll cover the necessary bits about setting up your app as an
-installable Python library and also the Django-specific setup you&apos;ll
-need to deal with in order to properly include everything else.</p>
-<p>If you&apos;re somewhat familiar with standalone Django apps you can probably
-skim this section.</p>
+                                <h1 id="the-structure-of-a-standalone-django-app">The structure of a standalone Django app</h1>
+<p>A standalone Django app is a Python package, and it&apos;s a Python package consisting of a [reusable] Django app.</p>
+<h2 id="what-makes-a-django-app">What makes a Django app</h2>
+<p>A Django app shares the same structure as any Python module, with a very
+very specific requirements depending on what features you include with
+your app.</p>
+<p>The most obvious is including data models, and for this you&apos;ll need a
+<code>models.py</code> file. Historically including the <code>models.py</code> file, empty or
+not, was sufficient to make an app installable, however with the advent
+of <code>AppConfig</code> this is no longer necessary.</p>
+<p>The first you <em>should</em> include though is an <code>apps.py</code> file with some
+basic <code>AppConfig</code> configuration. This allows your app to be installed
+wihtout a models file and it allows your end users to change
+configuration for using your app as necessary (e.g. changing the name in
+the admin). Note that the apps.py file is not strictly required, and
+that including a <code>models.py</code> file in sufficient to make your app
+installable. However adding an <code>AppConfig</code> class is best practice as it allows
+end users to make modifications and, in the event that you do not have
+any models, it provides a much clearer foundation without a superfluous
+and empty module file.</p>
+<h2 id="what-requires-a-django-app">What <em>requires</em> a Django app</h2>
+<p>You can use any Python code in your Django project from another PYthon
+librayr without that library being an installable Django app. So its
+worth looking at some of the things that require having a Django app
+structure to use:</p>
+<ul>
+<li>templates</li>
+<li>template tags and filters</li>
+<li>static files</li>
+<li>management commands</li>
+<li>models</li>
+</ul>
+<p>Of course there are ways to make use of some of these features, like
+templates, without an app by means of extensive configuration, but
+that&apos;s hardly a superior option.</p>
+<h2 id="example-app-currency">Example app: currency</h2>
+<p>We&apos;ll start with a very basic example app. This is an app to make working with
+currencies easier. At their base currencies values are just numeric values,
+specifically decimal values, that refer to an amount in a specific denomination, and
+often at a specific point in time. $10 in US dollars is not the same as &#x20AC;10,
+and $10 USD in 2015 dollars is not the same as $10 USD in 1990 dollars.</p>
+<p>What we want to do is make it easier to toggle the display of currency amounts
+and easily format them. To start with, we just want to change the formatting of
+certain of numbers, so we&apos;re just adding a couple of template filters.</p>
+<p>The question in front of us is whether this is necessarily a Django app? As we
+build this out more and more of it may be more generalizablely <em>not</em> Django
+specific, but if we&apos;re going to add template tags they necessarily must be part of a Django app. Otherwise
+we can&apos;t load the tags library<sup><a href="#fn_1" id="reffn_1">1</a></sup>. So this will be a Django app.</p>
+<p>I&apos;m going to start out the app, called <code>currency</code>, with just the necessary files at first. The file structure will look like this:</p>
+<pre><code>    currency
+    |&#x2500;&#x2500; __init__.py
+    |&#x2500;&#x2500; apps.py
+    |&#x2500;&#x2500; templatetags
+    &#x2502;   |&#x2500;&#x2500; __init__.py
+    &#x2502;   |&#x2500;&#x2500; currency_tags.py
+    |&#x2500;&#x2500; tests.py
+</code></pre><p>The <code>currency</code> folder including an <code>__init__.py</code> file makes a module. Our core
+functionality is just template tags and filters for now, so we just have a <code>templatetags</code> module,
+again with the <code>__init__.py</code> file and then the tag library name.</p>
+<blockquote>
+<p>Pedant&apos;s note: you can create a module without recourse to
+<code>__init__.py</code>, but that makes a namespace module, and is only
+available in Python 3, an assumption this book does make for the
+reader.</p>
+</blockquote>
+<p>There&apos;s one tests.py file for our tests and then an <code>apps.py</code> file. In order to
+satisfy the requirements of a Django app, our package must define a models.py file
+or an app.py file, ideally including the latter even with a models.py. This allows
+us to define things about our app and ensure that it&apos;s picked up by Django as
+an app.</p>
+<p>So now let&apos;s look at the content. Our <code>__init__.py</code> files are empty (for now).</p>
+<p>Here&apos;s our apps.py file.</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.apps <span class="hljs-keyword">import</span> AppConfig
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CurrencyConfig</span><span class="hljs-params">(AppConfig)</span>:</span>
+    name = <span class="hljs-string">&apos;currency&apos;</span>
+    verbose_name = <span class="hljs-string">&quot;Currency&quot;</span>
+</code></pre>
+<p>Heres our tags library:</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django <span class="hljs-keyword">import</span> template
+
+register = template.Library()
+
+
+<span class="hljs-meta">@register.filter</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">accounting</span><span class="hljs-params">(value)</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;({0})&quot;</span>.format(value) <span class="hljs-keyword">if</span> value &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;{0}&quot;</span>.format(value)
+</code></pre>
+<p>And here&apos;s our tests.py file.</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> unittest
+<span class="hljs-keyword">from</span> currency.templatetags.currency_tags <span class="hljs-keyword">import</span> accounting
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FilterTests</span><span class="hljs-params">(unittest.TestCase)</span>:</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_positive_value</span><span class="hljs-params">(self)</span>:</span>
+    self.assertEqual(<span class="hljs-string">&quot;10&quot;</span>, accounting(<span class="hljs-number">10</span>))
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_zero_value</span><span class="hljs-params">(self)</span>:</span>
+    self.assertEqual(<span class="hljs-string">&quot;0&quot;</span>, accounting(<span class="hljs-number">0</span>))
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_negative_value</span><span class="hljs-params">(self)</span>:</span>
+    self.assertEqual(<span class="hljs-string">&quot;(10)&quot;</span>, accounting(<span class="hljs-number">-10</span>))
+</code></pre>
+<h2 id="a-basic-setuppy-file">A basic setup.py file</h2>
+<p>In order to package this we need a way of defining the package: what is it
+called, what version is it, where is the code.</p>
+<p>If you&apos;re familiar with Ruby gemspec or Node package files, the setup.py file
+serves a similar purpose. And it&apos;s just Python. Let&apos;s look at the file.</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> setuptools <span class="hljs-keyword">import</span> setup
+
+setup(
+    name=<span class="hljs-string">&quot;currency&quot;</span>,
+    version=<span class="hljs-string">&quot;0.0.1&quot;</span>,
+    packages=[<span class="hljs-string">&quot;currency&quot;</span>],
+    test_suite=<span class="hljs-string">&quot;currency.tests&quot;</span>,
+)
+</code></pre>
+<p>This is about as basic and stripped down as we can get. This isn&apos;t enough to
+release our package, but it&apos;s enough to install it and run tests. We&apos;ve got a name,
+version, packages, and test suite defined.</p>
+<p>The version is important because this is how we determine what to install when something
+changes, and it&apos;s used for tracking dependencies by other apps as well.</p>
+<blockquote id="fn_1">
+<sup>1</sup>. These can be included using the <code>libraries</code> options<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#x21A9;</a>
+</blockquote>
 
                                 
                                 </section>
@@ -622,12 +740,12 @@ skim this section.</p>
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="scope.html" class="navigation navigation-prev " aria-label="Previous page: Defining the Scope">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="scope.html" class="navigation navigation-next " aria-label="Next page: Defining the Scope">
+                <a href="testing.html" class="navigation navigation-next " aria-label="Next page: Testing outside of a project">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -638,7 +756,7 @@ skim this section.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"The Components of a Django Reusable App","level":"1.2","depth":1,"next":{"title":"Defining the Scope","level":"1.2.1","depth":2,"path":"part1/scope.md","ref":"part1/scope.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Ben Lopatin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Django Standalone Apps","gitbook":"*"},"file":{"path":"part1/intro.md","mtime":"2018-09-29T14:42:37.713Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-09-29T17:43:34.447Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Structure of a reusable app","level":"1.2.2","depth":2,"next":{"title":"Testing outside of a project","level":"1.2.3","depth":2,"path":"part1/testing.md","ref":"part1/testing.md","articles":[]},"previous":{"title":"Defining the Scope","level":"1.2.1","depth":2,"path":"part1/scope.md","ref":"part1/scope.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Ben Lopatin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Django Standalone Apps","gitbook":"*"},"file":{"path":"part1/structure.md","mtime":"2018-09-29T17:28:48.076Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-09-29T17:43:34.447Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

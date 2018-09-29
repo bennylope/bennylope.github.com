@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>The Components of a Django Reusable App · Django Standalone Apps</title>
+        <title>Defining the Scope · Django Standalone Apps</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="scope.html" />
+    <link rel="next" href="structure.html" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="intro.html" />
     
 
     </head>
@@ -102,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="intro.html">
+        <li class="chapter " data-level="1.2" data-path="intro.html">
             
                 <a href="intro.html">
             
@@ -116,7 +116,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="scope.html">
+        <li class="chapter active" data-level="1.2.1" data-path="scope.html">
             
                 <a href="scope.html">
             
@@ -572,7 +572,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >The Components of a Django Reusable App</a>
+        <a href=".." >Defining the Scope</a>
     </h1>
 </div>
 
@@ -587,14 +587,113 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="basic-components-of-a-django-app">Basic Components of a Django App</h1>
-<p>If you&apos;ve never created a Python package before, or if you have but have
-never created a Django-app as a Python package, then this section is for
-you. We&apos;ll cover the necessary bits about setting up your app as an
-installable Python library and also the Django-specific setup you&apos;ll
-need to deal with in order to properly include everything else.</p>
-<p>If you&apos;re somewhat familiar with standalone Django apps you can probably
-skim this section.</p>
+                                <h1 id="defining-the-scope">Defining the scope</h1>
+<p>There&apos;s a line you&apos;re going to draw whether you deliberately choose to
+or not. You probably drew it when you extracted this from another app into
+its own, or created it to fill a gap in one of your projects.</p>
+<h2 id="with-or-without-django">With or without Django?</h2>
+<p>Occassinoally otherwise helpful functionality is packaged as &quot;Django
+Such and Such&quot; for use in Django projects, but without having any
+necessary dependence on Django. This probably sounds untroubling, and
+indeed there&apos;s nothing awful about this, however the first scoping
+question you need to ask when creating a standalone app is &quot;Does this
+require Django?&quot;.</p>
+<p>Why ensure this separation? Well for starters, if you&apos;re going to be
+sharing this with the rest of the world, and the core functionality
+doesn&apos;t actually depend on Django, then you&apos;ve broadened the audience.</p>
+<p>You&apos;re also reducing yet another dependency in your package, which, even
+if you&apos;re using it in Django projects, is another line of dependencies
+that can break. Where it makes sense, reference the standard library
+instead of Django utilities. If something moves in a new Django version,
+you&apos;re now insulated from that change.</p>
+<p>It&apos;s worth keeping in mind that you can add functionality to Django projects
+without Django-specific modules, or without necessarily requiring Django.</p>
+<p>And lastly, it&apos;s often easier to test.</p>
+<p>In a later chapter on mixed dependency support we&apos;ll examine how to separate
+out what&apos;s Django specific and what&apos;s not.</p>
+<h2 id="choosing-your-dependencies">Choosing your dependencies</h2>
+<p>The great thing about packages like the one you&apos;re creating is that they
+give you funcitonality for free - maybe not free, but without the cost
+of writing the code and figuring out the edge cases yourself.</p>
+<p>These benefits presume that the dependencies you&apos;re using are adequately
+tested and work as advertised.</p>
+<p>Each dependency you add increases the surface area that you
+need to test as well opportunties for broken interactions. This is true
+in a Django project (site) and its equally true in your own standalone
+app.</p>
+<p>Now, it&apos;s certainly unwise to rewrite everything yourself! But give
+thought to whether you really need to use a certain dependency or class
+it provides.</p>
+<p>Among the guiding questions you should ask:</p>
+<ol>
+<li>Does the dependency provide <em>required</em> functionality for your app?</li>
+<li>Is it up to date with the Django version(s) you will be supporting?</li>
+<li>Does it have tests that cover its core functionality?</li>
+<li>Does it have documentation? This could be complete documentation on
+Read the Docs or even a fully fleshed out README, depending on the
+scope of the app.</li>
+</ol>
+<blockquote>
+<p> This is a &quot;mistake&quot; I&apos;ve made. An example of this in my own case is a
+ decision to use the otherwise fantastic
+ django-extensions app as a dependency for my own, django-organizations.
+ I wanted a timestamped models - a good thing to have which you&apos;ll notice
+ when its missing - and moreover I wanted slug fields that took care
+ of themselves. For this I wanted the AutoslugField. This wasn&apos;t a bad
+ decision so much as a restrictive one. I could&apos;ve just used a typical
+ Django slug field but for my own needs the Autoslug was where it was at.
+ Later I realized that some people, including myself, might need to be able
+ to configure how slugs are made, and this shouldnt&apos; be so fixed.</p>
+</blockquote>
+<h2 id="specific-vs-generalized">Specific vs. Generalized</h2>
+<p>It&apos;s a common temptation to write reusable code and to start making it as generalized as possible. This is almost always a mistake, regardless of how useful the more general case is. You&apos;re likely to spend time anticipating non-issues and failing to anticipate <em>actual</em> needs.</p>
+<p>For example you might have a subscription management library for SaaS apps which is built with Stripe. A more generalizable approach would account for different subscription and payment backends. However unless you actively make uses of these different scenarios yourself trying to handle them all is likely to lead to half-way solutions. And creating a more general system capable of handling user-customized scenarios when you start out with your app will cause you to sepnd more time on abstractions that could be better spent getting your app polished.</p>
+<!--
+
+## Django version support
+
+The last scoping consideration we'll mention here is the range of Django
+versions that you intend to support.
+
+For a new app it's safe to specify the latest major version and
+then, dependent on testing against different environments (see the
+section on testing multiple v$ersion). If going back to a certain
+version requires tortuous changes due to backwards compatability issues,
+that's a sign to stop.
+
+
+Be conservative with what you'll require, and liberal with what you'll
+allow.
+
+The error of not specifying any level of version for your
+project's dependencies is that it may encounter dependency versions that
+are too old to work properly with your app, or that are newer such that
+they break API compatability. On the other hand, you can easily
+overspecify the versions. Aside from restricting what other people need
+to use, this runs the risk of modifying dependencies they have set for
+their own reasons.
+
+![Mismatched dependency versions](images/dependency-mismatch.png)
+
+It can make testing that much harder if you have lots of dependencies
+which can break themselves or create breaking probelems on their upgrade
+- especially if your app requires a version window that is suddenly
+behind the major published version. If that becomes the case it may be
+worthwhile to vendor the dependency, creating a specific copy that is
+bundled with your app. But that's not something you should be worrying
+about right now.
+
+## Example project
+
+Our example project is an international ecommerce site, and we have to do
+a lot of things with different currencies. In fact, we know we've got another
+project in the planning stages that's going to need to use much of the same
+functionality. This would be a good time to start pulling this stuff out.
+
+It allows us to print Decimals as currency by default for easy formatting,
+without obscuring the underlying numeral value.
+
+-->
 
                                 
                                 </section>
@@ -622,12 +721,12 @@ skim this section.</p>
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="intro.html" class="navigation navigation-prev " aria-label="Previous page: The Components of a Django Reusable App">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="scope.html" class="navigation navigation-next " aria-label="Next page: Defining the Scope">
+                <a href="structure.html" class="navigation navigation-next " aria-label="Next page: Structure of a reusable app">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -638,7 +737,7 @@ skim this section.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"The Components of a Django Reusable App","level":"1.2","depth":1,"next":{"title":"Defining the Scope","level":"1.2.1","depth":2,"path":"part1/scope.md","ref":"part1/scope.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Ben Lopatin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Django Standalone Apps","gitbook":"*"},"file":{"path":"part1/intro.md","mtime":"2018-09-29T14:42:37.713Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-09-29T17:43:34.447Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Defining the Scope","level":"1.2.1","depth":2,"next":{"title":"Structure of a reusable app","level":"1.2.2","depth":2,"path":"part1/structure.md","ref":"part1/structure.md","articles":[]},"previous":{"title":"The Components of a Django Reusable App","level":"1.2","depth":1,"path":"part1/intro.md","ref":"part1/intro.md","articles":[{"title":"Defining the Scope","level":"1.2.1","depth":2,"path":"part1/scope.md","ref":"part1/scope.md","articles":[]},{"title":"Structure of a reusable app","level":"1.2.2","depth":2,"path":"part1/structure.md","ref":"part1/structure.md","articles":[]},{"title":"Testing outside of a project","level":"1.2.3","depth":2,"path":"part1/testing.md","ref":"part1/testing.md","articles":[]},{"title":"Documentation","level":"1.2.4","depth":2,"ref":"","articles":[]},{"title":"Migrations","level":"1.2.5","depth":2,"ref":"","articles":[]},{"title":"Templates","level":"1.2.6","depth":2,"ref":"","articles":[]},{"title":"Static files","level":"1.2.7","depth":2,"ref":"","articles":[]},{"title":"Namespacing","level":"1.2.8","depth":2,"ref":"","articles":[]},{"title":"Packaging","level":"1.2.9","depth":2,"ref":"","articles":[]}]},"dir":"ltr"},"config":{"plugins":["include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Ben Lopatin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Django Standalone Apps","gitbook":"*"},"file":{"path":"part1/scope.md","mtime":"2018-09-29T17:15:31.054Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-09-29T17:43:34.447Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
