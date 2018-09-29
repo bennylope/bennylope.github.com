@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>The Components of a Django Reusable App · Django Standalone Apps</title>
+        <title>Documenting your app · Django Standalone Apps</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="scope.html" />
+    <link rel="next" href="migrations.html" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="testing.html" />
     
 
     </head>
@@ -102,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="intro.html">
+        <li class="chapter " data-level="1.2" data-path="intro.html">
             
                 <a href="intro.html">
             
@@ -155,7 +155,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="docs.html">
+        <li class="chapter active" data-level="1.2.4" data-path="docs.html">
             
                 <a href="docs.html">
             
@@ -572,7 +572,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >The Components of a Django Reusable App</a>
+        <a href=".." >Documenting your app</a>
     </h1>
 </div>
 
@@ -587,14 +587,83 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="basic-components-of-a-django-app">Basic Components of a Django App</h1>
-<p>If you&apos;ve never created a Python package before, or if you have but have
-never created a Django-app as a Python package, then this section is for
-you. We&apos;ll cover the necessary bits about setting up your app as an
-installable Python library and also the Django-specific setup you&apos;ll
-need to deal with in order to properly include everything else.</p>
-<p>If you&apos;re somewhat familiar with standalone Django apps you can probably
-skim this section.</p>
+                                <h1 id="documenting-your-standalone-app">Documenting your standalone app</h1>
+<p>Have you ever found a package that looks like it just might work like
+you need it to, and then realized that something didn&apos;t quite make sense</p>
+<ul>
+<li>and there was no documentation for how it worked? How frustrated were
+you? And do you remember doing that when you were facing down a hard
+deadline? Not fun.</li>
+</ul>
+<p>Documentation is important for users to understand why your app exists,
+what it does, and how it does it. How do they add it into their project?
+What does it need them to do? Beyond that, how exactly can they hook
+into their app?</p>
+<p>Before you have a panic attack about writing lots of docs, keep in mind
+that for many projects, especially smaller ones, a good README file is
+sufficient.</p>
+<h2 id="what-should-you-document">What should you document?</h2>
+<p>No matter how extensive your project documentation, there are a few
+basic things you should include, wiehter in a full docs folder or merely
+in a README.</p>
+<h3 id="purpose-and-goals">Purpose and goals</h3>
+<p>Even a readme file should start with a minimum of one sentence
+explaining what the project is for. There is of course a marketing
+benefit to this if you want other people to be able to find your
+rpoject, but it&apos;s also helpful for people to understand how or wehter
+this si the tool they&apos;re looking for.</p>
+<p>Examples of projects explaining what they are:</p>
+<ul>
+<li>Django</li>
+<li>Sphinx</li>
+<li>django-organizations</li>
+<li>django-rest-framework</li>
+</ul>
+<p>If this sounds daunting let Unix <code>manpages</code> give you an idea of how even
+a short description can be helpful.</p>
+<h3 id="installation">Installation</h3>
+<p>The first thing that any and all documentation shoudl cover is
+installation. This might be as minimal as <code>pip install my-app</code> but no
+doubt should be left to the user.</p>
+<p>If you&apos;re including an installed app even the step adding this to the
+<code>INSTALLED_APPS</code> list should be included.</p>
+<h3 id="configuration">Configuration</h3>
+<p>Beyond installation, does your app incldue any necessary additions to
+the settings, such as adding middleware classes or adding optional - or
+required - app specific settings, then this should be documented, too.
+If URLs are required, pointing out that these should be included and any
+expected namespaces is something you should document as well.</p>
+<h3 id="the-top-level-interface">The top level interface</h3>
+<p>Lastly in our list of prerequisitie documentation, you&apos;ll want to
+include an overview of the top level interface for your app. You don&apos;t
+need to explain how everything works, but you should provide a brief
+expalanation and example or two about how to integrate and use your app.</p>
+<p>If you have template tags, show a template snippet loading the template
+tag library by name and showing a short example of tags and filters.</p>
+<p>If this some kind of mixins, show a user class including the mixin and
+any changes they&apos;d include in their class&apos;s methods.</p>
+<p>Note this is the minimum you should include in external documentation.</p>
+<h2 id="some-notes-on-markup-language">Some notes on markup language</h2>
+<p>You&apos;ve probably noticed that the predominate chocie of markup language
+for Python projects is reStructuredText, using the rst extension. This
+is a good default, even if you&apos;re used to Markdown. The basics of
+reStructuredText aren&apos;t that much different than Markdown. Probably the
+biggest difference is the link syntax.</p>
+<p>This is a good default choice for external documentation, from your
+README, changelog, and docs folder. For starters, its what docutils and
+PyPI understand.</p>
+<p>You may not use many of the features of reStructuredText, but as you
+continue developing - and documenting -</p>
+<p>If you really want to use Markdown you certainly can - documentation in
+plain text is better than none, and Markdown is a very palatable choice.
+If you choose to write documentation in Markdown, use Tom Christie&apos;s
+<code>mkdocs</code> package. It&apos;ll provide a lot of the structure allowing you to
+build multipage documentation that&apos;s structured and links to each other.
+At the very least keep your README and anything else that you want
+properly formatted on PyPI in reStructuredText. If you don&apos;t care how it
+looks there, then damn the directives.</p>
+<p>Both reStructuredText and Markdown are supported on Read the Docs, you
+can just do a lot more with reStructuredText.</p>
 
                                 
                                 </section>
@@ -622,12 +691,12 @@ skim this section.</p>
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="testing.html" class="navigation navigation-prev " aria-label="Previous page: Testing outside of a project">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="scope.html" class="navigation navigation-next " aria-label="Next page: Defining the Scope">
+                <a href="migrations.html" class="navigation navigation-next " aria-label="Next page: Model migrations">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -638,7 +707,7 @@ skim this section.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"The Components of a Django Reusable App","level":"1.2","depth":1,"next":{"title":"Defining the Scope","level":"1.2.1","depth":2,"path":"part1/scope.md","ref":"part1/scope.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Ben Lopatin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Django Standalone Apps","gitbook":"*"},"file":{"path":"part1/intro.md","mtime":"2018-09-29T14:42:37.713Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-09-29T18:04:38.723Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Documenting your app","level":"1.2.4","depth":2,"next":{"title":"Model migrations","level":"1.2.5","depth":2,"path":"part1/migrations.md","ref":"part1/migrations.md","articles":[]},"previous":{"title":"Testing outside of a project","level":"1.2.3","depth":2,"path":"part1/testing.md","ref":"part1/testing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Ben Lopatin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Django Standalone Apps","gitbook":"*"},"file":{"path":"part1/docs.md","mtime":"2018-09-29T17:53:23.818Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-09-29T18:04:38.723Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

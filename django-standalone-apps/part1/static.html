@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>The Components of a Django Reusable App · Django Standalone Apps</title>
+        <title>Static files · Django Standalone Apps</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="scope.html" />
+    <link rel="next" href="namespacing.md" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="templates.html" />
     
 
     </head>
@@ -102,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="intro.html">
+        <li class="chapter " data-level="1.2" data-path="intro.html">
             
                 <a href="intro.html">
             
@@ -194,7 +194,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="static.html">
+        <li class="chapter active" data-level="1.2.7" data-path="static.html">
             
                 <a href="static.html">
             
@@ -572,7 +572,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >The Components of a Django Reusable App</a>
+        <a href=".." >Static files</a>
     </h1>
 </div>
 
@@ -587,14 +587,55 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="basic-components-of-a-django-app">Basic Components of a Django App</h1>
-<p>If you&apos;ve never created a Python package before, or if you have but have
-never created a Django-app as a Python package, then this section is for
-you. We&apos;ll cover the necessary bits about setting up your app as an
-installable Python library and also the Django-specific setup you&apos;ll
-need to deal with in order to properly include everything else.</p>
-<p>If you&apos;re somewhat familiar with standalone Django apps you can probably
-skim this section.</p>
+                                <h1 id="static-assets">Static assets</h1>
+<p>&quot;Static assets&quot;, images, CSS, and JavaScript files, are a less common
+component in standalone Django apps. However they 
+but occassionally important inclusion in standalone apps. It warrants
+the question why, though, if in describing the use of templates we&apos;ve
+already covered that such assets should be minimized in including
+templates.</p>
+<h3 id="why">Why</h3>
+<p>A few of the scenarios in which you might include assets like this
+include:</p>
+<ul>
+<li>Focus on a specific front-end framework (e.g. Bootstrap)</li>
+<li>Additional admin functionality</li>
+</ul>
+<h3 id="what-to-include">What to include</h3>
+<p>A better heading here might be what <em>not</em> to include. There are two scenarios
+in which you&apos;re including static files: you need them for some Django admin
+functionality or you need them for some non-Django admin functionality. It&apos;s a
+binary choice.</p>
+<h3 id="library-dependencies">Library dependencies</h3>
+<p>It might be tempting to think, my cool widget here requires Angular.js, so I&apos;ll
+just include Angular... whoa. Unless your app is in fact a Django package for the
+purpose of shipping Angular, there shouldn&apos;t be any need to include the library
+in your package.</p>
+<p>Most projects will be including fiels like this through front-end sepcific build
+processes, so there shouldnt&apos; be much need to do so here.</p>
+<h3 id="jquery-and-the-django-admin">jQuery and the Django admin</h3>
+<p>If you&apos;re using jQuery, it&apos;s a good idea to test that your code is compatible
+with the version of jQuery that ships with Django - provided, of course, that your
+intention is to include it in the Django admin.</p>
+<p>And of course if you&apos;re calling these sources from templates then its&apos; at the users&apos;
+discretion to change them.</p>
+<p>The Django admin packages jQuery using the <code>django.jQuery</code> namespace. If
+your app requires a jQuery version incompatible with the one shipped
+with Django (unlikely, but possible), then you can safely refer to your
+version loaded using the typical <code>$</code> namespace.</p>
+<h3 id="how-to-package">How to package</h3>
+<p>This part is pretty easy. Your static files should be included in
+your app folder just as if it were an app in your own project.</p>
+<pre><code>|- myapp
+|---static/
+|-------myapp/
+|-------------/js/myfile.js
+|-------------/css/myfile.css
+</code></pre><blockquote>
+<p>Don&apos;t forget to include these files in your package when you prepare it.
+They&apos;ll need to be explicitly included in your Manifest.in file. See
+the section on packaging for more details.</p>
+</blockquote>
 
                                 
                                 </section>
@@ -622,12 +663,12 @@ skim this section.</p>
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="templates.html" class="navigation navigation-prev " aria-label="Previous page: Templates">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="scope.html" class="navigation navigation-next " aria-label="Next page: Defining the Scope">
+                <a href="namespacing.md" class="navigation navigation-next " aria-label="Next page: Namespacing">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -638,7 +679,7 @@ skim this section.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"The Components of a Django Reusable App","level":"1.2","depth":1,"next":{"title":"Defining the Scope","level":"1.2.1","depth":2,"path":"part1/scope.md","ref":"part1/scope.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Ben Lopatin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Django Standalone Apps","gitbook":"*"},"file":{"path":"part1/intro.md","mtime":"2018-09-29T14:42:37.713Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-09-29T18:04:38.723Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Static files","level":"1.2.7","depth":2,"next":{"title":"Namespacing","level":"1.2.8","depth":2,"path":"part1/namespacing.md","ref":"part1/namespacing.md","articles":[]},"previous":{"title":"Templates","level":"1.2.6","depth":2,"path":"part1/templates.md","ref":"part1/templates.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Ben Lopatin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Django Standalone Apps","gitbook":"*"},"file":{"path":"part1/static.md","mtime":"2018-09-29T17:58:28.879Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-09-29T18:04:38.723Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

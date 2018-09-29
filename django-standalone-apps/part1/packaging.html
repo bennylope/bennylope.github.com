@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>The Components of a Django Reusable App · Django Standalone Apps</title>
+        <title>Packaging · Django Standalone Apps</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="scope.html" />
+    <link rel="next" href="../part2/intro.html" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="namespacing.md" />
     
 
     </head>
@@ -102,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="intro.html">
+        <li class="chapter " data-level="1.2" data-path="intro.html">
             
                 <a href="intro.html">
             
@@ -220,7 +220,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.9" data-path="packaging.html">
+        <li class="chapter active" data-level="1.2.9" data-path="packaging.html">
             
                 <a href="packaging.html">
             
@@ -572,7 +572,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >The Components of a Django Reusable App</a>
+        <a href=".." >Packaging</a>
     </h1>
 </div>
 
@@ -587,14 +587,153 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="basic-components-of-a-django-app">Basic Components of a Django App</h1>
-<p>If you&apos;ve never created a Python package before, or if you have but have
-never created a Django-app as a Python package, then this section is for
-you. We&apos;ll cover the necessary bits about setting up your app as an
-installable Python library and also the Django-specific setup you&apos;ll
-need to deal with in order to properly include everything else.</p>
-<p>If you&apos;re somewhat familiar with standalone Django apps you can probably
-skim this section.</p>
+                                <h1 id="packaging">Packaging</h1>
+<p>You&apos;ve probably installed Python libraries before using <code>pip</code> like so:</p>
+<pre><code>pip install Django==4.9.3
+</code></pre><p>And then like magic you could start using Django scripts and importing
+Django code into your own project.</p>
+<p>But how did that command get Django installed? We&apos;re not going to do a
+deep dive on packaging here because it&apos;s a lengthy subject, but we are
+going to explore enough so that you understand how to take your app and
+make it installable and usable by other users.</p>
+<h2 id="the-basics-setuppy">The basics: setup.py</h2>
+<p>The basics of a Python package include a (1) Python module and (2) a
+setup file that identifies your package and locates the code.</p>
+<p>At a bare minimum you&apos;ll need a <code>setup.py</code> file that tells the package
+manager infomration about your Python package such as it&apos;s name, the
+version, and what source code to include when installing.</p>
+<pre><code class="lang-python"><span class="hljs-comment"># app.py</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">hello_world</span><span class="hljs-params">()</span>:</span>
+    print(<span class="hljs-string">&quot;Hello!&quot;</span>)
+    <span class="hljs-keyword">return</span> {}
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment"># setup.py</span>
+<span class="hljs-keyword">from</span> distutils.core <span class="hljs-keyword">import</span> setup
+
+setup(
+    author=<span class="hljs-string">&quot;Me&quot;</span>,
+    name=<span class="hljs-string">&quot;hello&quot;</span>,
+    version=<span class="hljs-string">&quot;1.0&quot;</span>,
+    packages=[<span class="hljs-string">&apos;app&apos;</span>],
+)
+</code></pre>
+<p>Okay, it&apos;s a silly module. But it&apos;s an installable silly module. The
+first part should be self explanatory. It&apos;s a Python module. The
+setup.py does one very important thing, it calls <code>setup</code> from distutils
+whcih is Python&apos;s way of declaring this a module. This file is what you
+will use when intsalling a package, either directly or indirectly.
+Without getting into the details of all of the possible arguments you
+can see that we&apos;re providing meta information, e.g. who wrote it, the
+name of the package, and where to find the packages.</p>
+<p>This file provides data at the installation level so that when you run
+<code>python setup.py install</code> Python knows what to get out to install on
+your Python path.</p>
+<ul>
+<li>where the package itself is, i.e. the source of the Python modules</li>
+<li>where tests are</li>
+<li>what else is required for the package to install and/or test</li>
+<li>descriptive information about the app itself</li>
+</ul>
+<p>It also provides useufl data for package indexes, like PyPI (nee
+Cheeseshop). Additional argumetns like <code>license</code> make it easy for people
+to search for modules by how the software is licences, and <code>classifiers</code>
+provies useful information for searching for software by targeted
+purpose, environment, and Python version.</p>
+<h3 id="version">Version</h3>
+<p>The version is critical. It needs to be a string, and you can
+hard code it here, but that turns out to be a pain in the tuchus. Look,
+you probably declare the version elsewhere, so declare it one place and
+be done with it. That one place should be in the package root itself,
+either in <code>mypackage.py</code> or <code>mypackage/__init__.py</code>. The canonoical
+way of definit it is with the variable name <code>__version__</code>.</p>
+<p>To get this into your package&apos;s setup.py file, either import or, if that
+causes problems, read it from the file directly as text.</p>
+<h3 id="classifiers">Classifiers</h3>
+<p>The most important thing you&apos;ll use classifiers for is specifying which
+Python versions your code works with.</p>
+<p>Classifiers won&apos;t create hard constraints on how your package can be
+installed - at least using typical tools - but they do provide strucuted
+information in the package index that allow people to find useful
+software and identify if itwill work for them.</p>
+<p>As we&apos;re still in the transition phase between Python 2 and Python 3,
+including the Pyton version classifier is one of the most important you
+can fill out. Beyond that you can include other classifiers such as the
+stability of your package (e.g. is it alpha? stable?).</p>
+<h2 id="everything-else">Everything else</h2>
+<p>Your Python package will need to include more than just your code and a
+setup.py file. Here&apos;s a short overview of what else should be included.</p>
+<h3 id="readme">README</h3>
+<p>Hopefully this one is obvious. But what should this include? At a minimum
+it&apos;s helpful to include a brief description of the project, author
+identification with contact info, and initial installation,
+configuration, and usage instructions. It needn&apos;t cover everything.</p>
+<p>Thanks to the GitHubification of open source software, README files are
+read just as much as web pages as they are in text editors, and so the
+content has changed. They can include project diagrams, logos, dynamic
+images for build progress, in short they often serve as much a purpose
+as marketing material as they do mini-documentation.</p>
+<p>If you&apos;re keen on promoting your app then you&apos;ll probably want to delve
+into all of that, but consider that a well written README, written for
+the developer trying to understand the code in front of them, will
+typically server as decent marketing, whereas great marketing READMEs
+dont&apos; necessarily work for the developer&apos;s aid.</p>
+<p>Your README can be in text format, but if you&apos;re going to put your
+package on PyPI you should use reStructuredText.</p>
+<h3 id="license">License</h3>
+<p>More on this later, but you should include a file explaining ownerhip of
+your code and how it&apos;s licensed for end users. </p>
+<h3 id="requirements">Requirements</h3>
+<p>You probably know what this is already, but it&apos;s common to see project
+requirements, dependencies, included in a pip requirements file. This
+may be joined by additional files like a requirements-test.txt file
+specifying dependencies used solely for testing.</p>
+<p>If the former is present by itself it&apos;s frequently read from to populate
+the setup.py file in an effort to break out more of the information.</p>
+<p>A separate testing requirements file is very helpful and these
+dependencies are <em>not</em> required and needn&apos;t be installed in the deployed
+environment and in many cases testing requires a few additional
+packages.</p>
+<h3 id="manifestin">Manifest.in</h3>
+<p>One thing the setup.py file doesn&apos;t include is project assets. There&apos;s a
+package specification and a test packages spec, but it may come as a
+surpise that this only includes Python files. If you&apos;re writing a number
+crunching library this might of no import to you (rimshot) but if you&apos;ve
+got templates or images, you&apos;re at risk of losing those.</p>
+<p>What&apos;s this manifest business? We need to tell setup.py what to include
+in the package. By default it will include Python files, but often we
+want to include other files, like a README or assets like HTML and CSS
+files. These we specify in the MANIFEST.in file.</p>
+<pre><code>include setup.py
+include README.rst
+include MANIFEST.in
+include LICENSE
+recursive-include myapp/templates *
+</code></pre><h3 id="setupcfg">setup.cfg</h3>
+<p>What&apos;s this setup.cfg file? That&apos;s a configuration file that we&apos;re using
+here for creating a <code>wheel</code> file. A wheel is a way of packaging Python
+programs that replaces the previous style, called an &apos;egg&apos;. I kind of
+prefer the term &apos;egg&apos;, it fits more with the Python namespace, if you
+will, although Larch might have been even better. Wheel can be
+configured in several ways and we want to just make universal wheels.</p>
+<pre><code>[bdist_wheel]
+universal = 1
+</code></pre><p>There are other uses for this file that go beyond the scope of what
+we&apos;re discussing here.</p>
+<h3 id="toxini">tox.ini</h3>
+<p>This is easily my favorite of these files (yes, I have a favorite, and
+no I don&apos;t get out much). We&apos;ll go into greater depth about how this
+file is used in the advanced section on testing, but is short it&apos;s a
+configuraiton file used primarily but exclusively by tox, a tool for
+managing test environments. It&apos;s worth mentioning here because you&apos;ll
+likely see this in many Python packages.</p>
+<h3 id="changelog">Changelog</h3>
+<p>Sometimes named HISTORY, this file should be used to catalog what changed in
+the package from version to version. When properly updated this tells
+your users when you introduced a backwards incompatible change (and why)
+explaining the justification for a new release.</p>
+<p>There&apos;s a chapter on releases, but suffice to say there&apos;s a lot of value
+in keeping this kind of thing uptodate even for small projects that the
+public will never see.</p>
 
                                 
                                 </section>
@@ -622,12 +761,12 @@ skim this section.</p>
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="namespacing.md" class="navigation navigation-prev " aria-label="Previous page: Namespacing">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="scope.html" class="navigation navigation-next " aria-label="Next page: Defining the Scope">
+                <a href="../part2/intro.html" class="navigation navigation-next " aria-label="Next page: Scoping and Extracting Reusable Apps">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -638,7 +777,7 @@ skim this section.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"The Components of a Django Reusable App","level":"1.2","depth":1,"next":{"title":"Defining the Scope","level":"1.2.1","depth":2,"path":"part1/scope.md","ref":"part1/scope.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Ben Lopatin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Django Standalone Apps","gitbook":"*"},"file":{"path":"part1/intro.md","mtime":"2018-09-29T14:42:37.713Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-09-29T18:04:38.723Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Packaging","level":"1.2.9","depth":2,"next":{"title":"Scoping and Extracting Reusable Apps","level":"1.3","depth":1,"path":"part2/intro.md","ref":"part2/intro.md","articles":[{"title":"Scoping","level":"1.3.1","depth":2,"ref":"","articles":[]},{"title":"Separate","level":"1.3.2","depth":2,"ref":"","articles":[]},{"title":"Reversal","level":"1.3.3","depth":2,"ref":"","articles":[]},{"title":"Example extraction","level":"1.3.4","depth":2,"ref":"","articles":[]}]},"previous":{"title":"Namespacing","level":"1.2.8","depth":2,"path":"part1/namespacing.md","ref":"part1/namespacing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Ben Lopatin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Django Standalone Apps","gitbook":"*"},"file":{"path":"part1/packaging.md","mtime":"2018-09-29T18:04:01.814Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-09-29T18:04:38.723Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>The Components of a Django Reusable App · Django Standalone Apps</title>
+        <title>Templates · Django Standalone Apps</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="scope.html" />
+    <link rel="next" href="static.html" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="migrations.html" />
     
 
     </head>
@@ -102,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="intro.html">
+        <li class="chapter " data-level="1.2" data-path="intro.html">
             
                 <a href="intro.html">
             
@@ -181,7 +181,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.6" data-path="templates.html">
+        <li class="chapter active" data-level="1.2.6" data-path="templates.html">
             
                 <a href="templates.html">
             
@@ -572,7 +572,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >The Components of a Django Reusable App</a>
+        <a href=".." >Templates</a>
     </h1>
 </div>
 
@@ -587,15 +587,102 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="basic-components-of-a-django-app">Basic Components of a Django App</h1>
-<p>If you&apos;ve never created a Python package before, or if you have but have
-never created a Django-app as a Python package, then this section is for
-you. We&apos;ll cover the necessary bits about setting up your app as an
-installable Python library and also the Django-specific setup you&apos;ll
-need to deal with in order to properly include everything else.</p>
-<p>If you&apos;re somewhat familiar with standalone Django apps you can probably
-skim this section.</p>
-
+                                <h1 id="templates">Templates</h1>
+<p>Not every Django app needs templates, but if your app renders any kind
+of content to an end user, either in a web page or even an email, it
+certainly will make use of them.</p>
+<p>If these were templates directly in your own project, you&apos;d probably
+include very specific templates, with your markup, perhaps using your
+chosen front end framework, and content specific to your app. This
+doesn&apos;t make sense to include in a standalone app though.</p>
+<p>However if your app provides any content that does render template
+content, you should include basic templates bundled in your app, both to
+faciiltate testing and to provide guidance to users.</p>
+<h3 id="what-to-include">What to include</h3>
+<p>You don&apos;t need to and should avoid including elaborate templates. For
+most cases, just basic HTML without extraneous CSS or JS.</p>
+<p>The purpose of including templates is three-fold: to show clearly what
+templates are available and to make it easy to update them, and secondarily
+to show how context variables are used in the templates.
+Not to mention that if you want to test your views you&apos;ll have a bad time if
+the templates they refer to are missing.</p>
+<p>This might seem redundant because this is already apparent from your
+views or perhaps you&apos;ve done a good job of including this in your docs. However
+its important to think of the different audiences working with your app.</p>
+<p>For a designer working on a project using your app it&apos;d be easy to
+copy the complete directory of templates into the base project - the copies
+of which should now be loaded first and used to override the original
+app templates.</p>
+<p>This will also allow you to effectively test your apps functionality
+that uses these templates. Otherwise you&apos;ll need to skip testing these
+areas or provide templates from a separate testing project.</p>
+<p>What else should you know? Be careful with base templates. There&apos;s a
+convention in Django projects to base everythign on a <code>base.html</code>
+template, but that&apos;s not a given. So behind inheriting from a template
+your app provides - that is central to your app - avoid extending from
+presumed project templates.</p>
+<p>But, you say, these templates should really include a lot of complex
+content! Then just include the bare essentials. Alternatively, include a
+bit more generic content if the template is intended to be uses as is.
+And of course if you&apos;re targetting specific output like a front end
+framework, then include the expected finale product.</p>
+<h3 id="how-to-package">How to package</h3>
+<p>This part is pretty easy. Your templates should be included in
+your app folder just as if it were an app in your own project.</p>
+<pre><code>    |- myapp
+    |---templates/
+    |-------myapp/
+    |-------------/list.html
+    |-------------/detail.html
+</code></pre><p>This ensures that provided your users are using the
+<code>django.template.loaders.app_directories.Loader</code> that their proejcts will
+load the app templates and that they&apos;re properly overloaded
+when your users override in their own project&apos;s <code>tempaltes</code> directory.</p>
+<blockquote>
+<p>Don&apos;t forget to include these files in your package when you prepare it.
+They&apos;ll need to be explicitly included in your Manifest.in file. See
+the section on <code>Packaging</code> for details.</p>
+</blockquote>
+<h3 id="email-templates">Email templates</h3>
+<p>If your app makes use of email, for notifiying users of events, for
+example, then you&apos;ll want to include email templates as hinted at above.</p>
+<p>I&apos;ve found that a good, easy to understand way of organizing these is
+using a <code>templates/email</code> directory.</p>
+<pre><code>|- myapp
+|---templates/
+|-------myapp/
+|-------------/email/
+|------------------/email-body.html
+|------------------/email-subject.txt
+|-------------/list.html
+|-------------/detail.html
+</code></pre><p>A named preface may suffice, but if you more than a handful of templates
+using a separate directory can make identifying the templates easier.</p>
+<p>It&apos;s not a firm rule, but if you&apos;re not sure then do include the subject
+from a template. This may not make sense for every email, but it makes
+changing the email subject easier for end users. (And don&apos;t forget to
+use <code>{% spaceless %}</code> tags in the subject or otherwise strip out
+incidnetal line breaks before adding rendered content to the email
+message itself).</p>
+<h3 id="alternative-template-engines">Alternative template engines</h3>
+<!-- .. todo:: fact check whether we want to call this shipping iwth an engine -->
+<p>Django 1.8 introduced support for multiple template engine backends
+including both an interface for custom tempalte engines and shipping with a
+Jinja2 template engine. Should you include alternate templates?</p>
+<p>Unless you plan on using both Django templates and Jinja2 templates (or a custom
+template engine), probably not. While Jinja2 is a powerful template engine and
+incredibly popular outside of Django, it&apos;s not a common choice.</p>
+<p>What are some scenarios where you would want to include alternative,
+non-Django templates? Well for starters, if that&apos;s what your app
+specifically targets, such as a Jinja specific library, then by all
+means include them. Or if you&apos;re including <em>both</em> Django and Jinja
+templates, then that would work well.</p>
+<p>These are of greatest importance where a template is designed to be
+included without the rest of the templates of a site. If your app&apos;s
+templates are designed to be used in a way to render content independnet
+of the typical views, that is, in some way that shouldnt&apos; be based on a
+site wide base template, then these issues are not of great concern.</p>
+<!-- TODO: email templates and the like -->
                                 
                                 </section>
                             
@@ -622,12 +709,12 @@ skim this section.</p>
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="migrations.html" class="navigation navigation-prev " aria-label="Previous page: Model migrations">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="scope.html" class="navigation navigation-next " aria-label="Next page: Defining the Scope">
+                <a href="static.html" class="navigation navigation-next " aria-label="Next page: Static files">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -638,7 +725,7 @@ skim this section.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"The Components of a Django Reusable App","level":"1.2","depth":1,"next":{"title":"Defining the Scope","level":"1.2.1","depth":2,"path":"part1/scope.md","ref":"part1/scope.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Ben Lopatin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Django Standalone Apps","gitbook":"*"},"file":{"path":"part1/intro.md","mtime":"2018-09-29T14:42:37.713Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-09-29T18:04:38.723Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Templates","level":"1.2.6","depth":2,"next":{"title":"Static files","level":"1.2.7","depth":2,"path":"part1/static.md","ref":"part1/static.md","articles":[]},"previous":{"title":"Model migrations","level":"1.2.5","depth":2,"path":"part1/migrations.md","ref":"part1/migrations.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Ben Lopatin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Django Standalone Apps","gitbook":"*"},"file":{"path":"part1/templates.md","mtime":"2018-09-29T17:57:34.877Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-09-29T18:04:38.723Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
