@@ -17,7 +17,7 @@ Much progress was rapidly made on the book and the life caught up with me. Books
 
 At any rate, in order to get it finished I've decided to eschew the self-publishing (Leanpub) method and just post it to my own site. I'll offer an ebook when there's a polished version, but in the meantime hopefully the material here will prove useful to someone else.
 
-You can read the in-progress version at [/django-standalone-apps/](/django-standalone-apps/)
+You can read the in-progress version at [http://www.django-standalone-apps.com/](http://www.django-standalone-apps.com/).
 
 It's worth noting that some of the original material was written _three years ago_. I've worked on it here and there since then, but some of the content deserves a significant update. I'm currently going through sections and either editing to make it publishable or updating/writing the content (as there were some holes despite the detailed outline).
 
