@@ -12,7 +12,9 @@ pageid: content
 
 {% if page.quora %}<h4>As answered on <a href="{{ page.quora }}" rel="nofollow">Quroa</a></h4>{% endif %}
 
+<div id="page-content">
 {{ content }}
+</div>
 
     <aside class="post-footer">
         Originally published {{ page.date|date: "%B %Y" }}

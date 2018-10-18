@@ -98,6 +98,11 @@ li {
     margin: 1rem 0;
 }
 
+#page-content ul {
+    padding-left: 20px;
+    list-style: disc;
+    line-height: 2.5rem;
+}
 
 
 /*
