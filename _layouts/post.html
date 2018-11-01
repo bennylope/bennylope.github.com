@@ -10,11 +10,23 @@ pageid: content
 
 {% if page.teaser %}<aside>{{ page.teaser }}</aside>{% endif %}
 
+
+
 {% if page.quora %}<h4>As answered on <a href="{{ page.quora }}" rel="nofollow">Quroa</a></h4>{% endif %}
 
 <div id="page-content">
 {{ content }}
 </div>
+
+{% if page.category == "programming" %}
+<div class="cta">Hey! Before you go, checkout my book,
+    <a href="http://www.django-standalone-apps.com?utm_source=benlopatin.com&utm_campaign={{ page.slug }}">
+Django Standalone Apps</a>!
+    It's a bit rough around the edges as I'm writing it in public,
+    which means chapters get released periodically. But I'd love
+    if you'd check it out (it's free to read online).
+</div>
+{% endif %}
 
     <aside class="post-footer">
         Originally published {{ page.date|date: "%B %Y" }}
